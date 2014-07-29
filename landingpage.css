@@ -194,7 +194,7 @@ img.bg {
     -moz-box-shadow: 0 0 30px black;
     -webkit-box-shadow: 0 0 30px black;
     box-shadow: 0 0 30px black; 
-    top: 500px;
+    top: 550px;
     left: 7%;
 }
 
@@ -208,7 +208,7 @@ img.bg {
     -moz-box-shadow: 0 0 10px black;
     -webkit-box-shadow: 0 0 10px black;
     box-shadow: 0 0 10px black; 
-    top: 600px;
+    top: 650px;
     left: 0px;
 }
 
@@ -235,5 +235,46 @@ img.bg {
     background: url('scrollup.png') no-repeat;
     content:url("http://www.atlantic.com.my/images/arrow-up.png");
 }
-                                
+               
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#clock {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 20px auto 0 auto;
+    background: url(images/clockface3.png);
+    background-size: 100%;
+    background-repeat: none;
+    list-style: none;
+    top: 50px;
+}
+
+#sec, #min, #hour {
+    position: absolute;
+    width: 30px;
+    height: 600px;
+    top: -70px;
+    left: 210px;
+  
+}
+
+#sec {
+    background: url(images/sechand3.png);
+    z-index: 3;
+}
+
+#min {
+    background: url(images/minhand2.png);
+    z-index: 2;
+}
+   
+#hour {
+    background: url(images/hourhand2.png);
+    z-index: 1;
+  
+}
 
