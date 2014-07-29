@@ -21,7 +21,8 @@
     <!-- Fonts and style sheet for the rest of the landingpage -->
 	<link rel="stylesheet" type="text/css" href="landingpage.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+          
 	<title>Home | Viva la Sleep</title>
 	<!-- Background image -->
 
@@ -29,9 +30,6 @@
 </head>
 
 <body>
-	<div id='header_top_left'>
-		TimeM
-	</div>
 	
 	<!-- Main menu (top menu) ====================================================-->
 	<div id='cssmenu' style="z-index:5;">
@@ -56,8 +54,8 @@
 				<ul class='dropdown'>
 					<form name = "myform">
 					    <p> 
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @gmail.com"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @gmail.com"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
+					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
 					    </p>
 					</form>
 				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
@@ -77,7 +75,7 @@
       
       <div class="carousel-inner">
         <div class="item active">
-          <img src="http://www.jpl.nasa.gov/spaceimages/images/mediumsize/PIA17011_ip.jpg" alt="First slide">
+          <img src='getstarted-green.png' alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Slideshow Finally</h1>
@@ -112,29 +110,55 @@
     </div>
     <!-- End carousel -->
 
-
-  
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-	<!-- Main Context (should be on the bottom of the scren) -->
-	<div id="context">
-		Put text here!
-	</div>	
+	<!-- Main Context (should be on the bottom of the screen) -->
+
+	<div id='header_top_left'>
+		TimeM
+	</div>
+
+	<!-- Bottom part of the screen -->
+	<div id= "bottom-layer-context"> </div>
+	<div id="main-layer-context">
+		<!--put crap information here -->
+		<div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> </div>
+	</div>
 </body>
 
-
 <footer>
+	<!-- Script for scroll up feature -->              
+	<script>
+		$(document).ready(function () {
+
+			$(window).scroll(function () {
+			    if ($(this).scrollTop() > 100) {
+			        $('.scrollup').fadeIn();
+			    } else {
+			        $('.scrollup').fadeOut();
+			    }
+			});
+
+			$('.scrollup').click(function () {
+			    $("html, body").animate({
+			        scrollTop: 0
+			    }, 600);
+		    	return false;
+			});
+
+		});
+	</script>
 
 	<article style="height: 300px">
-		<!-- Scrolling up feature -->
 		<a href="#" class="scrollup">Scroll</a>
-
-		<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
-		<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
 	</article>
 
-</footer>
+	<!-- Must put footer here -->
+	<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
+	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
+	<!-- Doesn't work -->
 
+</footer>
 </html>

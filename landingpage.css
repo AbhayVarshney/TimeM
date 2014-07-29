@@ -20,14 +20,16 @@ img.bg {
     }
 }
 
+
+
 #header_top_left {
     /* Top left header */
     color: #ffffff;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 0.03em;
-    font-weight: 300;
     font-size: 45px;
+
     position: absolute;
     left: 6.5%;
     top: 5%;
@@ -69,7 +71,8 @@ img.bg {
 #cssmenu > ul > li > a {
     color: rgb(255, 255, 255);
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: 0.16em;
     line-height: 70px;      /* This bit chances the size of the text on the main heading */
     padding: 15px 24px;     /* This is the padding between the different titles */
     -webkit-transition: color .15s;
@@ -79,7 +82,7 @@ img.bg {
 }
 
 #cssmenu > ul > li > a:hover {
-    color: rgb(250,250,250); 
+    color: rgb(125,125,125); 
 }
 
 #cssmenu > ul > li > ul {
@@ -178,19 +181,58 @@ img.bg {
     background-color: rgb(114,164,65);
     color: rgb(240,240,240);
 }
-
-#context {
-    /* Textbox with content*/
-    position: absolute;
-    left: 40%;
-    top: 500px;
-    width: 400px;
-    margin: 50px auto; 
+                    
+#main-layer-context { 
+    /* This is the top layer of information sheet */
+    position: absolute; 
+    width: 1100px; 
+    height: 850px;
+    margin: 50px auto;
     padding: 20px; 
-    background: white; 
-    -moz-box-shadow: 0 0 20px black; 
-    -webkit-box-shadow: 0 0 20px black; 
-    box-shadow: 0 0 20px black;
-    font: 15px/2 Times, Serif;
-    text-indent: 40px; 
+    background: white;
+    -moz-box-shadow: 0 0 30px black;
+    -webkit-box-shadow: 0 0 30px black;
+    box-shadow: 0 0 30px black; 
+    top: 500px;
+    left: 7%;
 }
+
+#bottom-layer-context {
+    /* Bottom layer of information sheet */
+    position: absolute; 
+    height: 800px;
+    width: 100%;
+    padding: 20px; 
+    background: #EAEEF1;
+    -moz-box-shadow: 0 0 10px black;
+    -webkit-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black; 
+    top: 600px;
+    left: 0px;
+}
+
+#left-informationandcontent { 
+    /* Styling for text */
+    font: 15px/1.5 'Raleway', serif; 
+    width: 550px;
+    text-align: left;
+    letter-spacing: 0.03em;
+    font-size: 40px;
+    position: absolute;
+    left: 70px;
+    top: 80px;
+}
+
+.scrollup {
+    width: 110px;
+    height: 110px;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+    text-indent: -9999px;
+    background: url('scrollup.png') no-repeat;
+    content:url("http://www.atlantic.com.my/images/arrow-up.png");
+}
+                                
+
