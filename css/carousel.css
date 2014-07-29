@@ -6,8 +6,6 @@ body {
   padding-bottom: 40px;
 }
 
-
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -39,7 +37,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 615px;
+  height: 625px;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
