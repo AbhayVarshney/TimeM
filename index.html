@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Fixes Windows 8 bug for slider-->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
-    <!-- Fonts and style sheet for the rest of the landingpage -->
-	<link rel="stylesheet" type="text/css" href="landingpage.css">
+
+    <!-- Fonts and style sheet for the rest of the Index -->
+	<link rel="stylesheet" type="text/css" href="index.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-	<link rel="icon" href="images/favicon.png">
-
           
 	<title>Home | Viva la Sleep</title>
 	<!-- Background image -->
@@ -30,37 +35,41 @@
 	<div id='cssmenu' style="z-index:5;">
 		<ul>
 			<li class='active'>
+				<a href='index.html'>
+					<span class = 'index'><strong> Home</strong></span>
+				</a>
+			</li>
+
+			<li class='active'>
 				<a href='aboutus.html'>
 					<span class = 'aboutus'><strong> About Us</strong></span>
 				</a>
 			</li>
 
 			<li class='active'>
-				<a href='howitworks.html'>
-					<span class = 'howitworks'><strong> How it works </strong></span>
+				<a href='progress.html'>
+					<span class = 'progress'><strong> Progress </strong></span>
 				</a>
 			</li>
 
 			<li class='active'>
-				<a href='#'>
-					<span class = 'login'><strong> Login </strong></span>
+				<a href='assignments.html'>
+					<span class = 'assignments'><strong> Assignments </strong></span>
 				</a>
-
-				<ul class='dropdown'>
-					<form name = "myform">
-					    <p> 
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Paul_G"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
-					    </p>
-					</form>
-				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
-				</ul>
 			</li>
+
+			
+			<li class='active'>
+				<a href='signout.html'>
+					<span class = 'signout'><strong> Sign Out </strong></span>
+				</a>
+			</li>
+
 	</div>
 	<!-- End main menu (top menu) -->
 
  <!-- Carousel  ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -75,7 +84,7 @@
             	<!-- Clock Begins Here ==========================-->
 				<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
 
-				<script src="clock.js"></script>
+				<script type="text/javascript" src="clock.js"></script>
 
 				<div id="clock_container">
 					<ul id="clock">	
@@ -113,52 +122,7 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- End carousel -->
-
-    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  	<script type="text/javascript">
-	    $(document).ready(function(){
-	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
-
-	        authenticateUser(username, password);
-
-	      });
-
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "index.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-	    </script>
-	    <!-- End of login functionality -->
-
+ 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -173,7 +137,7 @@
 	<div id= "bottom-layer-context"> </div>
 	<div id="main-layer-context">
 		<!--put crap information here -->
-		<div id= "left-informationandcontent"> <strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> </div>
+		<div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> Like <strong>Abhay</strong></div>
 	</div>
 </body>
 
@@ -205,7 +169,7 @@
 	</article>
 
 	<!-- Must put footer here -->
-	<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
+	<p><class='active'><a href='index.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
 	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
 	<!-- Doesn't work -->
 

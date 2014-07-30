@@ -49,7 +49,7 @@ img.bg {
 #cssmenu {
     /* drop down menu */
     height: 70px;           /* This is for the main menu bit at the top */
-    width: 100%;            /* This means on every screen no matter the size, the width will cover the top  */
+    width: 80%;            /* This means on every screen no matter the size, the width will cover the top  */
     line-height: normal;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.0); 
@@ -65,7 +65,7 @@ img.bg {
 
 #cssmenu > ul > li {
     display:inline-block;
-    margin-left: 15px;       /* This is when the drop down box appears */
+    margin-left: 35px;       /* This is when the drop down box appears */
     position: relative;
 }
 
@@ -276,11 +276,5 @@ img.bg {
     background: url(images/hourhand2.png);
     z-index: 1;
   
-}
-
-#signIn {
-    background-color: white;
-    border: 1px solid #C0C0C0;
-    padding: 5px;
 }
 
