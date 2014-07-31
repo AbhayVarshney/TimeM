@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
-
-    <!-- Fonts and style sheet for the rest of the Index -->
-	<link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Fonts and style sheet for the rest of the landingpage -->
+	<link rel="stylesheet" type="text/css" href="landingpage.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="images/favicon.png">
+
           
 	<title>Home | Viva la Sleep</title>
 	<!-- Background image -->
@@ -31,32 +29,35 @@
 	<!-- Main menu (top menu) ====================================================-->
 	<div id='cssmenu' style="z-index:5;">
 		<ul>
-			
-
 			<li class='active'>
-				<a href='progress.html'>
-					<span class = 'index'><strong> Profile </strong></span>
+				<a href='aboutus.html'>
+					<span class = 'aboutus'><strong> Profile </strong></span>
 				</a>
 			</li>
 
 			<li class='active'>
-				<a href='assignments.html'>
-					<span class = 'assignments'><strong> Assignments </strong></span>
+				<a href='howitworks.html'>
+					<span class = 'howitworks'><strong> Assignments </strong></span>
 				</a>
 			</li>
 
-			
 			<li class='active'>
-				<a href='landingpage.html'>
-					<span class ='signout'>Sign Out</span>
+				<a href='#'>
+					<span class = 'login'><strong> Logout </strong></span>
 				</a>
-			</li>
 
+			</li>
+	</div>
+	<!-- put settings bar over here -->
+	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+	
+  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
 	</div>
 	<!-- End main menu (top menu) -->
 
  <!-- Carousel  ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<script src="js/bootstrap.min.js"></script>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -68,10 +69,65 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-            	<!-- Clock Begins Here ==========================-->
-				<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+				<h1><strong> <a style = "font-size: 65px; color: white;" > Welcome to TimeM. </a></strong></h1>
+              <br/> 
+              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
+              <br/>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
+            </div>
+          </div>
+        </div>
 
-				<script type="text/javascript" src="clock.js"></script>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption" style = "position: absolute; top: 40px">
+
+            <!-- Clock Begins Here ==========================-->
+              <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+
+			    <script type="text/javascript">
+			    
+			        $(document).ready(function() {
+
+			          // set the push in of the clock hands
+			          //var offset= $("#clock").offset();
+			          //console.log("top: " + offset.top+ "left: " + offset.left);
+			         
+			              setInterval( function() {
+			              var seconds = new Date().getSeconds();
+			              var sdegree = seconds * 6;
+			              var srotate = "rotate(" + sdegree + "deg)";
+			              
+			              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+			                
+			              }, 1000 );
+			              
+			         
+			              setInterval( function() {
+			              var hours = new Date().getHours();
+			              var mins = new Date().getMinutes();
+			              var hdegree = hours * 30 + (mins / 2);
+			              var hrotate = "rotate(" + hdegree + "deg)";
+			              
+			              $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+			                  
+			              }, 1000 );
+			        
+			        
+			              setInterval( function() {
+			              var mins = new Date().getMinutes();
+			              var mdegree = mins * 6;
+			              var mrotate = "rotate(" + mdegree + "deg)";
+			              
+			              $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+			                  
+			              }, 1000 );
+			         
+			        }); 
+			    
+			    </script>
+
+				<script src="clock.js"></script>
 
 				<div id="clock_container">
 					<ul id="clock">	
@@ -81,25 +137,15 @@
 					</ul>
 				</div>
 
-            </div>
-          </div>
-        </div>
-
         <!-- CLOCK ENDS HERE =====================================-->
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Works</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
         <div class="item">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Took a long time</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Gotta put mas informacion</h1>
+              <p>need mas por favor. no se lo que hace para este parafo. </p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
@@ -109,10 +155,78 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- End carousel -->
- 
-    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+  	<script type="text/javascript">
+	    $(document).ready(function(){
+	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+	      $("#signIn").on('click', function(e){
+	        e.preventDefault();
+	        var username = $("#username").val();
+	        var password = $("#password").val();
+	        if(username.length < 0){
+	          alert("Please type in your username"); 
+	        }
+	        if(password.length < 0){
+	          alert("Please type in your password"); 
+	        }
+
+	        authenticateUser(username, password);
+
+	      });
+
+
+	      /* Adding Username */
+	      var makeAssignment,getAssignment;
+
+	      //function to find an existing user
+	      var authenticateUser = function(username, password){
+	        
+
+	        Parse.User.logIn(username, password, {
+	          success: function(user) {
+	            // Do stuff after successful login.
+	             document.cookie="username=" + username;
+	             window.location.href = "index.html";
+
+	          },
+	          error: function(user, error) {
+	            // The login failed. Check error to see why.
+	            alert("Incorrect password or username");
+	          }
+	        });
+	      };
+
+		    var newUser = function (username, password){
+	        var user = new Parse.User();
+	        user.set("username", username);
+	        user.set("password", password);
+	        user.signUp(null, {
+	          success: function(user) {
+	            // Hooray! Let them use the app now.
+	            alert("new user has been created", user.get("username"));
+	          },
+	          error: function(user, error) {
+	            // Show the error message somewhere and let the user try again.
+	            alert("Error: " + error.code + " " + error.message);
+
+	          }
+	        });
+	      };
+
+      	//get the username and password that the user has entered in the landing page
+
+    	});
+
+
+	</script>
+	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<!-- End of login functionality -->
 
 	<!-- Main Context (should be on the bottom of the screen) -->
 
@@ -124,7 +238,13 @@
 	<div id= "bottom-layer-context"> </div>
 	<div id="main-layer-context">
 		<!--put crap information here -->
-		<div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> Like <strong>Abhay</strong></div>
+		<div id= "left-informationandcontent"> 
+			<strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their 
+			<strong> homework. </strong> 
+		</div>
+		<div id= "right-informationandcontent"> 
+			<strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
+		</div>
 	</div>
 </body>
 
@@ -156,7 +276,7 @@
 	</article>
 
 	<!-- Must put footer here -->
-	<p><class='active'><a href='index.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
+	<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
 	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
 	<!-- Doesn't work -->
 
