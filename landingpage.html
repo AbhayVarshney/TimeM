@@ -48,10 +48,9 @@
 
 				<ul class='dropdown'>
 					<form name = "myform">
-					    <p> 
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @gmail.com"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <br/> <input id="signIn" type="button" style = "font-size: 15px; position: absolute; left: 15px; top: 125px; background: none; border-color: white; border-width: 3px; border-radius: 3px; font-family: 'Raleway', serif; width: 150px; height: 25px;" value="Sign In" name="Submit"> </center> 
-					    	<br/>
+					    <p>
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Paul_G"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
+					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
 					    </p>
 					</form>
 				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
@@ -164,6 +163,51 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- End carousel -->
+
+    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+  	<script type="text/javascript">
+	    $(document).ready(function(){
+	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+	      $("#signIn").on('click', function(e){
+	        e.preventDefault();
+	        var username = $("#username").val();
+	        var password = $("#password").val();
+	        if(username.length < 0){
+	          alert("Please type in your username"); 
+	        }
+	        if(password.length < 0){
+	          alert("Please type in your password"); 
+	        }
+
+	        authenticateUser(username, password);
+
+	      });
+
+
+	      /* Adding Username */
+	      var makeAssignment,getAssignment;
+
+	      //function to find an existing user
+	      var authenticateUser = function(username, password){
+	        
+
+	        Parse.User.logIn(username, password, {
+	          success: function(user) {
+	            // Do stuff after successful login.
+	             document.cookie="username=" + username;
+	             window.location.href = "index.html";
+
+	          },
+	          error: function(user, error) {
+	            // The login failed. Check error to see why.
+	            alert("Incorrect password or username");
+	          }
+	        });
+	      };
+	    </script>
+	    <!-- End of login functionality -->
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

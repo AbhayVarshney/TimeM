@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Fixes Windows 8 bug for slider-->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <!-- Fonts and style sheet for the rest of the Index -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+          
+	<title>Home | Viva la Sleep</title>
+	<!-- Background image -->
+
+	<img src="images/mainbackground.jpg" class="bg">
+</head>
+
+<body>
+	
+	<!-- Main menu (top menu) ====================================================-->
+	<div id='cssmenu' style="z-index:5;">
+		<ul>
+			<li class='active'>
+				<a href='index.html'>
+					<span class = 'index'><strong> Home</strong></span>
+				</a>
+			</li>
+
+			<li class='active'>
+				<a href='aboutus.html'>
+					<span class = 'aboutus'><strong> About Us</strong></span>
+				</a>
+			</li>
+
+			<li class='active'>
+				<a href='progress.html'>
+					<span class = 'progress'><strong> Progress </strong></span>
+				</a>
+			</li>
+
+			<li class='active'>
+				<a href='assignments.html'>
+					<span class = 'assignments'><strong> Assignments </strong></span>
+				</a>
+			</li>
+
+			
+			<li class='active'>
+				<a href='landingpage.html'>
+					<span class ='signout'>Sign Out</span>
+				</a>
+			</li>
+
+	</div>
+	<!-- End main menu (top menu) -->
+
+ <!-- Carousel  ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<!-- Clock Begins Here ==========================-->
+				<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+
+				<script type="text/javascript" src="clock.js"></script>
+
+				<div id="clock_container">
+					<ul id="clock">	
+						<li id="sec"></li>
+						<li id="hour"></li>
+						<li id="min"></li>
+					</ul>
+				</div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CLOCK ENDS HERE =====================================-->
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Works</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Took a long time</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <!-- End carousel -->
+ 
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+	<!-- Main Context (should be on the bottom of the screen) -->
+
+	<div id='header_top_left'>
+		TimeM
+	</div>
+
+	<!-- Bottom part of the screen -->
+	<div id= "bottom-layer-context"> </div>
+	<div id="main-layer-context">
+		<!--put crap information here -->
+		<div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> Like <strong>Abhay</strong></div>
+	</div>
+</body>
+
+<footer>
+	<!-- Script for scroll up feature -->              
+	<script>
+		$(document).ready(function () {
+
+			$(window).scroll(function () {
+			    if ($(this).scrollTop() > 100) {
+			        $('.scrollup').fadeIn();
+			    } else {
+			        $('.scrollup').fadeOut();
+			    }
+			});
+
+			$('.scrollup').click(function () {
+			    $("html, body").animate({
+			        scrollTop: 0
+			    }, 600);
+		    	return false;
+			});
+
+		});
+	</script>
+
+	<article style="height: 300px">
+		<a href="#" class="scrollup">Scroll</a>
+	</article>
+
+	<!-- Must put footer here -->
+	<p><class='active'><a href='index.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
+	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
+	<!-- Doesn't work -->
+
+</footer>
+</html>
