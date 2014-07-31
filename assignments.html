@@ -46,34 +46,38 @@
 				</li>
 			</ul>
 		</div>
+		<!-- End Navbar ================================================================-->
 
 		<!-- Adding an assignment -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
         <div class="addAssignment">
           <h3 style="text-align:center; color:white"> Add new assignments below </h3>
+          <!-- Not sure what this does ===================================-->
           <script type = 'text/javascript'>
-          function changeThis() {
-            var assignmentInput = document.getElementById('assignment');
-            document.getElementById('newAssign').innerHTML = assignmentInput.value;
-            var minsInput = document.getElementById('mins');
-            document.getElementById('newMins').innerHTML = minsInput.value;
-          }
+	          function changeThis() {
+	            var assignmentInput = document.getElementById('assignment');
+	            document.getElementById('newAssign').innerHTML = assignmentInput.value;
+	            var minsInput = document.getElementById('mins');
+	            document.getElementById('newMins').innerHTML = minsInput.value;
+	          }
           </script>
+
           <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
           <script type="text/javascript">
-          $(document).ready(function () {
-            $('<div/>', {
-              'class' : 'extraPerson', html: GetHtml()
-            }).appendTo('#container');
-            $('#addRow').click(function () {
-              $('<div/>', {
-                'class' : 'extraPerson', html: GetHtml()
-              }).hide().appendTo('#container').slideDown('slow');
+	          $(document).ready(function () {
+	            $('<div/>', {
+	              'class' : 'extraPerson', html: GetHtml()
+	            }).appendTo('#container');
+	            $('#addRow').click(function () {
+	              $('<div/>', {
+	                'class' : 'extraPerson', html: GetHtml()
+	              }).hide().appendTo('#container').slideDown('slow');
 
-            });
-          })
+	            });
+	          })
           </script>
+
         </div>
 
         <div class="extraPersonTemplate">
