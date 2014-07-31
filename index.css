@@ -20,8 +20,6 @@ img.bg {
     }
 }
 
-
-
 #header_top_left {
     /* Top left header */
     color: #ffffff;
@@ -61,6 +59,8 @@ img.bg {
 
 #cssmenu > ul {
     text-align:center;
+    position: absolute;
+    left: 210px;
 }
 
 #cssmenu > ul > li {
