@@ -50,12 +50,18 @@
 					<form name = "myform">
 					    <p> 
 					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @gmail.com"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    	<center> <br/> <input id="signIn" type="button" style = "font-size: 15px; position: absolute; left: 15px; top: 125px; background: none; border-color: white; border-width: 3px; border-radius: 3px; font-family: 'Raleway', serif; width: 150px; height: 25px;" value="Sign In" name="Submit"> </center> 
+					    	<br/>
 					    </p>
 					</form>
 				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
 				</ul>
 			</li>
+	</div>
+	<!-- put settings bar over here -->
+	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+	
+  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
 	</div>
 	<!-- End main menu (top menu) -->
 
@@ -72,8 +78,63 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-            	<!-- Clock Begins Here ==========================-->
-				<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+				<h1><strong> <a style = "font-size: 65px; color: white;" > Welcome to TimeM. </a></strong></h1>
+              <br/> 
+              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
+              <br/>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption" style = "position: absolute; top: 40px">
+
+            <!-- Clock Begins Here ==========================-->
+              <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+
+			    <script type="text/javascript">
+			    
+			        $(document).ready(function() {
+
+			          // set the push in of the clock hands
+			          //var offset= $("#clock").offset();
+			          //console.log("top: " + offset.top+ "left: " + offset.left);
+			         
+			              setInterval( function() {
+			              var seconds = new Date().getSeconds();
+			              var sdegree = seconds * 6;
+			              var srotate = "rotate(" + sdegree + "deg)";
+			              
+			              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+			                
+			              }, 1000 );
+			              
+			         
+			              setInterval( function() {
+			              var hours = new Date().getHours();
+			              var mins = new Date().getMinutes();
+			              var hdegree = hours * 30 + (mins / 2);
+			              var hrotate = "rotate(" + hdegree + "deg)";
+			              
+			              $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+			                  
+			              }, 1000 );
+			        
+			        
+			              setInterval( function() {
+			              var mins = new Date().getMinutes();
+			              var mdegree = mins * 6;
+			              var mrotate = "rotate(" + mdegree + "deg)";
+			              
+			              $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+			                  
+			              }, 1000 );
+			         
+			        }); 
+			    
+			    </script>
 
 				<script src="clock.js"></script>
 
@@ -85,25 +146,15 @@
 					</ul>
 				</div>
 
-            </div>
-          </div>
-        </div>
-
         <!-- CLOCK ENDS HERE =====================================-->
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Works</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
         <div class="item">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Took a long time</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Gotta put mas informacion</h1>
+              <p>need mas por favor. no se lo que hace para este parafo. </p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
@@ -128,7 +179,13 @@
 	<div id= "bottom-layer-context"> </div>
 	<div id="main-layer-context">
 		<!--put crap information here -->
-		<div id= "left-informationandcontent"> <strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their <strong> homework. </strong> </div>
+		<div id= "left-informationandcontent"> 
+			<strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their 
+			<strong> homework. </strong> 
+		</div>
+		<div id= "right-informationandcontent"> 
+			<strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
+		</div>
 	</div>
 </body>
 

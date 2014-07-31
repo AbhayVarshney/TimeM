@@ -57,6 +57,7 @@ img.bg {
     vertical-align: middle;
     position: absolute;
     top: 20px;
+    font-family: 'Raleway', serif;
 }
 
 #cssmenu > ul {
@@ -220,8 +221,20 @@ img.bg {
     letter-spacing: 0.03em;
     font-size: 40px;
     position: absolute;
-    left: 70px;
+    left: 60px;
     top: 80px;
+}
+
+#right-informationandcontent {
+    /*Styling for test */
+    font: 15px/1.5 'Roboto', serif; 
+    width: 370px;
+    text-align: left;
+    letter-spacing: 0.07em;
+    font-size: 23px;
+    position: absolute;
+    left: 655px;
+    top: 93px;
 }
 
 .scrollup {
@@ -277,4 +290,5 @@ img.bg {
     z-index: 1;
   
 }
+
 
