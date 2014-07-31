@@ -195,7 +195,7 @@ img.bg {
     -moz-box-shadow: 0 0 30px black;
     -webkit-box-shadow: 0 0 30px black;
     box-shadow: 0 0 30px black; 
-    top: 550px;
+    top: 650px;
     left: 7%;
 }
 
@@ -209,7 +209,7 @@ img.bg {
     -moz-box-shadow: 0 0 10px black;
     -webkit-box-shadow: 0 0 10px black;
     box-shadow: 0 0 10px black; 
-    top: 650px;
+    top: 750px;
     left: 0px;
 }
 
@@ -222,11 +222,11 @@ img.bg {
     font-size: 40px;
     position: absolute;
     left: 60px;
-    top: 80px;
+    top: 110px;
 }
 
 #right-informationandcontent {
-    /*Styling for test */
+    /*Styling for text */
     font: 15px/1.5 'Roboto', serif; 
     width: 370px;
     text-align: left;
@@ -289,4 +289,16 @@ img.bg {
     background: url(images/hourhand2.png);
     z-index: 1;
   
+}
+
+#signIn {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+}
+
+#howitworksconentpics {
+    position: absolute;
+    top: 150px;
+    left: 200px;
 }
