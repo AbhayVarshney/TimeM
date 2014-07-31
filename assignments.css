@@ -20,6 +20,170 @@ img.bg {
     }
 }
 
+
+
+#header_top_left {
+    /* Top left header */
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 45px;
+
+    position: absolute;
+    left: 6.5%;
+    top: 5%;
+}
+
+
+#cssmenu ul { margin: 0; padding: 0;}
+
+#cssmenu li { margin: 0; padding: 0;}
+
+#cssmenu a { margin: 0; padding: 0;}
+
+#cssmenu ul {list-style: none;}
+
+#cssmenu a {text-decoration: none;}
+
+#cssmenu {
+    /* drop down menu */
+    height: 70px;           /* This is for the main menu bit at the top */
+    width: 100%;            /* This means on every screen no matter the size, the width will cover the top  */
+    line-height: normal;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.0); 
+    box-shadow: 0px 2px 3px rgba(0,0,0,.0);
+    vertical-align: middle;
+    position: absolute;
+    top: 20px;
+    font-family: 'Raleway', serif;
+}
+
+#cssmenu > ul {
+    text-align:center;
+}
+
+#cssmenu > ul > li {
+    display:inline-block;
+    margin-left: 15px;       /* This is when the drop down box appears */
+    position: relative;
+}
+
+#cssmenu > ul > li > a {
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.16em;
+    line-height: 70px;      /* This bit chances the size of the text on the main heading */
+    padding: 15px 24px;     /* This is the padding between the different titles */
+    -webkit-transition: color .15s;
+    -moz-transition: color .15s;
+    -o-transition: color .15s;
+    transition: color .15s;
+}
+
+#cssmenu > ul > li > a:hover {
+    color: rgb(125,125,125); 
+}
+
+#cssmenu > ul > li > ul {
+    opacity: 0;
+    visibility: hidden;
+    padding: 16px 0 20px 0;
+    background-color: rgb(250,250,250);
+    text-align: left;  /* This is for the text when box is dropped down, centered isnt always totally in the middle so best to have on the left */
+    position: absolute;
+    top: 55px;          /* This is for the drop down annimation */
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    z-index: 10;
+    -webkit-transition: all .3s .1s;
+    -moz-transition: all .3s .1s;
+    -o-transition: all .3s .1s;
+    transition: all .3s .1s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+}
+
+#cssmenu > ul > li:hover > ul {
+    opacity: 1;
+    top: 65px;          /* This is how far from the top the drop down annimation will go  */
+    visibility: visible;
+}
+
+#cssmenu > ul > li > ul:before{
+    /*Drop Down Box */
+    content: '';
+    display: block;
+    border-color: transparent transparent rgb(250,250,250) transparent;
+    border-style: solid;
+    border-width: 10px;  /* The border on the drop down box  */ 
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+#cssmenu > ul ul > li { 
+    position: absolute;
+}
+
+#cssmenu ul ul a{     /* This is the drop down menu, change font or size when its drops down */
+    color: rgb(50,50,50);
+    font-family: Verdana, 'Lucida Grande';
+    font-size: 13px;   
+    background-color: rgb(250,250,250);
+    padding: 5px 8px 7px 16px;
+    display: block;
+    -webkit-transition: background-color .1s;
+    -moz-transition: background-color .1s;
+    -o-transition: background-color .1s;
+    transition: background-color .1s;
+}
+
+#cssmenu ul ul a:hover {
+    background-color: rgb(240,240,240);
+}
+
+#cssmenu ul ul ul { 
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -16px;
+    left: 206px;        /* This is for a sub sub menu */
+    padding: 16px 0 20px 0;
+    background-color: rgb(250,250,250);
+    text-align: left;
+    width: 160px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+}
+
+#cssmenu ul ul > li:hover > ul { 
+    opacity: 1; 
+    left: 196px;     
+    visibility: visible;
+}
+
+#cssmenu ul ul a:hover{
+    background-color: rgb(114,164,65);
+    color: rgb(240,240,240);
+}
+
 h1{
     color: #ffffff;
     text-align: center;
@@ -48,11 +212,11 @@ h1{
 }
 
 h2, span {
-	color: #FFFFFF;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: lighter;
-	letter-spacing: 0.12em;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 0.12em;
 }
 
 .registration {
@@ -76,9 +240,9 @@ form {
 }
 
 p {
-	font-family: 'Open Sans', sans-serif;
-	text-align: center;
-	color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: black;
 }
 
 #firstname, #lastname, #username, #password {
@@ -103,267 +267,8 @@ p {
 }
 
 form {
-	text-align: center;
-	color: #ffffff;
-}
-
-
-
-
-#cssmenu ul { margin: 0; padding: 0;}
-
-#cssmenu li { margin: 0; padding: 0;}
-
-#cssmenu a { margin: 0; padding: 0;}
-
-#cssmenu ul {list-style: none;}
-
-#cssmenu a {text-decoration: none;}
-
-
-
-#cssmenu {
-
-	height: 70px;			/* This is for the main menu bit at the top */
-
-	width: 100%;			/* This means on every screen no matter the size, the width will cover the top  */
-
-	line-height: normal;
-
-	text-align: center;
-
-	background-color: rgba(0, 0, 0, 0.0); 
-
-	box-shadow: 0px 2px 3px rgba(0,0,0,.0);
-	
-	vertical-align: middle;
-    horizontal-align: top;
-
-    position: absolute;
-    top: 200px;
-
-}
-
-#cssmenu > ul {
-    text-align:center;
-}
-
-#cssmenu > ul > li {
-
-    display:inline-block;
-
-    margin-left: 15px;       /* This is when the drop down box appears */
-
-    position: relative;
-
-}
-
-
-
-#cssmenu > ul > li > a {
-
-    color: rgb(160,160,160);
-
-    font-family: 'Open Sans', sans-serif;
-
-    font-size: 14px;
-
-    line-height: 70px;		/* This bit chances the size of the text on the main heading */
-
-    padding: 15px 24px;		/* This is the padding between the different titles */
-
-	
-
--webkit-transition: color .15s;
-
-   -moz-transition: color .15s;
-
-     -o-transition: color .15s;
-
-        transition: color .15s;
-
-}
-
-
-
-#cssmenu > ul > li > a:hover {color: rgb(250,250,250); }
-
-#cssmenu > ul > li > ul {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    padding: 16px 0 20px 0;
-
-    background-color: rgb(250,250,250);
-
-    text-align: left;  /* This is for the text when box is dropped down, centered isnt always totally in the middle so best to have on the left */
-
-    position: absolute;
-
-    top: 55px;			/* This is for the drop down annimation */
-
-    left: 50%;
-
-    margin-left: -90px;
-
-    width: 180px;
-
-    z-index: 10;
-
--webkit-transition: all .3s .1s;
-
-   -moz-transition: all .3s .1s;
-
-     -o-transition: all .3s .1s;
-
-        transition: all .3s .1s;
-
--webkit-border-radius: 5px;
-
-   -moz-border-radius: 5px;
-
-        border-radius: 5px;
-
--webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-   -moz-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-        box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-}
-
-
-
-#cssmenu > ul > li:hover > ul {
-
-    opacity: 1;
-
-    top: 65px;			/* This is how far from the top the drop down annimation will go  */
-
-    visibility: visible;
-
-}
-
-
-
-#cssmenu > ul > li > ul:before{
-
-    content: '';
-
-    display: block;
-
-    border-color: transparent transparent rgb(250,250,250) transparent;
-
-    border-style: solid;
-
-    border-width: 10px;  /* The border on the drop down box  */ 
-
-    position: absolute;
-
-    top: -20px;
-
-    left: 50%;
-
-    margin-left: -10px;
-
-}
-
-
-
-#cssmenu > ul ul > li { position: relative;}
-
-
-
-#cssmenu ul ul a{     /* This is the drop down menu, change font or size when its drops down */
-
-    color: rgb(50,50,50);
-
-    font-family: Verdana, 'Lucida Grande';
-
-    font-size: 13px;   
-
-    background-color: rgb(250,250,250);
-
-    padding: 5px 8px 7px 16px;
-
-    display: block;
-
--webkit-transition: background-color .1s;
-
-   -moz-transition: background-color .1s;
-
-     -o-transition: background-color .1s;
-
-        transition: background-color .1s;
-
-}
-
-
-
-#cssmenu ul ul a:hover {background-color: rgb(240,240,240);}
-
-
-
-
-
-#cssmenu ul ul ul {   /* In this build i havent included a sub sub menu in, but here is the code if ever needed */
-
-    visibility: hidden;
-
-    opacity: 0;
-
-    position: absolute;
-
-    top: -16px;
-
-    left: 206px;		/* This is for a sub sub menu */
-
-    padding: 16px 0 20px 0;
-
-    background-color: rgb(250,250,250);
-
-    text-align: left;
-
-    width: 160px;
-
--webkit-transition: all .3s;
-
-   -moz-transition: all .3s;
-
-     -o-transition: all .3s;
-
-        transition: all .3s;
-
--webkit-border-radius: 5px;
-
-   -moz-border-radius: 5px;
-
-        border-radius: 5px;
-
--webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-   -moz-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-        box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-
-}
-
-#cssmenu ul ul > li:hover > ul { 
-	
-	opacity: 1; 
-	
-	left: 196px; 
-	
-	visibility: visible;}
-
-#cssmenu ul ul a:hover{
-
-    background-color: rgb(114,164,65);
-
-    color: rgb(240,240,240);
-
+    text-align: center;
+    color: #ffffff;
 }
 
 #wrapper #page #page-bgtop #page-bgbtm #content .post .entry table tr td {
