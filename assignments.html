@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,311 +12,186 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <!-- Fonts and style sheet for the rest of the landingpage -->
-	<link rel="stylesheet" type="text/css" href="landingpage.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-	<link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="landingpage.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="images/favicon.png">
 
           
-	<title>Assignments</title>
-	<!-- Background image -->
+  <title>Assignments | Viva la Sleep</title>
+  <!-- Background image -->
 
-	
+  <img src="images/mainbackground.jpg" class="bg">
 </head>
 
 <body>
-	
-	<!-- Main menu (top menu) ====================================================-->
-	<div id='cssmenu' style="z-index:5;">
-		<ul>
-			<li class='active'>
-				<a href='profile.html'>
-					<span class = 'aboutus'><strong> Profile </strong></span>
-				</a>
-			</li>
+  
+  <!-- Nav Bar(top menu) ====================================================-->
+  <div id='cssmenu' style="z-index:5;">
+    <ul>
+      <li class='active'>
+        <a href='aboutus.html'>
+          <span class = 'aboutus'><strong> Profile </strong></span>
+        </a>
+      </li>
 
-			<li class='active'>
-				<a href='howitworks.html'>
-					<span class = 'howitworks'><strong> How it works </strong></span>
-				</a>
-			</li>
+      <li class='active'>
+        <a href='assignments.html'>
+          <span class = 'howitworks'><strong> Assignments </strong></span>
+        </a>
+      </li>
 
-			<li class='active'>
-				<a href='#'>
-					<span class = 'login'><strong> Login </strong></span>
-				</a>
+      <li class='active'>
+        <a href='landingpage.html'>
+          <span class = 'login'><strong> Logout </strong></span>
+        </a>
 
-				<ul class='dropdown'>
-					<form name = "myform">
-					    <p>
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
-					    </p>
-					</form>
-				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
-				</ul>
-			</li>
-	</div>
-	<!-- put settings bar over here -->
-	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
-	
-  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
-	</div>
-	<!-- End main menu (top menu) -->
-	<div class="addAssignment">
-          <h3 style="text-align:center; color:white"> Add new assignments below </h3>
-       	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-        <script type = 'text/javascript'>
-           Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-          
-          function changeThis() {
+      </li>
+  </div>
+  <!-- put settings bar over here -->
+  <div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+  
+      <paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
+  </div>
+  <!-- End main menu (top menu) -->
 
-            var assignmentInput = document.getElementById('assignment');
-            document.getElementById('newAssign').innerHTML = assignmentInput.value;
-            var minsInput = document.getElementById('mins');
-            document.getElementById('newMins').innerHTML = minsInput.value;
+
+    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+        $("#signIn").on('click', function(e){
+          e.preventDefault();
+          var username = $("#username").val();
+          var password = $("#password").val();
+          if(username.length < 0){
+            alert("Please type in your username"); 
           }
-        </script>
-        <!--
-          <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-          <script type="text/javascript">
-          $(document).ready(function () {
-            $('<div/>', {
-              'class' : 'extraPerson', html: GetHtml()
-            }).appendTo('#container');
-            $('#addRow').click(function () {
-              $('<div/>', {
-                'class' : 'extraPerson', html: GetHtml()
-              }).hide().appendTo('#container').slideDown('slow');
-
-            });
-          })
-
-          function GetHtml()
-          {
-            //var len = $('.extraPerson').length;
-            //var $html = $('.extraPersonTemplate').clone();
-            //$html.find('[name=assignment]')[0].name="assignment" + len;
-            //$html.find('[name=mins]')[0].name="mins" + len;
-            //return $html.html();    
+          if(password.length < 0){
+            alert("Please type in your password"); 
           }
-          </script>
-          <!---->
 
-          <div class="extraPersonTemplate">
-            <div class="controls controls-row">
-              <label>
-                <input id="assignment" class="span3" placeholder="Assignment" type="text" name="assignment">
-                <input id="mins" class="span2" placeholder="Enter minutes" type="text" name="mins">
-                <input id="addNewAssignment" class="submit" type="submit" value="Submit">
-              </select>
-            </label>
-          </div>
-        </div> 
-        <div id="container"></div>
-        <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
-      </div>
+          authenticateUser(username, password);
 
-      <!-- Display added assignments -->
-      <h3 style="text-align:center; color:white"> View assignments for today here </h3>
-      <ul id="assignments" class="list-group">
-        <!-- here the  assignments will be inserted -->
-        <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
-      </ul>
-      <table class="table table-striped" table align = "center">
-        <thead>
-          <tr style="color:white">
-            <th >Assignment Name</th>
-            <th>Time (in Minutes)</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="assignmentList">
-
-        </tbody>
-
-      </table>
-
-      <script type="text/javascript">
-      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-      $("#addNewAssignment").on('click', function(){
-
-        var username = getUsername();
-        var assignment = $("#assignment").val();
-        var time = parseInt($("#mins").val());
-        createNewAssignment( assignment, username, time);
-
-      });
-
-
-
-//  making the list of assignment in the ui from the assignments pulled from the database
-var makeAssignmentList = function(username){
-  var query = new Parse.Query("Assignment");
-  query.equalTo("username", username);
-  query.find({
-    success: function(results){
-
-
-      for(var i = 1; i < results.length; i++ ){
-        console.log(results[i].get("assignment"));
-        var assignmentList = $("#assignmentList");
-
-        var tr = $('<tr></tr>');
-        var td = $('<td></td>').text(results[i].get("assignment"));
-        var td2 = $('<td></td>').text(results[i].get("time"));
-        var text = "<td><span style='color:green'>Completed</span></td>";
-        var btn = '<td><button class="done-button" type="button"> Done</button></td>';
-
-        $(tr).append(td);
-        $(tr).append(td2);
-
-        if (results[i].get("completed") == 1){
-          $(tr).append(text);
-        }
-        else{
-          $(tr).append(btn);
-        }
-        
-
-        assignmentList.append(tr);
-      }
-
-    },
-    error: function( assignment,error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
-
-      }
-    });
-};
-
-
-  //Function for creating a new assignment and adding to the database
-  var createNewAssignment = function (assignmentName, username, time){
-    var Assignment = Parse.Object.extend("Assignment");
-
-    //Creating a new instance of the class
-    var assignment = new Assignment();
-    
-    var _assignmentName = assignmentName;
-    var _time = time;
-    var assignment_data = {assignment: _assignmentName, username: username, time: _time, completed: 0};
-
-    /* Save the Assignment */
-
-    assignment.save(assignment_data, 
-      {success: function(assignment) {
-        //add the newly created assignment to the bottom of the table 
-        var assignmentList = $("#assignmentList");
-        var tr = $('<tr></tr>');
-        var td = $('<td></td>').text(assignment.get("assignment"));
-        var td2 = $('<td></td>').text(assignment.get("time"));
-
-        var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-        
-        $(tr).append(td);
-        $(tr).append(td2);
-        $(tr).append(btn);
-        assignmentList.append(tr);
-
-        //empty the asisgnment name and time form hte new assignment form
-        $("#assignment").val("");
-        $("#mins").val("");
-      },
-      error: function( assignment,error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
-
-      }
-    });
-      //things to do after the save takes place
-    };
-
-    var getUsername = function (){
-      var half = (document.cookie).substring(9);
-      var array = (half).split(";");
-      var username = array[0];
-      return username;
-    };
-
-
-    var username = getUsername();
-    makeAssignmentList(username);
-
-      var done= document.getElementById('done-button');
-      console.log(done);
-      $(".done-button").click(function(){
-        alert(clicked);
-      });
-
-/*
-      $(".done-button").on('click', function(){
-          alert("done clicked");
-          //var parent = this.parent.append("<span>Completed</span>")
-          //this.fadeOut();
         });
-      });*/
-     $(document).on('click', "button.done-button", function() {
 
 
-        var assignmentName = $(this).parent().parent().children(":first").html();
-        console.log(assignmentName);
+        /* Adding Username */
+        var makeAssignment,getAssignment;
 
-        //replace the button with text that says "completed"
-        $(this).replaceWith("<span style='color:green'>Completed</span>"); 
-        //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+        //function to find an existing user
+        var authenticateUser = function(username, password){
           
 
-        //in the database change completed status to 1
-        var query = new Parse.Query("Assignment");
-        query.equalTo("assignment", assignmentName);
-        query.first({
-         success: function(assignment){
-            console.log(assignment);
-          //updating the completed column for this assingment
-            assignment.save({completed:1}, {
-              success: function() {
-                console.log("assginment has been updated with completed=1");
-              }
+          Parse.User.logIn(username, password, {
+            success: function(user) {
+              // Do stuff after successful login.
+               document.cookie="username=" + username;
+               window.location.href = "index.html";
+
+            },
+            error: function(user, error) {
+              // The login failed. Check error to see why.
+              alert("Incorrect password or username");
+            }
           });
-        },
-        error: function( assignment,error) {
+        };
+
+        var newUser = function (username, password){
+          var user = new Parse.User();
+          user.set("username", username);
+          user.set("password", password);
+          user.signUp(null, {
+            success: function(user) {
+              // Hooray! Let them use the app now.
+              alert("new user has been created", user.get("username"));
+            },
+            error: function(user, error) {
               // Show the error message somewhere and let the user try again.
               alert("Error: " + error.code + " " + error.message);
 
-          }
-        });
-    });
+            }
+          });
+        };
 
-    </script>
+        //get the username and password that the user has entered in the landing page
 
-<!--End assignment interface for access with Parse===================================-->
+      });
 
-	 <!-- Placed at the end of the document so the pages load faster -->
+
+  </script>
+   <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<!-- End of login functionality -->
+  <!-- End of login functionality -->
 
-	<!-- Main Context (should be on the bottom of the screen) -->
+  <!-- Main Context (should be on the bottom of the screen) -->
 
-	<div id='header_top_left'>
-		<!-- Needs to be clickable -->
-		<a href = "landingpage.html" style = "color: white; z-index: 6;"> TimeM </a>
-	</div>
+  <div id='header_top_left'>
+    <a href = "index.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM </a>
+  </div>
 
-	<!-- Bottom part of the screen -->
-	
+  <!-- Bottom part of the screen -->
+  <div id= "bottom-layer-context"> </div>
+  <div id="main-layer-context">
+    <!--put crap information here -->
+    <div id= "left-informationandcontent"> 
+      <strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their 
+      <strong> homework. </strong> 
+    </div>
+    <div id= "right-informationandcontent"> 
+      <strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
+    </div>
+  </div>
 </body>
 
 <footer>
+  <!-- Script for scroll up feature -->              
+  <script>
+    $(document).ready(function () {
 
-	<!-- Must put footer here -->
-	<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
-	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
-	<!-- Doesn't work -->
+      $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+              $('.scrollup').fadeIn();
+          } else {
+              $('.scrollup').fadeOut();
+          }
+      });
+
+      $('.scrollup').click(function () {
+          $("html, body").animate({
+              scrollTop: 0
+          }, 600);
+          return false;
+      });
+
+    });
+  </script>
+
+  <article style="height: 300px">
+    <a href="#" class="scrollup">Scroll</a>
+  </article>
+
+  <canvas id="myCanvas" width="1300px" height="230px"style="border:5px solid #000000; position: absolute; top: 1500px; left: -10px; background:rgba(0,0,0,0.7);">
+  </canvas>
+
+  <h1>
+    <a href= "index.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
+    </a> 
+
+    <a href= "assignments.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 41%" > Assignments &nbsp;&nbsp;&nbsp;&nbsp;|
+    </a>
+
+    <a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 66%" > Profile &nbsp;&nbsp;&nbsp;&nbsp;
+  </h1>
+
+  <h1> 
+    <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1650px; left: 39%">TimeM.com
+    </a>
+  </h1> 
 
 </footer>
 </html>
