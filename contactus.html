@@ -12,7 +12,7 @@
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <!-- Fonts and style sheet for the rest of the landingpage -->
-	<link rel="stylesheet" type="text/css" href="landingpage.css">
+	<link rel="stylesheet" type="text/css" href="contactus.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="images/favicon.png">
@@ -64,106 +64,7 @@
 	</div>
 	<!-- End main menu (top menu) -->
 
- <!-- Carousel  ================================================== -->
-	<script src="js/bootstrap.min.js"></script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-				<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > Welcome to TimeM. </a></strong></h1>
-              <br/> 
-              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
-              <br/>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
-            </div>
-          </div>
-        </div>
 
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption" style = "position: absolute; top: 40px">
-
-            <!-- Clock Begins Here ==========================-->
-              <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
-
-			    <script type="text/javascript">
-			    
-			        $(document).ready(function() {
-
-			          // set the push in of the clock hands
-			          //var offset= $("#clock").offset();
-			          //console.log("top: " + offset.top+ "left: " + offset.left);
-			         
-			              setInterval( function() {
-			              var seconds = new Date().getSeconds();
-			              var sdegree = seconds * 6;
-			              var srotate = "rotate(" + sdegree + "deg)";
-			              
-			              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
-			                
-			              }, 1000 );
-			              
-			         
-			              setInterval( function() {
-			              var hours = new Date().getHours();
-			              var mins = new Date().getMinutes();
-			              var hdegree = hours * 30 + (mins / 2);
-			              var hrotate = "rotate(" + hdegree + "deg)";
-			              
-			              $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
-			                  
-			              }, 1000 );
-			        
-			        
-			              setInterval( function() {
-			              var mins = new Date().getMinutes();
-			              var mdegree = mins * 6;
-			              var mrotate = "rotate(" + mdegree + "deg)";
-			              
-			              $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
-			                  
-			              }, 1000 );
-			         
-			        }); 
-			    
-			    </script>
-
-				<script src="clock.js"></script>
-
-				<div id="clock_container">
-					<ul id="clock">	
-						<li id="sec"></li>
-						<li id="hour"></li>
-						<li id="min"></li>
-					</ul>
-				</div>
-
-        <!-- CLOCK ENDS HERE =====================================-->
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-				<h1><a style = "font-size: 45px; color: white; text-decoration:none; position: relative; top: -140px;" > <strong> "</strong>There's never enough time to do all the nothing you want.<strong>"</strong> </a> </h1> 
-				<p> <a style = "font-size: 30px; color: white; text-decoration: none; position: absolute; left: 480px; top: 0px"> ― Bill Watterson </a> </p>
-				
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-    <!-- End carousel -->
 
     <!-- Authenticating User to allow user to enter the index.html page, logged in -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -244,19 +145,8 @@
 		<a href = "landingpage.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM </a>
 	</div>
 
-	<!-- Bottom part of the screen -->
-	<div id= "bottom-layer-context"> </div>
-	<div id="main-layer-context">
-
-		<!--put crap information here -->
-		<div id= "left-informationandcontent"> 
-			<strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their 
-			<strong> homework. </strong> 
-		</div>
-		<div id= "right-informationandcontent"> 
-			<strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
-		</div>
-	</div>
+	<canvas id="myCanvas" width="800px" height="230px"style="border:5px solid #000000; position: absolute; top: 170px; left: 235px; background:rgba(0,0,0,0.7);">
+	</canvas>
 </body>
 
 <footer>
