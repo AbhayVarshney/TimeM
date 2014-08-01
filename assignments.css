@@ -183,230 +183,116 @@ img.bg {
     background-color: rgb(114,164,65);
     color: rgb(240,240,240);
 }
-
-h1{
-    color: #ffffff;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    font-size: 5em;
+                    
+#main-layer-context { 
+    /* This is the top layer of information sheet */
+    position: absolute; 
+    width: 1100px; 
+    height: 850px;
+    margin: 50px auto;
+    padding: 20px; 
+    background: white;
+    -moz-box-shadow: 0 0 30px black;
+    -webkit-box-shadow: 0 0 30px black;
+    box-shadow: 0 0 30px black; 
+    top: 550px;
+    left: 7%;
 }
 
-.tagLine {
-    color: #ffffff;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 1.50em;
-    letter-spacing: 0.1em;
+#bottom-layer-context {
+    /* Bottom layer of information sheet */
+    position: absolute; 
+    height: 800px;
+    width: 100%;
+    padding: 20px; 
+    background: #EAEEF1;
+    -moz-box-shadow: 0 0 10px black;
+    -webkit-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black; 
+    top: 650px;
+    left: 0px;
 }
 
-.home, .progress, .signout, .aboutus, .assignments, .login, .howitworks, .login {
-    color: #ffffff;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 200;
-    font-size: 2em;
-    letter-spacing: 0.12em;
-}
-
-h2, span {
-    color: #FFFFFF;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter;
-    letter-spacing: 0.12em;
-}
-
-.registration {
-    color: #ffffff;
-    text-align: center;
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    letter-spacing: 0.1em;
-    font-size: 3.5em;
-}
-
-form {
-    color: #ffffff;
+#left-informationandcontent { 
+    /* Styling for text */
+    font: 15px/1.5 'Raleway', serif; 
+    width: 550px;
     text-align: left;
-    display: block;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    font-size: 1.5em;
+    letter-spacing: 0.03em;
+    font-size: 40px;
+    position: absolute;
+    left: 60px;
+    top: 80px;
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    color: black;
-}
-
-#firstname, #lastname, #username, #password {
-    background-color: transparent;
+#right-informationandcontent {
+    /*Styling for test */
+    font: 15px/1.5 'Roboto', serif; 
+    width: 370px;
     text-align: left;
-    padding-left: 5px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.75em;
-    font-weight: 300;
-    border: 1px solid white;
-    height: 30px;
-    width: 150px;
+    letter-spacing: 0.07em;
+    font-size: 23px;
+    position: absolute;
+    left: 655px;
+    top: 93px;
 }
 
-.button {
+.scrollup {
+    width: 110px;
+    height: 110px;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+    text-indent: -9999px;
+    background: url('scrollup.png') no-repeat;
+    content:url("http://www.atlantic.com.my/images/arrow-up.png");
+}
+               
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#clock {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 20px auto 0 auto;
+    background: url(images/clockface3.png);
+    background-size: 100%;
+    background-repeat: none;
+    list-style: none;
+    top: 50px;
+}
+
+#sec, #min, #hour {
+    position: absolute;
+    width: 30px;
+    height: 600px;
+    top: -70px;
+    left: 210px;
+  
+}
+
+#sec {
+    background: url(images/sechand3.png);
+    z-index: 3;
+}
+
+#min {
+    background: url(images/minhand2.png);
+    z-index: 2;
+}
+   
+#hour {
+    background: url(images/hourhand2.png);
+    z-index: 1;
+  
+}
+
+#signIn {
     background-color: white;
-    border: 1px solid white;
-    height: 50px;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.75em;
+    border: 1px solid #C0C0C0;
+    padding: 5px;
 }
-
-form {
-    text-align: center;
-    color: #ffffff;
-}
-
-#wrapper #page #page-bgtop #page-bgbtm #content .post .entry table tr td {
-
-	text-align: center;
-
-}
-
-.addAssignment{
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
-}
-
-
-footer { 
-  font: 100% 'Droid Sans', arial, sans-serif;
-  color: blue;
-  height: 145px;
-  padding: 28px 0 5px 0;
-  text-align: center; 
-  background: #FFFFFF;
-  margin: 0;
-  border-top: 6px solid #DEC240;
-}
-
-footer p { 
-  line-height: 1.7em;
-  padding: 0 0 10px 0;
-}
-
-
-
-.name {
-    font-family: 'Oswald', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    font-size: 5em;
-    color: #ffffff;
-    letter-spacing: 0.25em;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.span3 {
-    background-color: transparent;
-    border: 1px solid white;
-    height: 35px;
-    width: 200px;
-    margin-right: 5px;
-}
-
-.span2 {
-    background-color: transparent;
-    border: 1px solid white;
-    height: 35px;
-    width: 125px;
-    margin-right: 5px;
-}
-.submit {
-    background-color: white;
-    border: 1px solid white;
-    height: 40px;
-    margin-right: 5px;
-}
-
-.newMins, .mins {
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-    font-size: 1.25em;
-}
-
-h3, h4 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-    letter-spacing: 0.15em;
-}
-
-p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    font-size: 1.5em;
-}
-
-div {
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-}
-
-span {
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-    font-size: 1.75em;
-}
-
-input {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: lighter;
-}
-
-body {
-    background-size: cover;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.backgroundImage{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-.addRow {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-}
-
- 
-
-
-
-

@@ -1,83 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	    <link rel="icon" href="../../favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <!-- Fonts and style sheet for the rest of the landingpage -->
+	<link rel="stylesheet" type="text/css" href="landingpage.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="images/favicon.png">
 
-	    <!-- Bootstrap core CSS -->
-    	<link href="css/bootstrap.css" rel="stylesheet">
+          
+	<title>Assignments</title>
+	<!-- Background image -->
 
-	    <!-- Fonts and style sheet for the rest of the Index -->
-		<link rel="stylesheet" type="text/css" href="assignments.css">
- 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+	
+</head>
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-	     
-	     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-	     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+<body>
+	
+	<!-- Main menu (top menu) ====================================================-->
+	<div id='cssmenu' style="z-index:5;">
+		<ul>
+			<li class='active'>
+				<a href='profile.html'>
+					<span class = 'aboutus'><strong> Profile </strong></span>
+				</a>
+			</li>
 
+			<li class='active'>
+				<a href='howitworks.html'>
+					<span class = 'howitworks'><strong> How it works </strong></span>
+				</a>
+			</li>
 
-		<title>Home | Viva la Sleep</title>
-		<img src="images/mainbackground.jpg" class="bg">
+			<li class='active'>
+				<a href='#'>
+					<span class = 'login'><strong> Login </strong></span>
+				</a>
 
-	</head>
-
-	<body>
-		<!-- Navbar (top menu) ====================================================-->
-		<div id='cssmenu' style="z-index:5;">
-			<ul>
-				
-				<li class='active'><a href='progress.html'><span class = 'index'><strong> Profile </strong></span></a></li>
-
-				<li class='active'><a href='assignments.html'><span class = 'assignments'><strong> Assignments </strong></span></a></li>
-
-
-			<li class='active'><a href='landingpage.html'><span class ='signout'>Sign Out</span></a></li>
-
-			</ul>
-		</div>
-		<!-- End Navbar ================================================================-->
-
-		<!-- Adding an assignment -->
-		
-    	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-        <div class="addAssignment">
+				<ul class='dropdown'>
+					<form name = "myform">
+					    <p>
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
+					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    </p>
+					</form>
+				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
+				</ul>
+			</li>
+	</div>
+	<!-- put settings bar over here -->
+	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+	
+  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
+	</div>
+	<!-- End main menu (top menu) -->
+	<div class="addAssignment">
           <h3 style="text-align:center; color:white"> Add new assignments below </h3>
-          <!-- Not sure what this does ===================================-->
-          <script type = 'text/javascript'>
-	          function changeThis() {
-	            var assignmentInput = document.getElementById('assignment');
-	            document.getElementById('newAssign').innerHTML = assignmentInput.value;
-	            var minsInput = document.getElementById('mins');
-	            document.getElementById('newMins').innerHTML = minsInput.value;
-	          }
-          </script>
+       	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+        <script type = 'text/javascript'>
+           Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+          
+          function changeThis() {
 
+            var assignmentInput = document.getElementById('assignment');
+            document.getElementById('newAssign').innerHTML = assignmentInput.value;
+            var minsInput = document.getElementById('mins');
+            document.getElementById('newMins').innerHTML = minsInput.value;
+          }
+        </script>
+        <!--
           <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
           <script type="text/javascript">
-	          $(document).ready(function () {
-	            $('<div/>', {
-	              'class' : 'extraPerson', html: GetHtml()
-	            }).appendTo('#container');
-	            $('#addRow').click(function () {
-	              $('<div/>', {
-	                'class' : 'extraPerson', html: GetHtml()
-	              }).hide().appendTo('#container').slideDown('slow');
+          $(document).ready(function () {
+            $('<div/>', {
+              'class' : 'extraPerson', html: GetHtml()
+            }).appendTo('#container');
+            $('#addRow').click(function () {
+              $('<div/>', {
+                'class' : 'extraPerson', html: GetHtml()
+              }).hide().appendTo('#container').slideDown('slow');
 
-	            });
-	          })
+            });
+          })
+
+          function GetHtml()
+          {
+            //var len = $('.extraPerson').length;
+            //var $html = $('.extraPersonTemplate').clone();
+            //$html.find('[name=assignment]')[0].name="assignment" + len;
+            //$html.find('[name=mins]')[0].name="mins" + len;
+            //return $html.html();    
+          }
           </script>
+          <!---->
 
-        </div>
-
-        <div class="extraPersonTemplate">
+          <div class="extraPersonTemplate">
             <div class="controls controls-row">
               <label>
                 <input id="assignment" class="span3" placeholder="Assignment" type="text" name="assignment">
@@ -221,7 +248,6 @@ var makeAssignmentList = function(username){
 
       var done= document.getElementById('done-button');
       console.log(done);
-
       $(".done-button").click(function(){
         alert(clicked);
       });
@@ -267,11 +293,30 @@ var makeAssignmentList = function(username){
 
     </script>
 
-	<!-- Logo page -->	
+<!--End assignment interface for access with Parse===================================-->
+
+	 <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<!-- End of login functionality -->
+
+	<!-- Main Context (should be on the bottom of the screen) -->
+
 	<div id='header_top_left'>
-		TimeM
+		<!-- Needs to be clickable -->
+		<a href = "landingpage.html" style = "color: white; z-index: 6;"> TimeM </a>
 	</div>
 
+	<!-- Bottom part of the screen -->
+	
+</body>
 
-	</body>
+<footer>
+
+	<!-- Must put footer here -->
+	<p><class='active'><a href='landingpage.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Home</strong></font></font></span><font size= "5"></a> | · About Us · | </font><class='active'><a href='ContactUs.html'><span class = 'aboutus'><font size="5"><font color="black"><strong>Contact Us</strong></font></font></span></a></p>
+	<font size= "10"><strong><p>Viva la Sleep </p></strong></font>
+	<!-- Doesn't work -->
+
+</footer>
 </html>
