@@ -8,26 +8,28 @@
     <meta name="author" content="">
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assignments.css">
+
     <!-- Fonts and style sheet for the rest of the landingpage -->
-  <link rel="stylesheet" type="text/css" href="landingpage.css">
+  
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
   <link rel="icon" href="images/favicon.png">
 
           
   <title>Assignments | Viva la Sleep</title>
-  <!-- Background image -->
+  <!-- Background image 
 
   <img src="images/mainbackground.jpg" class="bg">
+  -->
 </head>
 
 <body>
   
   <!-- Nav Bar(top menu) ====================================================-->
-  <div id='cssmenu' style="z-index:5;">
+  <div id='cssmenu' style="z-index:1;">
     <ul>
       <li class='active'>
         <a href='aboutus.html'>
@@ -49,14 +51,237 @@
       </li>
   </div>
   <!-- put settings bar over here -->
-  <div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+  <div id = 'settingsbar' style = "z-index:3; position: absolute; left: 80%; top: 100px;">
   
       <paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
   </div>
   <!-- End main menu (top menu) -->
+<div class="addAssignment" style="z-index:5">
+          <h3 style="text-align:center; color:black"> Add new assignments below </h3>
+          <script type = 'text/javascript'>
+          function changeThis() {
+            var assignmentInput = document.getElementById('assignment');
+            document.getElementById('newAssign').innerHTML = assignmentInput.value;
+            var minsInput = document.getElementById('mins');
+            document.getElementById('newMins').innerHTML = minsInput.value;
+          }
+          </script>
+          <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+          <script type="text/javascript">
+          $(document).ready(function () {
+            $('<div/>', {
+              'class' : 'extraPerson', html: GetHtml()
+            }).appendTo('#container');
+            $('#addRow').click(function () {
+              $('<div/>', {
+                'class' : 'extraPerson', html: GetHtml()
+              }).hide().appendTo('#container').slideDown('slow');
+
+            });
+          })
+
+          function GetHtml()
+          {
+            //var len = $('.extraPerson').length;
+            //var $html = $('.extraPersonTemplate').clone();
+            //$html.find('[name=assignment]')[0].name="assignment" + len;
+            //$html.find('[name=mins]')[0].name="mins" + len;
+            //return $html.html();    
+          }
+          </script>
+
+          <div class="extraPersonTemplate">
+            <div class="controls controls-row">
+              <label>
+                <input id="assignment" class="span3" placeholder="Assignment" type="text" name="assignment">
+                <input id="mins" class="span2" placeholder="Enter minutes" type="text" name="mins">
+                <input id="addNewAssignment" class="submit" type="submit" value="Submit">
+              </select>
+            </label>
+          </div>
+        </div> 
+        <div id="container"></div>
+        <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
+</div>
+
+      <!-- Display added assignments -->
+      <h3 style="text-align:center; color:black"> View assignments for today here </h3>
+      <ul id="assignments" class="list-group">
+        <!-- here the  assignments will be inserted -->
+        <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
+      </ul>
+      <table class="table table-striped" table align = "center">
+        <thead>
+          <tr style="color:black">
+            <th >Assignment Name</th>
+            <th>Time (in Minutes)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="assignmentList">
+
+        </tbody>
+
+      </table>
+
+      <script type="text/javascript">
+      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+      $("#addNewAssignment").on('click', function(){
+
+        var username = getUsername();
+        var assignment = $("#assignment").val();
+        var time = parseInt($("#mins").val());
+        createNewAssignment( assignment, username, time);
+
+      });
 
 
-    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+
+//  making the list of assignment in the ui from the assignments pulled from the database
+var makeAssignmentList = function(username){
+  var query = new Parse.Query("Assignment");
+  query.equalTo("username", username);
+  query.find({
+    success: function(results){
+
+
+      for(var i = 1; i < results.length; i++ ){
+        console.log(results[i].get("assignment"));
+        var assignmentList = $("#assignmentList");
+
+        var tr = $('<tr></tr>');
+        var td = $('<td></td>').text(results[i].get("assignment"));
+        var td2 = $('<td></td>').text(results[i].get("time"));
+        var text = "<td><span style='color:green'>Completed</span></td>";
+        var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+
+        $(tr).append(td);
+        $(tr).append(td2);
+
+        if (results[i].get("completed") == 1){
+          $(tr).append(text);
+        }
+        else{
+          $(tr).append(btn);
+        }
+        
+
+        assignmentList.append(tr);
+      }
+
+    },
+    error: function( assignment,error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+
+      }
+    });
+};
+
+
+  //Function for creating a new assignment and adding to the database
+  var createNewAssignment = function (assignmentName, username, time){
+    var Assignment = Parse.Object.extend("Assignment");
+
+    //Creating a new instance of the class
+    var assignment = new Assignment();
+    
+    var _assignmentName = assignmentName;
+    var _time = time;
+    var assignment_data = {assignment: _assignmentName, username: username, time: _time, completed: 0};
+
+    /* Save the Assignment */
+
+    assignment.save(assignment_data, 
+      {success: function(assignment) {
+        //add the newly created assignment to the bottom of the table 
+        var assignmentList = $("#assignmentList");
+        var tr = $('<tr></tr>');
+        var td = $('<td></td>').text(assignment.get("assignment"));
+        var td2 = $('<td></td>').text(assignment.get("time"));
+
+        var btn = '<td><button class="done-button" type="button"> Done</button></td>'
+        
+        $(tr).append(td);
+        $(tr).append(td2);
+        $(tr).append(btn);
+        assignmentList.append(tr);
+
+        //empty the asisgnment name and time form hte new assignment form
+        $("#assignment").val("");
+        $("#mins").val("");
+      },
+      error: function( assignment,error) {
+        // Show the error message somewhere and let the user try again.
+        alert("Error: " + error.code + " " + error.message);
+
+      }
+    });
+      //things to do after the save takes place
+    };
+
+    var getUsername = function (){
+      var half = (document.cookie).substring(9);
+      var array = (half).split(";");
+      var username = array[0];
+      return username;
+    };
+
+
+    var username = getUsername();
+    makeAssignmentList(username);
+
+      var done= document.getElementById('done-button');
+      console.log(done);
+
+      $(".done-button").click(function(){
+        alert(clicked);
+      });
+
+/*
+      $(".done-button").on('click', function(){
+          alert("done clicked");
+          //var parent = this.parent.append("<span>Completed</span>")
+          //this.fadeOut();
+        });
+      });*/
+     $(document).on('click', "button.done-button", function() {
+
+
+        var assignmentName = $(this).parent().parent().children(":first").html();
+        console.log(assignmentName);
+
+        //replace the button with text that says "completed"
+        $(this).replaceWith("<span style='color:green'>Completed</span>"); 
+        //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+          
+
+        //in the database change completed status to 1
+        var query = new Parse.Query("Assignment");
+        query.equalTo("assignment", assignmentName);
+        query.first({
+         success: function(assignment){
+            console.log(assignment);
+          //updating the completed column for this assingment
+            assignment.save({completed:1}, {
+              success: function() {
+                console.log("assginment has been updated with completed=1");
+              }
+          });
+        },
+        error: function( assignment,error) {
+              // Show the error message somewhere and let the user try again.
+              alert("Error: " + error.code + " " + error.message);
+
+          }
+        });
+    });
+
+    </script>
+
+
+    <!-- Authenticating User to allow user to enter the index.html page, logged in 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script type="text/javascript">
@@ -123,6 +348,7 @@
 
 
   </script>
+  -->
    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -183,6 +183,14 @@ img.bg {
     background-color: rgb(114,164,65);
     color: rgb(240,240,240);
 }
+
+.addAssignment{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    top:-150px;
+    margin-top: 150px;
+}
                     
 #main-layer-context { 
     /* This is the top layer of information sheet */
