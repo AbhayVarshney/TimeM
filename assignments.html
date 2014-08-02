@@ -19,11 +19,11 @@
   <link rel="icon" href="images/favicon.png">
 
           
-  <title>Assignments | Viva la Sleep</title>
-  <!-- Background image 
+  <title>Assignments | TimeM</title>
+  <!-- Background image -->
 
   <img src="images/mainbackground.jpg" class="bg">
-  -->
+  
 </head>
 
 <body>
@@ -32,7 +32,7 @@
   <div id='cssmenu' style="z-index:1;">
     <ul>
       <li class='active'>
-        <a href='aboutus.html'>
+        <a href='profile.html'>
           <span class = 'aboutus'><strong> Profile </strong></span>
         </a>
       </li>
@@ -57,14 +57,16 @@
   </div>
   <!-- End main menu (top menu) -->
 <div class="addAssignment" style="z-index:5">
-          <h3 style="text-align:center; color:black"> Add new assignments below </h3>
+          <h3 style="text-align:center; color:white"> Add new assignments below </h3>
           <script type = 'text/javascript'>
-          function changeThis() {
-            var assignmentInput = document.getElementById('assignment');
-            document.getElementById('newAssign').innerHTML = assignmentInput.value;
-            var minsInput = document.getElementById('mins');
-            document.getElementById('newMins').innerHTML = minsInput.value;
-          }
+
+            function changeThis() {
+              var assignmentInput = document.getElementById('assignment');
+              document.getElementById('newAssign').innerHTML = assignmentInput.value;
+              var minsInput = document.getElementById('mins');
+              document.getElementById('newMins').innerHTML = minsInput.value;
+            }
+
           </script>
           <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
           <script type="text/javascript">
@@ -105,14 +107,14 @@
 </div>
 
       <!-- Display added assignments -->
-      <h3 style="text-align:center; color:black"> View assignments for today here </h3>
+      <h3 style="text-align:center; color:white"> View assignments for today here </h3>
       <ul id="assignments" class="list-group">
         <!-- here the  assignments will be inserted -->
         <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
       </ul>
       <table class="table table-striped" table align = "center">
         <thead>
-          <tr style="color:black">
+          <tr style="color:white">
             <th >Assignment Name</th>
             <th>Time (in Minutes)</th>
             <th>Status</th>
@@ -123,7 +125,7 @@
         </tbody>
 
       </table>
-
+      <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
       <script type="text/javascript">
       Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
@@ -280,75 +282,6 @@ var makeAssignmentList = function(username){
 
     </script>
 
-
-    <!-- Authenticating User to allow user to enter the index.html page, logged in 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-        $("#signIn").on('click', function(e){
-          e.preventDefault();
-          var username = $("#username").val();
-          var password = $("#password").val();
-          if(username.length < 0){
-            alert("Please type in your username"); 
-          }
-          if(password.length < 0){
-            alert("Please type in your password"); 
-          }
-
-          authenticateUser(username, password);
-
-        });
-
-
-        /* Adding Username */
-        var makeAssignment,getAssignment;
-
-        //function to find an existing user
-        var authenticateUser = function(username, password){
-          
-
-          Parse.User.logIn(username, password, {
-            success: function(user) {
-              // Do stuff after successful login.
-               document.cookie="username=" + username;
-               window.location.href = "index.html";
-
-            },
-            error: function(user, error) {
-              // The login failed. Check error to see why.
-              alert("Incorrect password or username");
-            }
-          });
-        };
-
-        var newUser = function (username, password){
-          var user = new Parse.User();
-          user.set("username", username);
-          user.set("password", password);
-          user.signUp(null, {
-            success: function(user) {
-              // Hooray! Let them use the app now.
-              alert("new user has been created", user.get("username"));
-            },
-            error: function(user, error) {
-              // Show the error message somewhere and let the user try again.
-              alert("Error: " + error.code + " " + error.message);
-
-            }
-          });
-        };
-
-        //get the username and password that the user has entered in the landing page
-
-      });
-
-
-  </script>
-  -->
    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -364,31 +297,6 @@ var makeAssignmentList = function(username){
 </body>
 
 <footer>
-  <!-- Script for scroll up feature -->              
-  <script>
-    $(document).ready(function () {
-
-      $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-              $('.scrollup').fadeIn();
-          } else {
-              $('.scrollup').fadeOut();
-          }
-      });
-
-      $('.scrollup').click(function () {
-          $("html, body").animate({
-              scrollTop: 0
-          }, 600);
-          return false;
-      });
-
-    });
-  </script>
-
-  <article style="height: 300px;">
-    <a href="#" class="scrollup">Scroll</a>
-  </article>
 
   <canvas id="myCanvas" width="1300px" height="230px"style="border:5px solid #000000; position: absolute; top: 1500px; left: -10px; background:rgba(0,0,0,0.7);">
   </canvas>

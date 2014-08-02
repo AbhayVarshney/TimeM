@@ -11,6 +11,7 @@ img.bg {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 @media screen and (max-width: 1024px){
@@ -187,10 +188,63 @@ img.bg {
 .addAssignment{
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    top:-150px;
+    width: 450px;
+    top:25px;
     margin-top: 150px;
 }
+
+.name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 5em;
+    color: #ffffff;
+    letter-spacing: 0.25em;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.span3 {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 35px;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.span2 {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 35px;
+    width: 125px;
+    margin-right: 5px;
+}
+.submit {
+    background-color: white;
+    border: 1px solid white;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.newMins, .mins {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.25em;
+}
+
+
+.addRow {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+}
+
                     
 #main-layer-context { 
     /* This is the top layer of information sheet */
