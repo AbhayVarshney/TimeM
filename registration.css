@@ -188,7 +188,7 @@ img.bg {
     /* This is the top layer of information sheet */
     position: absolute; 
     width: 800px; 
-    height: 590px;
+    height: 610px;
     margin: 50px auto;
     padding: 20px; 
     background: #DFE8EC;
@@ -221,11 +221,12 @@ img.bg {
     color: #9EA4A6;
 }
 
+
 #callus-layer-context { 
     /* This is the top layer of information sheet */
     position: absolute; 
     width: 580px; 
-    height: 820px;
+    height: 850px;
     margin: 50px auto;
     padding: 10px; 
     background: #DFE2E4;
