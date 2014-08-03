@@ -69,7 +69,9 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-				<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > Welcome to TimeM. </a></strong></h1>
+            	<div class="setLeft">
+					<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > When you plan to wake up </a></strong></h1>
+				</div>
               <br/> 
               <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
               <br/>
@@ -163,73 +165,16 @@
     </div>
     <!-- End carousel -->
 
-    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+    <!-- This is the Java Script for all of the  settings that will be edited =============================
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
   	<script type="text/javascript">
 	    $(document).ready(function(){
 	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
-
-	        authenticateUser(username, password);
-
-	      });
-
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "index.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-
-		    var newUser = function (username, password){
-	        var user = new Parse.User();
-	        user.set("username", username);
-	        user.set("password", password);
-	        user.signUp(null, {
-	          success: function(user) {
-	            // Hooray! Let them use the app now.
-	            alert("new user has been created", user.get("username"));
-	          },
-	          error: function(user, error) {
-	            // Show the error message somewhere and let the user try again.
-	            alert("Error: " + error.code + " " + error.message);
-
-	          }
-	        });
-	      };
-
-      	//get the username and password that the user has entered in the landing page
-
-    	});
-
-
 	</script>
+	-->
+
 	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -241,14 +186,7 @@
 		<a href = "index.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM </a>
 	</div>
 
-	<!-- Bottom part of the screen -->
-	<div id= "bottom-layer-context"> </div>
-	<div id="main-layer-context">
-		<!--put crap information here -->
-		<div id= "left-informationandcontent"> 
-			<strong> Replace </strong> this content <strong>with </strong> stuff for the profile page 
-		</div>
-	</div>
+	
 </body>
 
 <footer>
