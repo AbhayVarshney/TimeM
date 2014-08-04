@@ -17,6 +17,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="images/favicon.png">
 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
           
 	<title>Home | TimeM</title>
 	<!-- Background image -->
@@ -40,7 +43,7 @@
 					<span class = 'howitworks'><strong> How it works </strong></span>
 				</a>
 			</li>
-
+<!--
 			<li class='active'>
 				<a href='#'>
 					<span class = 'login'><strong> Login </strong></span>
@@ -56,6 +59,7 @@
 				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
 				</ul>
 			</li>
+		-->
 	</div>
 	<!-- put settings bar over here -->
 	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
@@ -63,91 +67,63 @@
   		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
 	</div>
 	<!-- End main menu (top menu) -->
+<div id = "callus-layer-context">
+	<form name="registration">
+		<!-- mail icons and information -->
+		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
+		<div id = "fullnamereg" style = "position: absolute; top: 160px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Full Name </div>
+		<input type="firstName" style= "position: absolute; top:210px; width: 220px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;First Name" name="firstname">
+		<input type="lastName" style= "position: absolute; top:210px; width: 220px; left: 300px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif;padding: 20px;" placeholder="&nbsp; &nbsp;Last Name" name="lastname">
 
+		<div id = "email" style = "position: absolute; top: 280px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
+		<input type="email" style= "position: absolute; top:330px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
+
+		<div id = "username" style = "position: absolute; top: 395px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Username </div>
+		<input type="username" id ="username" name = "username" required="required" style= "position: absolute; top:445px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;Username">
+
+		<div id = "password" style = "position: absolute; top: 510px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Password </div>
+		<input id="password" name = "password" type="password" required="required" style= "position: absolute; top:560px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
+
+		<div id = "repassword" style = "position: absolute; top: 620px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
+		<input type="repassword" style= "position: absolute; top:675px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
+		<p>
+			<!--You got to make sure that this links to the index or landingpage -->
+			<a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style= "font-size: 20px; position: absolute; left: 190px; top: 750px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;">Sign Up!</a></p>
+		</form>
+	</div>
 
 
     <!-- Authenticating User to allow user to enter the index.html page, logged in -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  	<script type="text/javascript">
-	    $(document).ready(function(){
-	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+  
+  	
+<script type="text/javascript">
+    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
+$("#signUp").on("click", function(e){
+	e.preventDefault();
+	newUser($("#username").val(), $("#password").val());
+	
 
-	        authenticateUser(username, password);
+})
 
-	      });
+var newUser = function (username, password){
+  var user = new Parse.User();
+  user.set("username", username);
+  user.set("password", password);
+  user.signUp(null, {
+    success: function(user) {
+      // Hooray! Let them use the app now.
+      alert("Please sign in with your new user name");
+      window.location.href = "landingpage.html";
+    },
+    error: function(user, error) {
+      // Show the error message somewhere and let the user try again.
+      alert("Error: " + error.code + " " + error.message);
 
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "index.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-
-		    var newUser = function (username, password){
-	        var user = new Parse.User();
-	        user.set("username", username);
-	        user.set("password", password);
-	        user.signUp(null, {
-	          success: function(user) {
-	            // Hooray! Let them use the app now.
-	            alert("new user has been created", user.get("username"));
-	          },
-	          error: function(user, error) {
-	            // Show the error message somewhere and let the user try again.
-	            alert("Error: " + error.code + " " + error.message);
-
-	          }
-	        });
-	      };
-
-	      //Check to make sure that the password is the same when it is retyped
-	      /*
-			if(($("#password").val) == ($("#repassword").val){
-				//Allow user to go to login page and continue on 
-					<href="landingpage.html">
-
-
-			} 
-			else{
-				//Ask them to retype
-				alert("Please retype your password correctly");
-			}
-
-	      */
-
-      	//get the username and password that the user has entered in the landing page
-
-    	});
-
-
-	</script>
+    }
+  });
+}
+</script>
 	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -161,28 +137,7 @@
 		</a>
 	</div>
 
-	<div id = "callus-layer-context">
-		<!-- mail icons and information -->
-		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
-		<div id = "fullnamereg" style = "position: absolute; top: 160px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Full Name </div>
-		<input type="firstName" style= "position: absolute; top:210px; width: 220px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;First Name" name="firstname">
-		<input type="lastName" style= "position: absolute; top:210px; width: 220px; left: 300px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif;padding: 20px;" placeholder="&nbsp; &nbsp;Last Name" name="lastname">
-
-		<div id = "email" style = "position: absolute; top: 280px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
-		<input type="email" style= "position: absolute; top:330px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
-
-		<div id = "username" style = "position: absolute; top: 395px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Username </div>
-		<input type="username" style= "position: absolute; top:445px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;Username" name="username">
-
-		<div id = "password" style = "position: absolute; top: 510px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Password </div>
-		<input type="password" style= "position: absolute; top:560px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
-
-		<div id = "repassword" style = "position: absolute; top: 620px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
-		<input type="password" style= "position: absolute; top:675px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
-		<p>
-			<!--You got to make sure that this links to the index or landingpage -->
-			<a class="btn btn-lg btn-primary" href="#" role="button" style= "font-size: 20px; position: absolute; left: 190px; top: 750px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;">Sign Up!</a></p>
-	</div>
+	
 
 </body>
 
