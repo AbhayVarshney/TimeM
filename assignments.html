@@ -29,32 +29,44 @@
 <body>
   
   <!-- Nav Bar(top menu) ====================================================-->
-  <div id='cssmenu' style="z-index:1;">
-    <ul>
-      <li class='active'>
-        <a href='profile.html'>
-          <span class = 'aboutus'><strong> Profile </strong></span>
-        </a>
-      </li>
+  <div id="fixedNav">
+    <div id='cssmenu' style="z-index:1;">
+      <ul>
 
-      <li class='active'>
-        <a href='assignments.html'>
-          <span class = 'howitworks'><strong> Assignments </strong></span>
-        </a>
-      </li>
+        <div id='header_top_left' class="active">
+          <a href = "index.html" style = "color: white; z-index: 10; position: absolute; text-decoration:none;"> TimeM </a>
+        </div> 
 
-      <li class='active'>
-        <a href='landingpage.html'>
-          <span class = 'login'><strong> Logout </strong></span>
-        </a>
+        <li class='active'>
+          <a href='profile.html'>
+            <span class = 'aboutus'><strong> Profile </strong></span>
+          </a>
+        </li>
 
-      </li>
+        <li class='active'>
+          <a href='assignments.html'>
+            <span class = 'howitworks'><strong> Assignments </strong></span>
+          </a>
+        </li>
+
+        <li class='active'>
+          <a href='landingpage.html'>
+            <span class = 'login'><strong> Logout </strong></span>
+          </a>
+
+        </li>
+      </ul>
   </div>
-  <!-- put settings bar over here -->
+
+</div>
+
+  <!-- POLYMER PROJECT 
   <div id = 'settingsbar' style = "z-index:3; position: absolute; left: 80%; top: 100px;">
   
       <paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
   </div>
+  -->
+
   <!-- End main menu (top menu) -->
 <div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
 <div class="addAssignment" style="z-index:5">
@@ -291,9 +303,7 @@ var makeAssignmentList = function(username){
 
   <!-- Main Context (should be on the bottom of the screen) -->
 
-  <div id='header_top_left'>
-    <a href = "index.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM </a>
-  </div>
+  
 
  
 </body>
