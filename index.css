@@ -245,7 +245,7 @@ img.bg {
     right: 100px;
     display: none;
     text-indent: -9999px;
-    background: url('scrollup.png') no-repeat;
+    background: url("images/scrollup.png") no-repeat;
     content:url("http://www.atlantic.com.my/images/arrow-up.png");
 }
                

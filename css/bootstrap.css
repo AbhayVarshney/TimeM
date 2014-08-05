@@ -5788,7 +5788,7 @@ button.close {
   
 }
 .carousel-control.left {
-  
+    /*background-image: none !important;*/
 }
 .carousel-control.right {
   right: 0;
