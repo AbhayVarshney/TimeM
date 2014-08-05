@@ -30,21 +30,27 @@
 <body>
 	
 	<!-- Main menu (top menu) ====================================================-->
-	<div id='cssmenu' style="z-index:5;">
-		<ul>
-			<li class='active'>
-				<a href='contactus.html'>
-					<span class = 'contactus'><strong> Contact Us</strong></span>
-				</a>
-			</li>
+	<div id="fixedNav" style="z-index:24">
+		<div id='cssmenu'>
+		  <ul>
+		    <div id='header_top_left' class="active">
+		      <a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
+		    </div> 
 
-			<li class='active'>
-				<a href='howitworks.html'>
-					<span class = 'howitworks'><strong> How it works </strong></span>
-				</a>
-			</li>
+		    <li class='active'>
+		      <a href='contactus.html'>
+		        <span class = 'contactus'><strong> Contact Us </strong></span>
+		      </a>
+		    </li>
 
+		    <li class='active'>
+		      <a href='howitworks.html'>
+		        <span class = 'howitworks'><strong> How it works </strong></span>
+		      </a>
+		    </li>
+		</div>
 	</div>
+
 	<!-- put settings bar over here -->
 	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
 	
@@ -56,6 +62,7 @@
 		<!-- mail icons and information -->
 		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
 		
+
 
 		<div id = "email" style = "position: absolute; top: 150px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
 		<input type="email" style= "position: absolute; top:200px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
@@ -72,6 +79,7 @@
 		
 		<p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button">Sign Up!</a></p>
 		
+
 		</form>
 	</div>
 
@@ -113,14 +121,6 @@ var newUser = function (username, password){
 	<!-- End of login functionality -->
 
 	<!-- Main Context (should be on the bottom of the screen) -->
-
-	<div id='header_top_left'>
-		<!-- Needs to be clickable -->
-		<a href = "landingpage.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM 
-		</a>
-	</div>
-
-	
 
 </body>
 
