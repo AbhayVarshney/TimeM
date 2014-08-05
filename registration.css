@@ -226,7 +226,7 @@ img.bg {
     /* This is the top layer of information sheet */
     position: absolute; 
     width: 580px; 
-    height: 850px;
+    height: 750px;
     margin: 50px auto;
     padding: 10px; 
     background: #DFE2E4;
@@ -258,10 +258,14 @@ img.bg {
     padding: 5px;
 }
 
-#username, #password, #signUp{
+#fixedNav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(95,158, 160,0.5);
 
-}
-
-.registration{
     
+    height:100px;
+    border:0.5px solid #000
+
 }

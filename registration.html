@@ -30,37 +30,27 @@
 <body>
 	
 	<!-- Main menu (top menu) ====================================================-->
-	<div id='cssmenu' style="z-index:5;">
-		<ul>
-			<li class='active'>
-				<a href='contactus.html'>
-					<span class = 'contactus'><strong> Contact Us</strong></span>
-				</a>
-			</li>
+	<div id="fixedNav" style="z-index:24">
+		<div id='cssmenu'>
+		  <ul>
+		    <div id='header_top_left' class="active">
+		      <a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
+		    </div> 
 
-			<li class='active'>
-				<a href='howitworks.html'>
-					<span class = 'howitworks'><strong> How it works </strong></span>
-				</a>
-			</li>
-<!--
-			<li class='active'>
-				<a href='#'>
-					<span class = 'login'><strong> Login </strong></span>
-				</a>
+		    <li class='active'>
+		      <a href='contactus.html'>
+		        <span class = 'contactus'><strong> Contact Us </strong></span>
+		      </a>
+		    </li>
 
-				<ul class='dropdown'>
-					<form name = "myform">
-					    <p>
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
-					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
-					    </p>
-					</form>
-				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
-				</ul>
-			</li>
-		-->
+		    <li class='active'>
+		      <a href='howitworks.html'>
+		        <span class = 'howitworks'><strong> How it works </strong></span>
+		      </a>
+		    </li>
+		</div>
 	</div>
+
 	<!-- put settings bar over here -->
 	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
 	
@@ -71,24 +61,18 @@
 	<form name="registration">
 		<!-- mail icons and information -->
 		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
-		<div id = "fullnamereg" style = "position: absolute; top: 160px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Full Name </div>
-		<input type="firstName" style= "position: absolute; top:210px; width: 220px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;First Name" name="firstname">
-		<input type="lastName" style= "position: absolute; top:210px; width: 220px; left: 300px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif;padding: 20px;" placeholder="&nbsp; &nbsp;Last Name" name="lastname">
+		
+		<div id = "email" style = "position: absolute; top: 170px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
+		<input type="email" style= "position: absolute; top:230px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp;name@email.com" name="email">
 
-		<div id = "email" style = "position: absolute; top: 280px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
-		<input type="email" style= "position: absolute; top:330px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
+		<div id = "password" style = "position: absolute; top: 310px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Password </div>
+		<input id="password" name = "password" type="password" required="required" style= "position: absolute; top:370px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder=" &nbsp;***************" name="password">
 
-		<div id = "username" style = "position: absolute; top: 395px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Username </div>
-		<input type="username" id ="username" name = "username" required="required" style= "position: absolute; top:445px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;Username">
-
-		<div id = "password" style = "position: absolute; top: 510px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Password </div>
-		<input id="password" name = "password" type="password" required="required" style= "position: absolute; top:560px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
-
-		<div id = "repassword" style = "position: absolute; top: 620px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
-		<input type="repassword" style= "position: absolute; top:675px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
+		<div id = "repassword" style = "position: absolute; top: 445px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
+		<input type="repassword" style= "position: absolute; top:510px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder=" &nbsp;***************" name="repassword">
 		<p>
 			<!--You got to make sure that this links to the index or landingpage -->
-			<a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style= "font-size: 20px; position: absolute; left: 190px; top: 750px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;">Sign Up!</a></p>
+			<a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style= "font-size: 20px; position: absolute; left: 190px; top: 620px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;">Sign Up!</a></p>
 		</form>
 	</div>
 
@@ -130,14 +114,6 @@ var newUser = function (username, password){
 	<!-- End of login functionality -->
 
 	<!-- Main Context (should be on the bottom of the screen) -->
-
-	<div id='header_top_left'>
-		<!-- Needs to be clickable -->
-		<a href = "landingpage.html" style = "color: white; z-index: 10; position: absolute; top =0px; text-decoration:none;"> TimeM 
-		</a>
-	</div>
-
-	
 
 </body>
 
