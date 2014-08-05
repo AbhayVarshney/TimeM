@@ -5,3 +5,15 @@
 .setRight{
 	float: right;
 }
+
+#fixedNav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(95,158, 160,0.5);
+
+    
+    height:100px;
+    border:0.5px solid #000
+
+}

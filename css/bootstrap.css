@@ -5745,7 +5745,7 @@ button.close {
   
 
     
-    background-color: rgba (255, 0, 0, 0.4);
+    /*background-color: rgba (255, 0, 0, 0.4);*/
 
 }
 .carousel-inner > .active,
@@ -5873,8 +5873,7 @@ button.close {
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-  background: rgba(0, 0, 0, 0.35);
+  
 
 }
 .carousel-caption .btn {
