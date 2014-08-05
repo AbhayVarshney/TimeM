@@ -43,7 +43,23 @@
 					<span class = 'howitworks'><strong> How it works </strong></span>
 				</a>
 			</li>
+<!--
+			<li class='active'>
+				<a href='#'>
+					<span class = 'login'><strong> Login </strong></span>
+				</a>
 
+				<ul class='dropdown'>
+					<form name = "myform">
+					    <p>
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username"></center> <br/> <center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********"> </center>
+					    	<center> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    </p>
+					</form>
+				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
+				</ul>
+			</li>
+		-->
 	</div>
 	<!-- put settings bar over here -->
 	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
@@ -55,23 +71,24 @@
 	<form name="registration">
 		<!-- mail icons and information -->
 		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
-		
+		<div id = "fullnamereg" style = "position: absolute; top: 160px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Full Name </div>
+		<input type="firstName" style= "position: absolute; top:210px; width: 220px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;First Name" name="firstname">
+		<input type="lastName" style= "position: absolute; top:210px; width: 220px; left: 300px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif;padding: 20px;" placeholder="&nbsp; &nbsp;Last Name" name="lastname">
 
-		<div id = "email" style = "position: absolute; top: 150px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
-		<input type="email" style= "position: absolute; top:200px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
+		<div id = "email" style = "position: absolute; top: 280px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
+		<input type="email" style= "position: absolute; top:330px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
 
-		<div class = "username" style = "top: 260px; left: 50px; font-size: 30px; color: #7E7A89">Username </div>
-		<!--                     -->
-		<input type="username" id ="inputUsername" class="username"name = "username" required="required" style= "top:310px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;Username">
+		<div id = "username" style = "position: absolute; top: 395px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Username </div>
+		<input type="username" id ="username" name = "username" required="required" style= "position: absolute; top:445px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;Username">
 
-		<div class = "password" style = "top: 370px;   font-size: 30px; color: #7E7A89">Password </div>
-		<input id="inputPassword" class= "password" name = "password" type="password" required="required" style= "top:420px; width: 470px;  height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
+		<div id = "password" style = "position: absolute; top: 510px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Password </div>
+		<input id="password" name = "password" type="password" required="required" style= "position: absolute; top:560px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
 
-		<div id = "repassword" style = "position: absolute; top: 480px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
-		<input type="repassword" style= "position: absolute; top:530px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
-		
-		<p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button">Sign Up!</a></p>
-		
+		<div id = "repassword" style = "position: absolute; top: 620px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
+		<input type="repassword" style= "position: absolute; top:675px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
+		<p>
+			<!--You got to make sure that this links to the index or landingpage -->
+			<a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style= "font-size: 20px; position: absolute; left: 190px; top: 750px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;">Sign Up!</a></p>
 		</form>
 	</div>
 
@@ -84,7 +101,7 @@
 
 $("#signUp").on("click", function(e){
 	e.preventDefault();
-	newUser($("#inputUsername").val(), $("#inputPassword").val());
+	newUser($("#username").val(), $("#password").val());
 	
 
 })

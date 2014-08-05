@@ -226,7 +226,7 @@ img.bg {
     /* This is the top layer of information sheet */
     position: absolute; 
     width: 580px; 
-    height: 850px;
+    height: 700px;
     margin: 50px auto;
     padding: 10px; 
     background: #DFE2E4;
@@ -247,7 +247,7 @@ img.bg {
     right: 100px;
     display: none;
     text-indent: -9999px;
-    background: url('scrollup.png') no-repeat;
+    background: url('images/scrollup.png') no-repeat;
     content:url("http://www.atlantic.com.my/images/arrow-up.png");
 }
          
@@ -258,10 +258,32 @@ img.bg {
     padding: 5px;
 }
 
-#username, #password, #signUp{
+.username{
+    position: absolute;
+    font-family: 'Raleway', sans-serif; 
+}
+
+.password{
+    position: absolute; 
+    left: 50px;
+    font-family: 'Raleway', san-serif;
+
+}
+
+#signUp{
+    font-size: 20px;
+    position: absolute; 
+    left: 190px; 
+    top: 620px; 
+    background: #4DA8C7; 
+    border-color: #4DA8C7; 
+    border-width: 3px; 
+    border-radius: 3px; 
+    width: 210px; 
+    height: 55px;
 
 }
 
 .registration{
-    
+
 }
