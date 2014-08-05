@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+/*
 	var audioArray = [
 		"assets/sounds/tick1.wav",
 		"assets/sounds/tick2.wav",
@@ -15,6 +15,6 @@ $(document).ready(function(){
 	    this.play();
 	}, false);
 
-
+*/
 
 });
