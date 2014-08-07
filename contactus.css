@@ -242,6 +242,8 @@ img.bg {
     width: 110px;
     height: 110px;
     position: fixed;
+    z-index: 500;
+    top: 0px;
     bottom: 50px;
     right: 100px;
     display: none;
