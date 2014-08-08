@@ -244,7 +244,7 @@ img.bg {
     right: 100px;
     display: none;
     text-indent: -9999px;
-    background: url('scrollup.png') no-repeat;
+    background: url('images/scrollup.png') no-repeat;
     content:url("http://www.atlantic.com.my/images/arrow-up.png");
 }
                
@@ -390,7 +390,6 @@ img.bg {
     -moz-transition:background-color .4s .2s;
     -o-transition:background-color .4s .2s;
     transition:background-color .4s .2s;
-    background:rgba(3,46,65,0) url(../images/plus-large.png) -9999px 0 no-repeat;
     text-indent:-9999px;
 }
 
