@@ -100,7 +100,8 @@
 		      <ul class='dropdown'>
 					<form name = "myform">
 					    <p>
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username" ></center> <br/> <br/><center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********" style = "width: 138px;" > </center>
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username" ></center> <br/> <br/><center> Password: </center> <center><input id="password" type="password" name="pword" placeholder="********" style = 
+					    	"width: 138px;" > </center>
 					    	<center> <br/> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
 					    </p>
 					</form>
@@ -154,6 +155,79 @@
 						<li id="min"></li>
 					</ul>
 				</div>
+
+				<!-- Display digital time -->
+				<script>
+					function updatingClock(selector, type) {
+					    function currentDate() {
+					        var currentDate = new Date;
+					        var Day = currentDate.getDate();
+					        if (Day < 10) {
+					            Day = '0' + Day;
+					        } //end if
+					        var Month = currentDate.getMonth() + 1;
+					        if (Month < 10) {
+					            Month = '0' + Month;
+					        } //end if
+					        var Year = currentDate.getFullYear();
+					        var fullDate = Month + '/' + Day + '/' + Year;
+					        return fullDate;
+					    } //end current date function
+
+					    function currentTime() {
+					        var currentTime = new Date;
+					        var Minutes = currentTime.getMinutes();
+					        if (Minutes < 10) {
+					            Minutes = '0' + Minutes;
+					        }
+					        var Hour = currentTime.getHours();
+					        if (Hour > 12) {
+					            Hour -= 12;
+					        } //end if
+					        var Time = Hour + ':' + Minutes;
+					        if (currentTime.getHours() <= 12) {
+					            Time += ' AM';
+					        } //end if
+					        if (currentTime.getHours() > 12) {
+					            Time += ' PM';
+					        } //end if
+					        return Time;
+					    } // end current time function
+
+
+					    function updateOutput() {
+					        var output;
+					        if (type == 'time') {
+					            output = currentTime();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					        if (type == 'date') {
+					            output = currentDate();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					        if (type == 'both') {
+					            output =  currentTime();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					    }//end update output function
+					    updateOutput();
+					    window.setInterval(function() {
+					        updateOutput();
+					    }, 1000); //run update every 1 second
+					} // end updating clock function
+					updatingClock('#date-time', 'both');
+
+				</script>
+
+				<div id="date-time" style= "position:absolute; top: 400px; left: 280px; font-family: 'Roboto', sans-serif; font-size: 50px;"></div>
+
+				<!-- End time -->
 
         <!-- CLOCK html ENDS HERE =====================================-->
             </div>
