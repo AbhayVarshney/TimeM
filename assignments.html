@@ -343,6 +343,11 @@
         </tbody>
 
       </table>
+
+      
+
+
+      <!-- PARSE JAVA SCRIPT ===================================================================================-->
       <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
       <script type="text/javascript">
       Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
@@ -367,25 +372,53 @@
             for(var i = 1; i < results.length; i++ ){
               console.log(results[i].get("assignment"));
               var assignmentList = $("#assignmentList");
-
-              var tr = $('<tr></tr>');
-              var td = $('<td></td>').text(results[i].get("assignment"));
-              var td2 = $('<td></td>').text(results[i].get("time"));
-              var text = "<td><span style='color:green'>Completed</span></td>";
-              var btn = '<td><button class="done-button" type="button"> Done</button></td>';
-
-              $(tr).append(td);
-              $(tr).append(td2);
-
-              if (results[i].get("completed") == 1){
-                $(tr).append(text);
+              
+              var assignmentForDate =results[i].get("assignment")
+              getAssignmentDate(assignmentForDate);
+               
+              var getAssignmentDate = function(assignment){
+                var createdAt = assignment.createdAt;
+                return createdAt;
               }
-              else{
-                $(tr).append(btn);
-              }
+              var date = new Date(createdAt);
+              var yr = date.getFullYear();
+              var mo = date.getMonth() + 1;
+              var day = date.getDate();
+
+              var newCreatedAt = yr + '-' + mo  + '-' + day;
               
 
-              assignmentList.append(tr);
+
+              var currentDate = new Date()
+              var dayToday = currentDate.getDate()
+              var month = currentDate.getMonth() + 1
+              var year = currentDate.getFullYear()
+              var todayDate = year+ '-' + month  + '-' + dayToday
+             
+
+
+              //This is the date that the assignment is added to Parse
+              
+              if(todayDate == newCreatedAt){
+                var tr = $('<tr></tr>');
+                var td = $('<td></td>').text(results[i].get("assignment"));
+                var td2 = $('<td></td>').text(results[i].get("time"));
+                var text = "<td><span style='color:green'>Completed</span></td>";
+                var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+
+                $(tr).append(td);
+                $(tr).append(td2);
+
+                if (results[i].get("completed") == 1){
+                  $(tr).append(text);
+                }
+                else{
+                  $(tr).append(btn);
+                }
+                
+
+                assignmentList.append(tr);
+              }
             }
 
           },
@@ -413,22 +446,24 @@
 
           assignment.save(assignment_data, 
             {success: function(assignment) {
-              //add the newly created assignment to the bottom of the table 
-              var assignmentList = $("#assignmentList");
-              var tr = $('<tr></tr>');
-              var td = $('<td></td>').text(assignment.get("assignment"));
-              var td2 = $('<td></td>').text(assignment.get("time"));
+              //add the newly created assignment to the bottom of the table
+             
+                  var assignmentList = $("#assignmentList");
+                  var tr = $('<tr></tr>');
+                  var td = $('<td></td>').text(assignment.get("assignment"));
+                  var td2 = $('<td></td>').text(assignment.get("time"));
 
-              var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-              
-              $(tr).append(td);
-              $(tr).append(td2);
-              $(tr).append(btn);
-              assignmentList.append(tr);
+                  var btn = '<td><button class="done-button" type="button"> Done</button></td>'
+                  
+                  $(tr).append(td);
+                  $(tr).append(td2);
+                  $(tr).append(btn);
+                  assignmentList.append(tr);
 
-              //empty the asisgnment name and time form hte new assignment form
-              $("#assignment").val("");
-              $("#mins").val("");
+                  //empty the asisgnment name and time from the new assignment form
+                  $("#assignment").val("");
+                  $("#mins").val("");
+                
             },
             error: function( assignment,error) {
               // Show the error message somewhere and let the user try again.
