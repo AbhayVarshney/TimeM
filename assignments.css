@@ -22,6 +22,18 @@ img.bg {
 }
 
 
+paper-dialog {
+      width: 50%;
+      min-width: 430px;
+    }
+
+    paper-dialog paper-button {
+      font-weight: bold;
+    }
+
+    paper-button[autofocus] {
+      color: #4285f4;
+    }
 
 #header_top_left {
     /* Top left header */
@@ -398,7 +410,7 @@ label {
 }
 
 #hor-minimalist-b td {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid grey;
     color: #669;
     padding: 6px 8px;
 }

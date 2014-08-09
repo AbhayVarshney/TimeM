@@ -18,7 +18,15 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
   <link rel="icon" href="images/favicon.png">
 
-          
+  <!-- Polymer fonts -->
+
+  <link href="components/paper-button/paper-button.html" rel="import">
+  <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+  <link href="components/paper-dialog/paper-dialog.html" rel="import">
+
+
+  <!-- End Polymer -->
+
   <title>Assignments | TimeM</title>
   <!-- Background image -->
 
@@ -27,10 +35,7 @@
 </head>
 
 <body>
-  
   <!-- Nav Bar(top menu) ====================================================-->
-
-
   <div id="fixedNav" style="z-index:24">
     <div id='cssmenu'>
       <ul>
@@ -55,65 +60,185 @@
           <a href='landingpage.html'>
             <span class = 'login'><strong> Logout </strong></span>
           </a>
-
         </li>
+
+         <!-- Polymer dialog -->
+
+        <paper-dialog heading="Settings" transition="paper-dialog-transition-center">
+          <!-- Put content here -->
+            <!-- Wake Up time input -->
+            <div style="color:#000000;font-size: 25px; position: absolute; left: 60px; top: 90px;">
+              <strong>Sleep Time: </strong>
+            </div>
+
+            <br/> <br/>
+            <select name="alarm_hour" title="Alarm Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 140px; font-size: 18px;">
+              <option value="">OFF</option>
+              <option value="1" style="text-align: right;">&nbsp;&nbsp;1 AM</option>
+              <option value="2" style="text-align: right;">&nbsp;&nbsp;2 AM</option>
+              <option value="3" style="text-align: right;">&nbsp;&nbsp;3 AM</option>
+              <option value="4" style="text-align: right;">&nbsp;&nbsp;4 AM</option>
+              <option value="5" style="text-align: right;">&nbsp;&nbsp;5 AM</option>
+              <option value="6" style="text-align: right;">&nbsp;&nbsp;6 AM</option>
+              <option value="7" style="text-align: right;">&nbsp;&nbsp;7 AM</option>
+              <option value="8" style="text-align: right;">&nbsp;&nbsp;8 AM</option>
+              <option value="9" style="text-align: right;">&nbsp;&nbsp;9 AM</option>
+              <option value="10" style="text-align: right;">           10 AM</option>
+              <option value="11" style="text-align: right;">           11 AM</option>
+              <option value="12" style="text-align: right;">           12 PM</option>
+              <option value="13" style="text-align: right;">&nbsp;&nbsp;1 PM</option>
+              <option value="14" style="text-align: right;">&nbsp;&nbsp;2 PM</option>
+              <option value="15" style="text-align: right;">&nbsp;&nbsp;3 PM</option>
+              <option value="16" style="text-align: right;">&nbsp;&nbsp;4 PM</option>
+              <option value="17" style="text-align: right;">&nbsp;&nbsp;5 PM</option>
+              <option value="18" style="text-align: right;">&nbsp;&nbsp;6 PM</option>
+              <option value="19" style="text-align: right;">&nbsp;&nbsp;7 PM</option>
+              <option value="20" style="text-align: right;">&nbsp;&nbsp;8 PM</option>
+              <option value="21" style="text-align: right;">&nbsp;&nbsp;9 PM</option>
+              <option value="22" style="text-align: right;">           10 PM</option>
+              <option value="23" style="text-align: right;">           11 PM</option>
+              <option value="0" style="text-align: right;">            12 AM</option>
+            </select>
+
+            <div style="color:#000000;font-size: 35px; position: absolute; left: 310px; top: 140px;">
+              <strong>&nbsp;:&nbsp; </strong>
+            </div>
+  
+            <select name="alarm_minute" title="Alarm Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 140px; font-size: 18px;">
+              <option value="0" style="text-align: right;">00</option>
+              <option value="1" style="text-align: right;">01</option>
+              <option value="2" style="text-align: right;">02</option>
+              <option value="3" style="text-align: right;">03</option>
+              <option value="4" style="text-align: right;">04</option>
+              <option value="5" style="text-align: right;">05</option>
+              <option value="6" style="text-align: right;">06</option>
+              <option value="7" style="text-align: right;">07</option>
+              <option value="8" style="text-align: right;">08</option>
+              <option value="9" style="text-align: right;">09</option>
+              <option value="10" style="text-align: right;">10</option>
+              <option value="11" style="text-align: right;">11</option>
+              <option value="12" style="text-align: right;">12</option>
+              <option value="13" style="text-align: right;">13</option>
+              <option value="14" style="text-align: right;">14</option>
+              <option value="15" style="text-align: right;">15</option>
+              <option value="16" style="text-align: right;">16</option>
+              <option value="17" style="text-align: right;">17</option>
+              <option value="18" style="text-align: right;">18</option>
+              <option value="19" style="text-align: right;">19</option>
+              <option value="20" style="text-align: right;">20</option>
+              <option value="21" style="text-align: right;">21</option>
+              <option value="22" style="text-align: right;">22</option>
+              <option value="23" style="text-align: right;">23</option>
+              <option value="24" style="text-align: right;">24</option>
+              <option value="25" style="text-align: right;">25</option>
+              <option value="26" style="text-align: right;">26</option>
+              <option value="27" style="text-align: right;">27</option>
+              <option value="28" style="text-align: right;">28</option>
+              <option value="29" style="text-align: right;">29</option>
+              <option value="30" style="text-align: right;">30</option>
+              <option value="31" style="text-align: right;">31</option>
+              <option value="32" style="text-align: right;">32</option>
+              <option value="33" style="text-align: right;">33</option>
+              <option value="34" style="text-align: right;">34</option>
+              <option value="35" style="text-align: right;">35</option>
+              <option value="36" style="text-align: right;">36</option>
+              <option value="37" style="text-align: right;">37</option>
+              <option value="38" style="text-align: right;">38</option>
+              <option value="39" style="text-align: right;">39</option>
+              <option value="40" style="text-align: right;">40</option>
+              <option value="41" style="text-align: right;">41</option>
+              <option value="42" style="text-align: right;">42</option>
+              <option value="43" style="text-align: right;">43</option>
+              <option value="44" style="text-align: right;">44</option>
+              <option value="45" style="text-align: right;">45</option>
+              <option value="46" style="text-align: right;">46</option>
+              <option value="47" style="text-align: right;">47</option>
+              <option value="48" style="text-align: right;">48</option>
+              <option value="49" style="text-align: right;">49</option>
+              <option value="50" style="text-align: right;">50</option>
+              <option value="51" style="text-align: right;">51</option>
+              <option value="52" style="text-align: right;">52</option>
+              <option value="53" style="text-align: right;">53</option>
+              <option value="54" style="text-align: right;">54</option>
+              <option value="55" style="text-align: right;">55</option>
+              <option value="56" style="text-align: right;">56</option>
+              <option value="57" style="text-align: right;">57</option>
+              <option value="58" style="text-align: right;">58</option>
+              <option value="59" style="text-align: right;">59</option>
+            </select>
+
+            <INPUT TYPE="HIDDEN" NAME="mode" value="alarm" CHECKED>
+            <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+            <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+          <paper-button label="More Info..." dismissive></paper-button>
+          <paper-button label="Save" affirmative autofocus></paper-button>
+
+        </paper-dialog>
+
+
+        <paper-button label="User's Lock" style = "position: absolute; top: 20px; left: 1000px; z-index: 500;" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+
+        <script>
+          function toggleDialog(transition) {
+            var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+            dialog.toggle();
+          }
+        </script>
+
+        <!-- End Paper Dialog -->
+    </div>
   </div>
 
-</div>
+  <div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
+  <div class="addAssignment" style="z-index:5">
 
+    <script type = 'text/javascript'>
 
-  <!-- End main menu (top menu) -->
-<div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
-<div class="addAssignment" style="z-index:5">
+      function changeThis() {
+        var assignmentInput = document.getElementById('assignment');
+        document.getElementById('newAssign').innerHTML = assignmentInput.value;
+        var minsInput = document.getElementById('mins');
+        document.getElementById('newMins').innerHTML = minsInput.value;
+      }
 
-          <script type = 'text/javascript'>
+    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('<div/>', {
+          'class' : 'extraPerson', html: GetHtml()
+        }).appendTo('#container');
+        $('#addRow').click(function () {
+          $('<div/>', {
+            'class' : 'extraPerson', html: GetHtml()
+          }).hide().appendTo('#container').slideDown('slow');
 
-            function changeThis() {
-              var assignmentInput = document.getElementById('assignment');
-              document.getElementById('newAssign').innerHTML = assignmentInput.value;
-              var minsInput = document.getElementById('mins');
-              document.getElementById('newMins').innerHTML = minsInput.value;
-            }
+        });
+      })
 
-          </script>
-          <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-          <script type="text/javascript">
-          $(document).ready(function () {
-            $('<div/>', {
-              'class' : 'extraPerson', html: GetHtml()
-            }).appendTo('#container');
-            $('#addRow').click(function () {
-              $('<div/>', {
-                'class' : 'extraPerson', html: GetHtml()
-              }).hide().appendTo('#container').slideDown('slow');
+      function GetHtml() {
+        //var len = $('.extraPerson').length;
+        //var $html = $('.extraPersonTemplate').clone();
+        //$html.find('[name=assignment]')[0].name="assignment" + len;
+        //$html.find('[name=mins]')[0].name="mins" + len;
+        //return $html.html();    
+      }
+    </script>
 
-            });
-          })
-
-          function GetHtml()
-          {
-            //var len = $('.extraPerson').length;
-            //var $html = $('.extraPersonTemplate').clone();
-            //$html.find('[name=assignment]')[0].name="assignment" + len;
-            //$html.find('[name=mins]')[0].name="mins" + len;
-            //return $html.html();    
-          }
-          </script>
-
-          <div class="extraPersonTemplate">
-            <div class="controls controls-row">
-              <label>
-                <br/><br/>
-                <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px">
-                <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px">
-                <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 190px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
-              </select>
-            </label>
-          </div>
-        </div>  
-        <div id="container"></div>
+    <div class="extraPersonTemplate">
+      <div class="controls controls-row">
+        <label>
+          <br/><br/>
+          <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px">
+          <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px">
+          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 190px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
+          </select>
+        </label>
+      </div>
+    </div>  
+    <div id="container"></div>
         <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
-</div>
+  </div>
 
       <!-- Display added assignments -->
       <h3 style="text-align:center; color:white; position: absolute; top: 250px; left: 420px"> View assignments for today here: </h3>
@@ -147,147 +272,145 @@
 
       });
 
-
-
-//  making the list of assignment in the ui from the assignments pulled from the database
-var makeAssignmentList = function(username){
-  var query = new Parse.Query("Assignment");
-  query.equalTo("username", username);
-  query.find({
-    success: function(results){
-
-
-      for(var i = 1; i < results.length; i++ ){
-        console.log(results[i].get("assignment"));
-        var assignmentList = $("#assignmentList");
-
-        var tr = $('<tr></tr>');
-        var td = $('<td></td>').text(results[i].get("assignment"));
-        var td2 = $('<td></td>').text(results[i].get("time"));
-        var text = "<td><span style='color:green'>Completed</span></td>";
-        var btn = '<td><button class="done-button" type="button"> Done</button></td>';
-
-        $(tr).append(td);
-        $(tr).append(td2);
-
-        if (results[i].get("completed") == 1){
-          $(tr).append(text);
-        }
-        else{
-          $(tr).append(btn);
-        }
-        
-
-        assignmentList.append(tr);
-      }
-
-    },
-    error: function( assignment,error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
-
-      }
-    });
-};
-
-
-  //Function for creating a new assignment and adding to the database
-  var createNewAssignment = function (assignmentName, username, time){
-    var Assignment = Parse.Object.extend("Assignment");
-
-    //Creating a new instance of the class
-    var assignment = new Assignment();
-    
-    var _assignmentName = assignmentName;
-    var _time = time;
-    var assignment_data = {assignment: _assignmentName, username: username, time: _time, completed: 0};
-
-    /* Save the Assignment */
-
-    assignment.save(assignment_data, 
-      {success: function(assignment) {
-        //add the newly created assignment to the bottom of the table 
-        var assignmentList = $("#assignmentList");
-        var tr = $('<tr></tr>');
-        var td = $('<td></td>').text(assignment.get("assignment"));
-        var td2 = $('<td></td>').text(assignment.get("time"));
-
-        var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-        
-        $(tr).append(td);
-        $(tr).append(td2);
-        $(tr).append(btn);
-        assignmentList.append(tr);
-
-        //empty the asisgnment name and time form hte new assignment form
-        $("#assignment").val("");
-        $("#mins").val("");
-      },
-      error: function( assignment,error) {
-        // Show the error message somewhere and let the user try again.
-        alert("Error: " + error.code + " " + error.message);
-
-      }
-    });
-      //things to do after the save takes place
-    };
-
-    var getUsername = function (){
-      var half = (document.cookie).substring(9);
-      var array = (half).split(";");
-      var username = array[0];
-      return username;
-    };
-
-
-    var username = getUsername();
-    makeAssignmentList(username);
-
-      var done= document.getElementById('done-button');
-      console.log(done);
-
-      $(".done-button").click(function(){
-        alert(clicked);
-      });
-
-/*
-      $(".done-button").on('click', function(){
-          alert("done clicked");
-          //var parent = this.parent.append("<span>Completed</span>")
-          //this.fadeOut();
-        });
-      });*/
-     $(document).on('click', "button.done-button", function() {
-
-
-        var assignmentName = $(this).parent().parent().children(":first").html();
-        console.log(assignmentName);
-
-        //replace the button with text that says "completed"
-        $(this).replaceWith("<span style='color:green'>Completed</span>"); 
-        //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
-          
-
-        //in the database change completed status to 1
+      //  making the list of assignment in the ui from the assignments pulled from the database
+      var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
-        query.equalTo("assignment", assignmentName);
-        query.first({
-         success: function(assignment){
-            console.log(assignment);
-          //updating the completed column for this assingment
-            assignment.save({completed:1}, {
-              success: function() {
-                console.log("assginment has been updated with completed=1");
+        query.equalTo("username", username);
+        query.find({
+          success: function(results){
+
+
+            for(var i = 1; i < results.length; i++ ){
+              console.log(results[i].get("assignment"));
+              var assignmentList = $("#assignmentList");
+
+              var tr = $('<tr></tr>');
+              var td = $('<td></td>').text(results[i].get("assignment"));
+              var td2 = $('<td></td>').text(results[i].get("time"));
+              var text = "<td><span style='color:green'>Completed</span></td>";
+              var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+
+              $(tr).append(td);
+              $(tr).append(td2);
+
+              if (results[i].get("completed") == 1){
+                $(tr).append(text);
               }
-          });
-        },
-        error: function( assignment,error) {
+              else{
+                $(tr).append(btn);
+              }
+              
+
+              assignmentList.append(tr);
+            }
+
+          },
+          error: function( assignment,error) {
               // Show the error message somewhere and let the user try again.
               alert("Error: " + error.code + " " + error.message);
 
-          }
-        });
-    });
+            }
+          });
+      };
+
+
+        //Function for creating a new assignment and adding to the database
+        var createNewAssignment = function (assignmentName, username, time){
+          var Assignment = Parse.Object.extend("Assignment");
+
+          //Creating a new instance of the class
+          var assignment = new Assignment();
+          
+          var _assignmentName = assignmentName;
+          var _time = time;
+          var assignment_data = {assignment: _assignmentName, username: username, time: _time, completed: 0};
+
+          /* Save the Assignment */
+
+          assignment.save(assignment_data, 
+            {success: function(assignment) {
+              //add the newly created assignment to the bottom of the table 
+              var assignmentList = $("#assignmentList");
+              var tr = $('<tr></tr>');
+              var td = $('<td></td>').text(assignment.get("assignment"));
+              var td2 = $('<td></td>').text(assignment.get("time"));
+
+              var btn = '<td><button class="done-button" type="button"> Done</button></td>'
+              
+              $(tr).append(td);
+              $(tr).append(td2);
+              $(tr).append(btn);
+              assignmentList.append(tr);
+
+              //empty the asisgnment name and time form hte new assignment form
+              $("#assignment").val("");
+              $("#mins").val("");
+            },
+            error: function( assignment,error) {
+              // Show the error message somewhere and let the user try again.
+              alert("Error: " + error.code + " " + error.message);
+
+            }
+          });
+            //things to do after the save takes place
+          };
+
+          var getUsername = function (){
+            var half = (document.cookie).substring(9);
+            var array = (half).split(";");
+            var username = array[0];
+            return username;
+          };
+
+
+          var username = getUsername();
+          makeAssignmentList(username);
+
+            var done= document.getElementById('done-button');
+            console.log(done);
+
+            $(".done-button").click(function(){
+              alert(clicked);
+            });
+
+      /*
+            $(".done-button").on('click', function(){
+                alert("done clicked");
+                //var parent = this.parent.append("<span>Completed</span>")
+                //this.fadeOut();
+              });
+            });*/
+           $(document).on('click', "button.done-button", function() {
+
+
+              var assignmentName = $(this).parent().parent().children(":first").html();
+              console.log(assignmentName);
+
+              //replace the button with text that says "completed"
+              $(this).replaceWith("<span style='color:green'>Completed</span>"); 
+              //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+                
+
+              //in the database change completed status to 1
+              var query = new Parse.Query("Assignment");
+              query.equalTo("assignment", assignmentName);
+              query.first({
+               success: function(assignment){
+                  console.log(assignment);
+                //updating the completed column for this assingment
+                  assignment.save({completed:1}, {
+                    success: function() {
+                      console.log("assginment has been updated with completed=1");
+                    }
+                });
+              },
+              error: function( assignment,error) {
+                    // Show the error message somewhere and let the user try again.
+                    alert("Error: " + error.code + " " + error.message);
+
+                }
+              });
+          });
 
     </script>
 
@@ -295,9 +418,6 @@ var makeAssignmentList = function(username){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   <!-- End of login functionality -->
-
-  <!-- Main Context (should be on the bottom of the screen) -->
-
  
 </body>
 
