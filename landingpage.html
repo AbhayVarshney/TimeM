@@ -22,82 +22,8 @@
 	<!-- Background image -->
 
 	<img src="images/mainbackground.jpg" class="bg">
-</head>
 
-<body>
-	
-	<!-- Main menu (top menu) ====================================================-->
-	<div id="fixedNav" style="z-index:24">
-		<div id='cssmenu'>
-		  <ul>
-		    <div id='header_top_left' class="active">
-		      <a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
-		    </div> 
-
-		    <li class='active'>
-		      <a href='contactus.html'>
-		        <span class = 'contactus'><strong> Contact Us </strong></span>
-		      </a>
-		    </li>
-
-		    <li class='active'>
-		      <a href='howitworks.html'>
-		        <span class = 'howitworks'><strong> How it works </strong></span>
-		      </a>
-		    </li>
-
-		    <li class='active'>
-		      <a href='#'>
-		        <span class = 'login'><strong> Login </strong></span>
-		      </a>
-		      <ul class='dropdown'>
-					<form name = "myform">
-					    <p>
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username" ></center> <br/> <br/><center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********" style = "width: 138px;" > </center>
-					    	<center> <br/> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
-					    </p>
-					</form>
-				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
-				</ul>
-		    </li>
-		</div>
-	</div>
-
-	<!-- put settings bar over here -->
-	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
-	
-  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
-	</div>
-	<!-- End main menu (top menu) -->
-
- <!-- Carousel  ================================================== -->
-	<script src="js/bootstrap.min.js"></script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-				<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > Welcome to TimeM. </a></strong></h1>
-              <br/> 
-              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
-              <br/>
-              <p><a class="btn btn-lg btn-primary" href="registration.html" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="container">
-            <div class="carousel-caption" style = "position: absolute; top: 40px">
-
-            <!-- Clock Begins Here ==========================-->
+	<!-- Clock Script begin ================================================================== -->
               <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
 
 			    <script type="text/javascript">
@@ -142,8 +68,86 @@
 			    
 			    </script>
 
-				<script src="clock.js"></script>
+    <!-- Clock Script end  ==================================================================-->
+</head>
 
+<body>
+	
+	<!-- Main menu (top menu) ====================================================-->
+	<div id="fixedNav" style="z-index:104">
+		<div id='cssmenu'>
+		  <ul>
+		    <div id='header_top_left' class="active">
+		      <a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
+		    </div> 
+
+		    <li class='active'>
+		      <a href='contactus.html'>
+		        <span class = 'contactus'><strong> Contact Us </strong></span>
+		      </a>
+		    </li>
+
+		    <li class='active'>
+		      <a href='howitworks.html'>
+		        <span class = 'howitworks'><strong> How it works </strong></span>
+		      </a>
+		    </li>
+
+		    <li class='active'>
+		      <a href='#'>
+		        <span class = 'login'><strong> Join </strong></span>
+		      </a>
+		      <ul class='dropdown'>
+					<form name = "myform">
+					    <p>
+					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username" ></center> <br/> <br/><center> Password: </center> <center><input id="password" type="password" name="pword" placeholder="********" style = 
+					    	"width: 138px;" > </center>
+					    	<center> <br/> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    </p>
+					</form>
+				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
+				</ul>
+		    </li>
+		</div>
+	</div>
+
+	<!-- put settings bar over here -->
+	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
+	
+  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
+	</div>
+	<!-- End main menu (top menu) -->
+
+ <!-- Carousel  ================================================== -->
+	<script src="js/bootstrap.min.js"></script>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+				<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > Welcome to TimeM. </a></strong></h1>
+              <br/> 
+              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
+              <br/>
+              <p><a class="btn btn-lg btn-primary" href="registration.html" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption" style = "position: absolute; top: 40px">
+
+
+				<!-- <script src="clock.js"></script> -->
+        <!-- CLOCK html BEGINS HERE =====================================-->
 				<div id="clock_container">
 					<ul id="clock">	
 						<li id="sec"></li>
@@ -152,7 +156,80 @@
 					</ul>
 				</div>
 
-        <!-- CLOCK ENDS HERE =====================================-->
+				<!-- Display digital time -->
+				<script>
+					function updatingClock(selector, type) {
+					    function currentDate() {
+					        var currentDate = new Date;
+					        var Day = currentDate.getDate();
+					        if (Day < 10) {
+					            Day = '0' + Day;
+					        } //end if
+					        var Month = currentDate.getMonth() + 1;
+					        if (Month < 10) {
+					            Month = '0' + Month;
+					        } //end if
+					        var Year = currentDate.getFullYear();
+					        var fullDate = Month + '/' + Day + '/' + Year;
+					        return fullDate;
+					    } //end current date function
+
+					    function currentTime() {
+					        var currentTime = new Date;
+					        var Minutes = currentTime.getMinutes();
+					        if (Minutes < 10) {
+					            Minutes = '0' + Minutes;
+					        }
+					        var Hour = currentTime.getHours();
+					        if (Hour > 12) {
+					            Hour -= 12;
+					        } //end if
+					        var Time = Hour + ':' + Minutes;
+					        if (currentTime.getHours() <= 12) {
+					            Time += ' AM';
+					        } //end if
+					        if (currentTime.getHours() > 12) {
+					            Time += ' PM';
+					        } //end if
+					        return Time;
+					    } // end current time function
+
+
+					    function updateOutput() {
+					        var output;
+					        if (type == 'time') {
+					            output = currentTime();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					        if (type == 'date') {
+					            output = currentDate();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					        if (type == 'both') {
+					            output =  currentTime();
+					            if ($(selector).text() != output) {
+					                $(selector).text(output);
+					            } //end if
+					        } //end if
+					    }//end update output function
+					    updateOutput();
+					    window.setInterval(function() {
+					        updateOutput();
+					    }, 1000); //run update every 1 second
+					} // end updating clock function
+					updatingClock('#date-time', 'both');
+
+				</script>
+
+				<div id="date-time" style= "position:absolute; top: 400px; left: 280px; font-family: 'Roboto', sans-serif; font-size: 50px;"></div>
+
+				<!-- End time -->
+
+        <!-- CLOCK html ENDS HERE =====================================-->
             </div>
           </div>
         </div>
@@ -333,7 +410,7 @@
 	</script>
 
 	<article style="height: 300px">
-		<a href="#" class="scrollup" style = "z-index: 40;">Scroll</a>
+		<a href="#" class="scrollup" style = "z-index: 108;">Scroll</a>
 	</article>
 	
 	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1800px; left: -10px; background:rgba(0,0,0,0.7);">

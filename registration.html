@@ -57,29 +57,24 @@
   		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
 	</div>
 	<!-- End main menu (top menu) -->
-<div id = "callus-layer-context">
-	<form name="registration">
-		<!-- mail icons and information -->
-		<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
-		
+	<div id = "callus-layer-context">
+		<form name="registration">
+			<!-- mail icons and information -->
+			<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
+			
 
 
-		<div id = "email" style = "position: absolute; top: 150px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
-		<input type="email" style= "position: absolute; top:200px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
+			<div id = "email" style = "position: absolute; top: 150px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Email </div>
+			<input type="email" style= "position: absolute; top:200px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;name@email.com" name="email">
 
-		<div class = "username" style = "top: 260px; left: 50px; font-size: 30px; color: #7E7A89">Username </div>
-		<!--                     -->
-		<input type="username" id ="inputUsername" class="username"name = "username" required="required" style= "top:310px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;Username">
 
-		<div class = "password" style = "top: 370px;   font-size: 30px; color: #7E7A89">Password </div>
-		<input id="inputPassword" class= "password" name = "password" type="password" required="required" style= "top:420px; width: 470px;  height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
+			<div class = "password" style = "top: 270px;   font-size: 30px; color: #7E7A89">Password </div>
+			<input id="inputPassword" class= "password" name = "password" type="password" required="required" style= "top:320px; width: 470px;  height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
 
-		<div id = "repassword" style = "position: absolute; top: 480px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
-		<input type="repassword" style= "position: absolute; top:530px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
-		
-		<p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button">Sign Up!</a></p>
-		
-
+			<div id = "repassword" style = "position: absolute; top: 385px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
+			<input type="repassword" style= "position: absolute; top:440px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
+			
+			<p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style ="position: absolute; top: 530px">Sign Up!</a></p>
 		</form>
 	</div>
 
@@ -87,35 +82,35 @@
     <!-- Authenticating User to allow user to enter the index.html page, logged in -->
   
   	
-<script type="text/javascript">
-    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+	<script type="text/javascript">
+	    Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
-$("#signUp").on("click", function(e){
-	e.preventDefault();
-	newUser($("#inputUsername").val(), $("#inputPassword").val());
-	
+	$("#signUp").on("click", function(e){
+		e.preventDefault();
+		newUser($("#inputUsername").val(), $("#inputPassword").val());
+		
 
-})
+	})
 
-var newUser = function (username, password){
-  var user = new Parse.User();
-  user.set("username", username);
-  user.set("password", password);
-  user.signUp(null, {
-    success: function(user) {
-      // Hooray! Let them use the app now.
-      alert("Please sign in with your new user name");
-      window.location.href = "landingpage.html";
-    },
-    error: function(user, error) {
-      // Show the error message somewhere and let the user try again.
-      alert("Error: " + error.code + " " + error.message);
+	var newUser = function (username, password){
+	  var user = new Parse.User();
+	  user.set("username", username);
+	  user.set("password", password);
+	  user.signUp(null, {
+	    success: function(user) {
+	      // Hooray! Let them use the app now.
+	      alert("Please sign in with your new user name");
+	      window.location.href = "landingpage.html";
+	    },
+	    error: function(user, error) {
+	      // Show the error message somewhere and let the user try again.
+	      alert("Error: " + error.code + " " + error.message);
 
-    }
-  });
-}
-</script>
-	 <!-- Placed at the end of the document so the pages load faster -->
+	    }
+	  });
+	}
+	</script>
+	<!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<!-- End of login functionality -->
@@ -148,24 +143,24 @@ var newUser = function (username, password){
 	</script>
 
 	<article style="height: 300px">
-		<a href="#" class="scrollup">Scroll</a>
+		<a href="#" class="scrollup" style = "z-index: 100;">Scroll</a>
 	</article>
 	
-	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1150px; left: -10px; background:rgba(0,0,0,0.7);">
+	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 950px; left: -10px; background:rgba(0,0,0,0.7);">
 	</canvas>
 
 	<h1>
-		<a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1210px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
+		<a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1010px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
 		</a> 
 
-		<a href= "contactus.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1210px; left: 41%" > Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|
+		<a href= "contactus.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1010px; left: 41%" > Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|
 		</a>
 
-		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1210px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp;
+		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1010px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp;
 	</h1>
 
 	<h1> 
-		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1300px; left: 39%">TimeM.com
+		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1100px; left: 39%">TimeM.com
 		</a>
 	</h1> 
 </footer>
