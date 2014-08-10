@@ -258,7 +258,7 @@ img.bg {
     width: 450px;
     height: 450px;
     margin: 20px auto 0 auto;
-    background: url(images/clockface3.png);
+    background: url(images/clockface.png);
     background-size: 100%;
     background-repeat: none;
     list-style: none;
@@ -275,17 +275,17 @@ img.bg {
 }
 
 #sec {
-    background: url(images/sechand3.png);
+    background: url(images/sechand.png);
     z-index: 3;
 }
 
 #min {
-    background: url(images/minhand2.png);
+    background: url(images/minhand.png);
     z-index: 2;
 }
    
 #hour {
-    background: url(images/hourhand2.png);
+    background: url(images/hourhand.png);
     z-index: 1;
   
 }
