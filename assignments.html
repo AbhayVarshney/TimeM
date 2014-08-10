@@ -372,14 +372,9 @@
             for(var i = 1; i < results.length; i++ ){
               console.log(results[i].get("assignment"));
               var assignmentList = $("#assignmentList");
-              
-              var assignmentForDate =results[i].get("assignment")
-              getAssignmentDate(assignmentForDate);
                
-              var getAssignmentDate = function(assignment){
-                var createdAt = assignment.createdAt;
-                return createdAt;
-              }
+              var createdAt = assignment.createdAt;
+              
               var date = new Date(createdAt);
               var yr = date.getFullYear();
               var mo = date.getMonth() + 1;
@@ -395,30 +390,31 @@
               var year = currentDate.getFullYear()
               var todayDate = year+ '-' + month  + '-' + dayToday
              
-
+              
 
               //This is the date that the assignment is added to Parse
               
-              if(todayDate == newCreatedAt){
-                var tr = $('<tr></tr>');
-                var td = $('<td></td>').text(results[i].get("assignment"));
-                var td2 = $('<td></td>').text(results[i].get("time"));
-                var text = "<td><span style='color:green'>Completed</span></td>";
-                var btn = '<td><button class="done-button" type="button"> Done</button></td>';
-
+              
+              var tr = $('<tr></tr>');
+              var td = $('<td></td>').text(results[i].get("assignment"));
+              var td2 = $('<td></td>').text(results[i].get("time"));
+              var text = "<td><span style='color:green'>Completed</span></td>";
+              var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+              
                 $(tr).append(td);
                 $(tr).append(td2);
-
-                if (results[i].get("completed") == 1){
-                  $(tr).append(text);
-                }
-                else{
-                  $(tr).append(btn);
-                }
-                
-
-                assignmentList.append(tr);
+              
+              console.log(newCreatedAt);
+              if (results[i].get("completed") == 1){
+                $(tr).append(text);
               }
+              else{
+                $(tr).append(btn);
+              }
+              
+
+              assignmentList.append(tr);
+              
             }
 
           },
