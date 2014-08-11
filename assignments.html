@@ -373,22 +373,27 @@
               console.log(results[i].get("assignment"));
               var assignmentList = $("#assignmentList");
                
+              //Determines date of assignment
               var createdAt = assignment.createdAt;
               
-              var date = new Date(createdAt);
-              var yr = date.getFullYear();
-              var mo = date.getMonth() + 1;
-              var day = date.getDate();
+                var date = new Date(createdAt);
+                var yr = date.getFullYear();
+                var mo = date.getMonth() + 1;
+                var day = date.getDate();
+                var newCreatedAt = yr + '-' + mo  + '-' + day;
 
-              var newCreatedAt = yr + '-' + mo  + '-' + day;
               
-
-
-              var currentDate = new Date()
-              var dayToday = currentDate.getDate()
-              var month = currentDate.getMonth() + 1
-              var year = currentDate.getFullYear()
-              var todayDate = year+ '-' + month  + '-' + dayToday
+                //Determines the date today 
+                
+              var dateToday = function(){
+                  var currentDate = new Date()
+                  var dayToday = currentDate.getDate()
+                  var month = currentDate.getMonth() + 1
+                  var year = currentDate.getFullYear()
+                  var todayDate = year+ '-' + month  + '-' + dayToday
+                  return todayDate;
+              }
+            
              
               
 
@@ -404,7 +409,7 @@
                 $(tr).append(td);
                 $(tr).append(td2);
               
-              console.log(newCreatedAt);
+              
               if (results[i].get("completed") == 1){
                 $(tr).append(text);
               }
