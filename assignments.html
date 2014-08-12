@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assignments.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assignments.css">
 
     <!-- Fonts and style sheet for the rest of the landingpage -->
   
@@ -20,16 +20,43 @@
 
   <!-- Polymer fonts -->
 
+  <script src="components/platform/platform.js"></script>
+
+
   <link href="components/paper-button/paper-button.html" rel="import">
   <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
   <link href="components/paper-dialog/paper-dialog.html" rel="import">
+
+  <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+
+  <link rel="import" href="components/paper-toast/paper-toast.html">
+
   <!-- End Polymer -->
 
   <title>Assignments | TimeM</title>
   <!-- Background image -->
 
   <img src="images/mainbackground.jpg" class="bg">
+
+<style shim-shadowdom>
   
+    paper-checkbox {
+      padding: 20px 20px 20px 0;
+    }
+    
+    section {
+      width: 300px;
+    }
+    
+    paper-checkbox.blue::shadow #ink[checked] {
+      color: #4285f4;
+    }
+    
+    paper-checkbox.blue::shadow #checkbox.checked {
+      border-color: #4285f4;
+
+    }
+    </style>
 </head>
 
 <body>
@@ -256,11 +283,18 @@
 
             <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
             <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
-          <paper-button label="Save" affirmative autofocus></paper-button>
+          
+          <paper-checkbox role="checkbox" tabindex="0" aria-checked="true" checked="" style = "position: absolute;top: 400px; left: 70px;"></paper-checkbox>
+          <div style="color:#000000;font-size: 25px; position: absolute; left: 150px; top: 415px;">
+            <strong> Turn On Sleep Calculator? </strong>
+          </div>
+
+          <paper-button label="Save" onclick="document.querySelector('#toast1').show()" style = "position: absolute; top : 500px; left: 500px; color: #607BC2"></paper-button>
+          <paper-toast id="toast1" text="&nbsp; &nbsp; Your selections have been saved." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
         </paper-dialog>
 
-        <paper-button label = "Settings" style = "position: absolute; top: 20px; left: 1000px; z-index: 500;" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+        <paper-button style = "position: absolute; top: 3px; left: 1050px; z-index: 500; background-image: url(images/lock.png); background-size: 60px; height: 60px; width: 60px" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
 
         <script>
           function toggleDialog(transition) {
@@ -344,9 +378,6 @@
 
       </table>
 
-      
-
-
       <!-- PARSE JAVA SCRIPT ===================================================================================-->
       <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
       <script type="text/javascript">
@@ -376,14 +407,14 @@
               //Determines date of assignment
               var createdAt = assignment.createdAt;
               
-                var date = new Date(createdAt);
-                var yr = date.getFullYear();
-                var mo = date.getMonth() + 1;
-                var day = date.getDate();
-                var newCreatedAt = yr + '-' + mo  + '-' + day;
+              var date = new Date(createdAt);
+              var yr = date.getFullYear();
+              var mo = date.getMonth() + 1;
+              var day = date.getDate();
+              var newCreatedAt = yr + '-' + mo  + '-' + day;
 
               
-                //Determines the date today 
+               //Determines the date today 
                 
               var dateToday = function(){
                   var currentDate = new Date()
@@ -394,9 +425,6 @@
                   return todayDate;
               }
             
-             
-              
-
               //This is the date that the assignment is added to Parse
               
               
@@ -538,6 +566,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   <!-- End of login functionality -->
+
+  <canvas id="myCanvas" width="1278px" height="100px"style="border:3px solid #FFFFFF; position: absolute; top: 1080px; left: -10px; background:rgba(150,150,150,0.6);">
+  </canvas>
+
+  <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1100px; left: 37.5%"> <strong> Add Minutes! </strong> </a>
+
+  <!-- Add minutes buttons -->
+  <div class="page-wrap" style = "position: absolute; top: 1220px; left: 150px">
+    
+      <nav>
+        <ul class="nav">
+          <li><a href="javascript:void(0);" class="icon-home" onclick="document.querySelector('#toast2').show()" ></a></li>
+          <paper-toast id="toast2" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
+
+          <li><a href="javascript:void(0);" class="icon-cog" onclick="document.querySelector('#toast3').show()"></a></li>
+          <paper-toast id="toast3" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
+
+          <li><a href="javascript:void(0);" class="icon-cw" onclick="document.querySelector('#toast4').show()"></a></li>
+          <paper-toast id="toast4" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
+
+          <li><a href="javascript:void(0);" class="icon-location" onclick="document.querySelector('#toast5').show()"></a></li>
+          <paper-toast id="toast5" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Hour Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
+
+        </ul>
+      </nav>
+
+  </div>
+
+  <!-- End add minutes buttons -->
+
  
 </body>
 
