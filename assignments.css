@@ -420,6 +420,7 @@ label {
 }
 /* End table styling */
 
+<<<<<<< HEAD
 /* Add minutes icons */
 [class*="icon-"] {
   font-family: 'fontello';
@@ -559,3 +560,22 @@ a:focus {
   color: #555;
   background: #f5f5f5;
 }
+=======
+
+/*start and stop buttons*/
+.stopwatch {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  .stopwatch span {
+    font-weight: bold;
+    display: block;
+  }
+  .stopwatch a {
+    padding-right: 5px;
+    text-decoration: none;
+  }
+>>>>>>> 02872525ed33467c88469dee244c38f3770645d2
