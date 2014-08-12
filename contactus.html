@@ -49,13 +49,21 @@
 
 		    <li class='active'>
 		      <a href='#'>
-		        <span class = 'login'><strong> Login </strong></span>
+		        <span class = 'login'><strong> Join </strong></span>
 		      </a>
 		      <ul class='dropdown'>
 					<form name = "myform">
 					    <p>
-					    	<center> Login: </center><center><input id="username" type="text" name="username" placeholder=" Username" ></center> <br/> <br/><center> Password: </center> <center> <input id="password" type="password" name="pword" placeholder="********" style = "width: 138px;" > </center>
-					    	<center> <br/> <br/> <input id="signIn" type="button" value="Sign In" name="Submit"> </center> 
+					    	<center> Login: </center>
+							<paper-input label="Email" id = "username" type= "text" name= " username"style = "position: absolute; top: 50px; width: 160px; left: 10px;"></paper-input>
+							<br/> <br/> <br/> <br/> 
+
+							<center> Password: </center>
+							<paper-input label="***********" id = "password" type = "password" name = "pword" style = "position: absolute; top: 130px; width: 160px; left: 10px;"></paper-input>
+							<br/> <br/> <br/> <br/> 
+
+							<input id="signIn" type="button" value="Sign In" name="Submit" style = "position: absolute; top: 190px; left: 30px; width: 120px;">
+							<br/> <br/>
 					    </p>
 					</form>
 				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
@@ -64,10 +72,6 @@
 		</div>
 	</div>
 	<!-- put settings bar over here -->
-	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
-	
-  		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
-	</div>
 	<!-- End main menu (top menu) -->
 
 
@@ -106,7 +110,7 @@
 	          success: function(user) {
 	            // Do stuff after successful login.
 	             document.cookie="username=" + username;
-	             window.location.href = "index.html";
+	             window.location.href = "assignments.html";
 
 	          },
 	          error: function(user, error) {
