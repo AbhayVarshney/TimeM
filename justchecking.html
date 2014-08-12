@@ -17,17 +17,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="images/favicon.png">
 
-
-
 	<link href="components/paper-input/paper-input.html" rel="import">
           
 	<title>Home | TimeM</title>
 	<!-- Background image -->
 
+	
+
+
 	<img src="images/mainbackground.jpg" class="bg">
 
 	<!-- Clock Script begin ================================================================== -->
-              <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+          <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
 
 			    <script type="text/javascript">
 			    
@@ -356,54 +357,331 @@
 			<strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
 		</div>
 
-<!-- Tiles -->
-		<div id= "mixed-tiles" style="position: absolute; top: 450px; left: 70px; z-index: 50;">
-			<!-- Top left tile -->
-			<div class="tile type-news odd" style="background-color:#209CC8;">
-				<!-- if you want to put an image -->
-				<div class=image>
-				</div>
-				<br/> <br/> <br/>
-				<span class=type>Sleep required for High Schoolers</span>
-				<h1><strong>8 hours</strong></h1>
-				<a href="http://www.nba.com" class=view>view</a>
-			</div>
+  <div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
+  <div class="addAssignment" style="z-index:5">
 
-			<div class="tile type-news even">
-				<span class=type>Average Sleep for High Schoolers</span>
-				<h1><strong></strong>7 hours</h1>
-				<a href="http://www.nationwidechildrens.org/sleep-in-adolescents" class=view>view</a>
-			</div>
+    <script type = 'text/javascript'>
 
-			<div class="tile type-case_study odd" style="background-color:#469146">
-				<br/><br/><br/><br/>
-				<span class=type>Percent of High Schoolers That Get Enough Sleep</span>
-				<h1><strong>8% to 15%</strong></h1>
-				<a href="http://sleepfoundation.org/sleep-topics/teens-and-sleep" class=view></a>
-			</div>
-			
-			<div class="tile type-white_paper even" style = "background-color: #FE8484">
-				<span class=type>Text</span>
-				<h2>Put main text here</h2>
-				<a href="http://www.iconpr.com.au/search-pr/" class=view>view</a>
-			</div>
-			
-			<div class="tile type-case_study odd" style="background-color:#d57e00">
-				<span class=type> More info </span>
-				<h2>Put main text here</h2>
-				<a href="http://www.lakers.com" class=view>view</a>
-			</div>
-			
-			<div class="tile type-case_study even" style="background-color: #F5A685">
-				<span class=type>Text</span>
-				<h2>More Text to show</h2>
-				<a href="http://www.yahoo.com" class=view>view</a>
-			</div>
-		</div>
-<!-- End Tiles -->
+      function changeThis() {
+        var assignmentInput = document.getElementById('assignment');
+        document.getElementById('newAssign').innerHTML = assignmentInput.value;
+        var minsInput = document.getElementById('mins');
+        document.getElementById('newMins').innerHTML = minsInput.value;
+      }
 
+    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('<div/>', {
+          'class' : 'extraPerson', html: GetHtml()
+        }).appendTo('#container');
+        $('#addRow').click(function () {
+          $('<div/>', {
+            'class' : 'extraPerson', html: GetHtml()
+          }).hide().appendTo('#container').slideDown('slow');
+
+        });
+      })
+
+      function GetHtml() {
+        //var len = $('.extraPerson').length;
+        //var $html = $('.extraPersonTemplate').clone();
+        //$html.find('[name=assignment]')[0].name="assignment" + len;
+        //$html.find('[name=mins]')[0].name="mins" + len;
+        //return $html.html();    
+      }
+    </script>
+
+    <div class="extraPersonTemplate">
+      <div class="controls controls-row">
+        <label>
+          <br/><br/>
+          <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px">
+          <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px">
+          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 190px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
+          </select>
+        </label>
+      </div>
+    </div>  
+    <div id="container"></div>
+        <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
+  </div>
+
+      <!-- Display added assignments -->
+      <h3 style="text-align:center; color:white; position: absolute; top: 250px; left: 420px"> View assignments for today here: </h3>
+      <ul id="assignments" class="list-group">
+        <!-- here the  assignments will be inserted -->
+        <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
+      </ul>
+      <table id="hor-minimalist-b" table align = "center" style= "position: absolute; top: 530px; left: 20px">
+        <thead>
+          <tr style="color:white">
+            <th >Assignment Name</th>
+            <th>Time (in Minutes)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="assignmentList">
+
+        </tbody>
+
+      </table>
+
+      <!-- PARSE JAVA SCRIPT ===================================================================================-->
+      <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+      <script type="text/javascript">
+      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+
+      $("#addNewAssignment").on('click', function(){
+
+        var username = getUsername();
+        var assignment = $("#assignment").val();
+        var time = parseInt($("#mins").val());
+        createNewAssignment( assignment, username, time);
+
+      });
+
+      //  making the list of assignment in the ui from the assignments pulled from the database
+      var makeAssignmentList = function(username){
+        var query = new Parse.Query("Assignment");
+        query.equalTo("username", username);
+        query.find({
+          success: function(results){
+
+
+            for(var i = 1; i < results.length; i++ ){
+              console.log(results[i].get("assignment"));
+              var assignmentList = $("#assignmentList");
+               
+              //Determines date of assignment
+              var createdAt = assignment.createdAt;
+              
+              var date = new Date(createdAt);
+              var yr = date.getFullYear();
+              var mo = date.getMonth() + 1;
+              var day = date.getDate();
+              var newCreatedAt = yr + '-' + mo  + '-' + day;
+
+              
+               //Determines the date today 
+                
+              var dateToday = function(){
+                  var currentDate = new Date()
+                  var dayToday = currentDate.getDate()
+                  var month = currentDate.getMonth() + 1
+                  var year = currentDate.getFullYear()
+                  var todayDate = year+ '-' + month  + '-' + dayToday
+                  return todayDate;
+              }
+            
+              //This is the date that the assignment is added to Parse
+              
+              
+              var tr = $('<tr></tr>');
+              var td = $('<td></td>').text(results[i].get("assignment"));
+              var td2 = $('<td></td>').text(results[i].get("time"));
+              var text = "<td><span style='color:green'>Completed</span></td>";
+              var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+              
+                $(tr).append(td);
+                $(tr).append(td2);
+              
+              
+              if (results[i].get("completed") == 1){
+                $(tr).append(text);
+              }
+              else{
+                $(tr).append(btn);
+              }
+              
+
+              assignmentList.append(tr);
+              
+            }
+
+          },
+          error: function( assignment,error) {
+              // Show the error message somewhere and let the user try again.
+              alert("Error: " + error.code + " " + error.message);
+
+            }
+          });
+      };
+
+
+        //Function for creating a new assignment and adding to the database
+        var createNewAssignment = function (assignmentName, username, time){
+          var Assignment = Parse.Object.extend("Assignment");
+
+          //Creating a new instance of the class
+          var assignment = new Assignment();
+          
+          var _assignmentName = assignmentName;
+          var _time = time;
+          var assignment_data = {assignment: _assignmentName, username: username, time: _time, completed: 0};
+
+          /* Save the Assignment */
+
+          assignment.save(assignment_data, 
+            {success: function(assignment) {
+              //add the newly created assignment to the bottom of the table
+             
+                  var assignmentList = $("#assignmentList");
+                  var tr = $('<tr></tr>');
+                  var td = $('<td></td>').text(assignment.get("assignment"));
+                  var td2 = $('<td></td>').text(assignment.get("time"));
+
+                  var btn = '<td><button class="done-button" type="button"> Done</button></td>'
+                  
+                  $(tr).append(td);
+                  $(tr).append(td2);
+                  $(tr).append(btn);
+                  assignmentList.append(tr);
+
+                  //empty the asisgnment name and time from the new assignment form
+                  $("#assignment").val("");
+                  $("#mins").val("");
+                
+            },
+            error: function( assignment,error) {
+              // Show the error message somewhere and let the user try again.
+              alert("Error: " + error.code + " " + error.message);
+
+            }
+          });
+            //things to do after the save takes place
+          };
+
+          var getUsername = function (){
+            var half = (document.cookie).substring(9);
+            var array = (half).split(";");
+            var username = array[0];
+            return username;
+          };
+
+
+          var username = getUsername();
+          makeAssignmentList(username);
+
+            var done= document.getElementById('done-button');
+            console.log(done);
+
+            $(".done-button").click(function(){
+              alert(clicked);
+            });
+
+      /*
+            $(".done-button").on('click', function(){
+                alert("done clicked");
+                //var parent = this.parent.append("<span>Completed</span>")
+                //this.fadeOut();
+              });
+            });*/
+           $(document).on('click', "button.done-button", function() {
+
+
+              var assignmentName = $(this).parent().parent().children(":first").html();
+              console.log(assignmentName);
+
+              //replace the button with text that says "completed"
+              $(this).replaceWith("<span style='color:green'>Completed</span>"); 
+              //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+                
+
+              //in the database change completed status to 1
+              var query = new Parse.Query("Assignment");
+              query.equalTo("assignment", assignmentName);
+              query.first({
+               success: function(assignment){
+                  console.log(assignment);
+                //updating the completed column for this assingment
+                  assignment.save({completed:1}, {
+                    success: function() {
+                      console.log("assginment has been updated with completed=1");
+                    }
+                });
+              },
+              error: function( assignment,error) {
+                    // Show the error message somewhere and let the user try again.
+                    alert("Error: " + error.code + " " + error.message);
+
+                }
+              });
+          });
+
+    </script>
+		<!-- Circle Progress Bar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.percentageloader-0.1.js"></script>
+
+
+		<div id="container" style = "position: absolute; top: 500px; left: 500px;">
+      <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      #topLoader {
+        width: 256px;
+        height: 256px;
+        margin-bottom: 32px;
+      }
+      
+      #container {
+        width: 940px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      #animateButton {
+        width: 256px;
+      }
+    </style>
+			<div id="topLoader"> </div>
+      
+			<button id="animateButton">Animate Loader</button>
+  
+			<script>
+				$(function() {
+				  var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0.5, onProgressUpdate : function(val) {
+				      $topLoader.setValue(Math.round(val * 100.0));
+				    }});
+
+				  var topLoaderRunning = false;
+				  $("#animateButton").click(function() {
+				    if (topLoaderRunning) {
+				      return;
+				    }
+				    topLoaderRunning = true;
+				    $topLoader.setProgress(0);
+				    $topLoader.setValue('0kb');
+				    var kb = 0;
+				    var totalKb = 999;
+				    var setKb = 900;
+				    
+				    var animateFunc = function() {
+				      kb += 17;
+				      $topLoader.setProgress(kb / totalKb);
+				      $topLoader.setValue(kb.toString() + 'kb');
+				      
+				      if (kb < setKb) {
+				        setTimeout(animateFunc, 25);
+				      } else {
+				        topLoaderRunning = false;
+				      }
+				    }
+				    
+				    setTimeout(animateFunc, 25);
+				    
+				  });
+				});      
+			</script>
+    	</div>
+    	<!-- End Circle Progress Bar -->
 	</div>
-
 </body>
 
 <footer>
