@@ -369,6 +369,7 @@
           <tr style="color:white">
             <th >Assignment Name</th>
             <th>Time (in Minutes)</th>
+            <th>Time Control</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -405,7 +406,7 @@
               var assignmentList = $("#assignmentList");
                
               //Determines date of assignment
-              var createdAt = assignment.createdAt;
+              var createdAt = results[i].get("createdAt");
               
               var date = new Date(createdAt);
               var yr = date.getFullYear();
@@ -416,27 +417,76 @@
               
                //Determines the date today 
                 
-              var dateToday = function(){
+            
                   var currentDate = new Date()
                   var dayToday = currentDate.getDate()
                   var month = currentDate.getMonth() + 1
                   var year = currentDate.getFullYear()
                   var todayDate = year+ '-' + month  + '-' + dayToday
-                  return todayDate;
-              }
-            
-              //This is the date that the assignment is added to Parse
+
+             
+             
               
-              
+
               var tr = $('<tr></tr>');
               var td = $('<td></td>').text(results[i].get("assignment"));
               var td2 = $('<td></td>').text(results[i].get("time"));
+              var td3 =  '<input type="button" value="Start" id="countDown">';
+              var td4 = '<input type="button" value="Stop" id="pause">'
+              var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()">'
               var text = "<td><span style='color:green'>Completed</span></td>";
               var btn = '<td><button class="done-button" type="button"> Done</button></td>';
               
                 $(tr).append(td);
                 $(tr).append(td2);
+                $(tr).append(td3);
+                $(tr).append(td4);
+                $(tr).append(td5);
+
+
+              //This is the date that the assignment is added to Parse
+
+                    var seconds = 76;
+                 
+                    var t;
+                    var count = 10;
+                    
+              // function cddisplay() {
+              //     // displays time in span
+              //     document.getElementById('timespan').innerHTML = count;
+              // };
+            
+
+
+
+              $("#countDown").on('click', function(){
+                  
+                  if (count === 0) {
+                      // time is up
+                  } else {
+                      count--;
+                      console.log(count);
+                      t = setTimeout(this.function, 1000);
+                  }
+              });
               
+              $("#pause").on('click',function(){
+                  // pauses countdown
+                  clearTimeout(t);
+              });
+              
+              $("#reset").on('click', function(){
+                  // resets countdown
+                  pause();
+                  count = seconds;
+                  //cddisplay();
+              });
+              
+       
+      
+                
+      
+
               
               if (results[i].get("completed") == 1){
                 $(tr).append(text);
@@ -445,7 +495,7 @@
                 $(tr).append(btn);
               }
               
-
+            
               assignmentList.append(tr);
               
             }
@@ -481,11 +531,13 @@
                   var tr = $('<tr></tr>');
                   var td = $('<td></td>').text(assignment.get("assignment"));
                   var td2 = $('<td></td>').text(assignment.get("time"));
+                  var td3 = $('<td></td>').text(assignment.get("time"));
 
                   var btn = '<td><button class="done-button" type="button"> Done</button></td>'
                   
                   $(tr).append(td);
                   $(tr).append(td2);
+                  $(tr).append(td3);
                   $(tr).append(btn);
                   assignmentList.append(tr);
 
