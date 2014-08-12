@@ -473,13 +473,6 @@ html {
   font-size: 100%;    
 }
 
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; 
-  font-size:18px; 
-  font-size:1.125rem;
-  line-height: 1.5;
-}
 
 a {
   text-decoration: none;
