@@ -418,15 +418,11 @@
                //Determines the date today 
                 
             
-                  var currentDate = new Date()
-                  var dayToday = currentDate.getDate()
-                  var month = currentDate.getMonth() + 1
-                  var year = currentDate.getFullYear()
-                  var todayDate = year+ '-' + month  + '-' + dayToday
-
-             
-             
-              
+              var currentDate = new Date()
+              var dayToday = currentDate.getDate()
+              var month = currentDate.getMonth() + 1
+              var year = currentDate.getFullYear()
+              var todayDate = year+ '-' + month  + '-' + dayToday
 
               var tr = $('<tr></tr>');
               var td = $('<td></td>').text(results[i].get("assignment"));
@@ -446,10 +442,10 @@
 
               //This is the date that the assignment is added to Parse
 
-                    var seconds = 76;
+                    var seconds = results[i].get("time");
                  
                     var t;
-                    var count = 10;
+                    var count = results[i].get("time");
                     
               // function cddisplay() {
               //     // displays time in span
