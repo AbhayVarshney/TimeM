@@ -25,53 +25,6 @@
 	<!-- Background image -->
 
 	<img src="images/mainbackground.jpg" class="bg">
-
-	<!-- Clock Script begin ================================================================== -->
-              <script type="text/javascript" src="jquery-1.2.6.min.js"></script>
-
-			    <script type="text/javascript">
-			    
-			        $(document).ready(function() {
-
-			          // set the push in of the clock hands
-			          //var offset= $("#clock").offset();
-			          //console.log("top: " + offset.top+ "left: " + offset.left);
-			         
-			              setInterval( function() {
-			              var seconds = new Date().getSeconds();
-			              var sdegree = seconds * 6;
-			              var srotate = "rotate(" + sdegree + "deg)";
-			              
-			              $("#sec").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
-			                
-			              }, 1000 );
-			              
-			         
-			              setInterval( function() {
-			              var hours = new Date().getHours();
-			              var mins = new Date().getMinutes();
-			              var hdegree = hours * 30 + (mins / 2);
-			              var hrotate = "rotate(" + hdegree + "deg)";
-			              
-			              $("#hour").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
-			                  
-			              }, 1000 );
-			        
-			        
-			              setInterval( function() {
-			              var mins = new Date().getMinutes();
-			              var mdegree = mins * 6;
-			              var mrotate = "rotate(" + mdegree + "deg)";
-			              
-			              $("#min").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
-			                  
-			              }, 1000 );
-			         
-			        }); 
-			    
-			    </script>
-
-    <!-- Clock Script end  ==================================================================-->
 </head>
 
 <body>
@@ -108,130 +61,202 @@
 	<!-- End main menu (top menu) -->
 
 
-	<canvas id="myCanvas" width="1278px" height="130px"style="border:5px solid #FFFFFF; position: absolute; top: 460px; left: -10px; background:rgba(150,150,150,0.7);">
+	<canvas id="myCanvas" width="1280px" height="130px"style="border:5px solid #FFFFFF; position: absolute; top: 445px; left: -5px; background:rgba(150,150,150,0.7);">
 	</canvas>
+	<div id = "schedule" style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: 480px; left:440px;" >
+		Daily Schedule:
+	</div>
 
  <!-- Carousel  ================================================== -->
 	<script src="js/bootstrap.min.js"></script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3; top: absolute; top: 520px;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3; top: absolute; top: 520px; z-index: 200; height: 640px;">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        <li data-target="#myCarousel" data-slide-to="0"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+
       </ol>
       
       <div class="carousel-inner">
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() - 4
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() - 3
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() - 2
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+      </div>
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() - 1
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-				<h1><strong> <a style = "font-size: 65px; color: white; text-decoration:none;" > Welcome to TimeM. </a></strong></h1>
-              <br/> 
-              <p>Eliminate <strong> distractions</strong>, while doing homework- and <strong> manage your time.</strong> Discover how many <strong>hours</strong> you have <strong> wasted. </strong></p>
-              <br/>
-              <p><a class="btn btn-lg btn-primary" href="registration.html" role="button" style= "font-size: 25px; position: absolute; left: 275px; background: none; border-color: white; border-width: 3px; border-radius: 3px; width: 210px;">Sign Up!</a></p>
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate()
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
             </div>
           </div>
         </div>
 
         <div class="item">
           <div class="container">
-            <div class="carousel-caption" style = "position: absolute; top: 40px">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() + 1
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
 
-
-				<!-- <script src="clock.js"></script> -->
-        <!-- CLOCK html BEGINS HERE =====================================-->
-				<div id="clock_container">
-					<ul id="clock">	
-						<li id="sec"></li>
-						<li id="hour"></li>
-						<li id="min"></li>
-					</ul>
-				</div>
-
-				<!-- Display digital time -->
-				<script>
-					function updatingClock(selector, type) {
-					    function currentDate() {
-					        var currentDate = new Date;
-					        var Day = currentDate.getDate();
-					        if (Day < 10) {
-					            Day = '0' + Day;
-					        } //end if
-					        var Month = currentDate.getMonth() + 1;
-					        if (Month < 10) {
-					            Month = '0' + Month;
-					        } //end if
-					        var Year = currentDate.getFullYear();
-					        var fullDate = Month + '/' + Day + '/' + Year;
-					        return fullDate;
-					    } //end current date function
-
-					    function currentTime() {
-					        var currentTime = new Date;
-					        var Minutes = currentTime.getMinutes();
-					        if (Minutes < 10) {
-					            Minutes = '0' + Minutes;
-					        }
-					        var Hour = currentTime.getHours();
-					        if (Hour > 12) {
-					            Hour -= 12;
-					        } //end if
-					        var Time = Hour + ':' + Minutes;
-					        if (currentTime.getHours() <= 12) {
-					            Time += ' AM';
-					        } //end if
-					        if (currentTime.getHours() > 12) {
-					            Time += ' PM';
-					        } //end if
-					        return Time;
-					    } // end current time function
-
-
-					    function updateOutput() {
-					        var output;
-					        if (type == 'time') {
-					            output = currentTime();
-					            if ($(selector).text() != output) {
-					                $(selector).text(output);
-					            } //end if
-					        } //end if
-					        if (type == 'date') {
-					            output = currentDate();
-					            if ($(selector).text() != output) {
-					                $(selector).text(output);
-					            } //end if
-					        } //end if
-					        if (type == 'both') {
-					            output =  currentTime();
-					            if ($(selector).text() != output) {
-					                $(selector).text(output);
-					            } //end if
-					        } //end if
-					    }//end update output function
-					    updateOutput();
-					    window.setInterval(function() {
-					        updateOutput();
-					    }, 1000); //run update every 1 second
-					} // end updating clock function
-					updatingClock('#date-time', 'both');
-
-				</script>
-
-				<div id="date-time" style= "position:absolute; top: 400px; left: 280px; font-family: 'Roboto', sans-serif; font-size: 50px;"></div>
-
-				<!-- End time -->
-
-        <!-- CLOCK html ENDS HERE =====================================-->
             </div>
           </div>
         </div>
         <div class="item">
           <div class="container">
             <div class="carousel-caption">
-				<h1><a style = "font-size: 45px; color: white; text-decoration:none; position: relative; top: -140px;" > <strong> "</strong>There's never enough time to do all the nothing you want.<strong>"</strong> </a> </h1> 
-				<p> <a style = "font-size: 30px; color: white; text-decoration: none; position: absolute; left: 480px; top: 0px"> ― Bill Watterson </a> </p>
-				
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() + 2
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() + 3
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript">
+						<!--
+						var currentTime = new Date()
+						var month = currentTime.getMonth() + 1
+						var day = currentTime.getDate() + 4
+						var year = currentTime.getFullYear()
+						document.write(month + "/" + day + "/" + year)
+						//-->
+						</script>
+					</a> </strong>
+				</h1>
             </div>
           </div>
         </div>

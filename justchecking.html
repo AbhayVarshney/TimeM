@@ -442,6 +442,7 @@
 
       });
 
+      var numberOfAssignments = 0, numberOfCompletedAssignments = 0;
       //  making the list of assignment in the ui from the assignments pulled from the database
       var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
@@ -449,11 +450,14 @@
         query.find({
           success: function(results){
 
-
+          	numberOfAssignments = results.length;
             for(var i = 1; i < results.length; i++ ){
               console.log(results[i].get("assignment"));
               var assignmentList = $("#assignmentList");
                
+              if(assignment.completed === 1){
+              	numberOfCompletedAssignments += 1;
+              }
               //Determines date of assignment
               var createdAt = assignment.createdAt;
               
@@ -578,16 +582,64 @@
                 //this.fadeOut();
               });
             });*/
+			var $topLoader;
+			$(function(){
+				var percentComplete = numberOfCompletedAssignments / numberOfAssignments;
+				console.log(numberOfCompletedAssignments);
+				console.log(numberOfAssignments);
+				console.log(percentComplete);
+				$topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0.5, onProgressUpdate : function(val) {
+			      $topLoader.setValue(Math.round(val * 100.0));
+				}});
+			});
+
+			function updateLoader(){
+				// var percentComplete = numberOfCompletedAssignments / numberOfAssignments;
+				// $topLoader.onProgressUpdate(percentComplete);
+				  //function animateLoader(){
+				  	var topLoaderRunning = false;
+				    if (topLoaderRunning) {
+				      return;
+				    }
+				    topLoaderRunning = true;
+				    $topLoader.setProgress(0);
+				    $topLoader.setValue('0kb');
+				    var kb = 0;
+				    var totalKb = 999;
+				    var setKb = 300;
+				    // var setKb = percentComplete * 100;
+				    
+				    var animateFunc = function(){
+				      kb += 17;
+				      $topLoader.setProgress(kb / totalKb);
+				      // $topLoader.setProgress(percentComplete);
+				      $topLoader.setValue(kb.toString() + 'kb');
+				      
+				      if (kb < setKb) {
+				        setTimeout(animateFunc, 25);
+				      } else {
+				        topLoaderRunning = false;
+				      }
+				    }
+				    
+				    setTimeout(animateFunc, 25);
+			}
+     
+
            $(document).on('click', "button.done-button", function() {
-
-
+           	  numberOfCompletedAssignments += 1;
+           	  updateLoader();
               var assignmentName = $(this).parent().parent().children(":first").html();
               console.log(assignmentName);
 
               //replace the button with text that says "completed"
               $(this).replaceWith("<span style='color:green'>Completed</span>"); 
               //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
-                
+              
+     //          var e = jQuery.Event( "onAssignmentComplete" );
+ 			 //  console.log(e);
+			  // // trigger an artificial click event
+			  // jQuery( "body" ).trigger( e );
 
               //in the database change completed status to 1
               var query = new Parse.Query("Assignment");
@@ -645,13 +697,49 @@
 			<button id="animateButton">Animate Loader</button>
   
 			<script>
-				$(function() {
+
+
+
+			// var topLoaderRunning = false;
+			$("#animateButton").click(function() {
+				// var percentComplete = numberOfCompletedAssignments / numberOfAssignments;
+				// // $topLoader.onProgressUpdate(percentComplete);
+				//   //function animateLoader(){
+				//     if (topLoaderRunning) {
+				//       return;
+				//     }
+				//     topLoaderRunning = true;
+				//     $topLoader.setProgress(0);
+				//     $topLoader.setValue('0kb');
+				//     var kb = 0;
+				//     var totalKb = 999;
+				//     var setKb = 300;
+				    
+				//     var animateFunc = function(){
+				//       kb += 17;
+				//       $topLoader.setProgress(kb / totalKb);
+				//       $topLoader.setValue(kb.toString() + 'kb');
+				      
+				//       if (kb < setKb) {
+				//         setTimeout(animateFunc, 25);
+				//       } else {
+				//         topLoaderRunning = false;
+				//       }
+				//     }
+				    
+				//     setTimeout(animateFunc, 25);
+			});
+			</script>
+			<!-- <script>
+//				$(function() {
+			function createLoader() {
 				  var $topLoader = $("#topLoader").percentageLoader({width: 256, height: 256, controllable : true, progress : 0.5, onProgressUpdate : function(val) {
 				      $topLoader.setValue(Math.round(val * 100.0));
 				    }});
 
 				  var topLoaderRunning = false;
 				  $("#animateButton").click(function() {
+				  //function animateLoader(){
 				    if (topLoaderRunning) {
 				      return;
 				    }
@@ -660,9 +748,9 @@
 				    $topLoader.setValue('0kb');
 				    var kb = 0;
 				    var totalKb = 999;
-				    var setKb = 900;
+				    var setKb = 300;
 				    
-				    var animateFunc = function() {
+				    var animateFunc = function(){
 				      kb += 17;
 				      $topLoader.setProgress(kb / totalKb);
 				      $topLoader.setValue(kb.toString() + 'kb');
@@ -677,8 +765,10 @@
 				    setTimeout(animateFunc, 25);
 				    
 				  });
-				});      
+				  //$(document).on('onAssignmentComplete', animateFunc());
+				};      
 			</script>
+		-->
     	</div>
     	<!-- End Circle Progress Bar -->
 	</div>
