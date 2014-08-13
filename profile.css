@@ -333,6 +333,41 @@ img.bg {
 
 }
 
+.homeFooter{
+    font-family: 'Raleway', sans-serif; font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 25%
+
+}
+
+.profileFooter{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 66%
+
+}
+
+.assignmentsFooter{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 41%
+
+}
+
 
 
 
