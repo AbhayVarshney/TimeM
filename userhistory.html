@@ -1,5 +1,5 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
 		<head>
 		<style>
@@ -60,135 +60,11 @@
 		</style>
 
 		<script src="vc.js"></script>
-
-		<script>
-
-			function debug() {
-				var result = '';
-				for(var i=0,l=arguments.length;i<l;i++) {
-					result += (String(arguments[i]) + ' ');
-				}
-
-				var debugbox = document.getElementById("debug");
-				debugbox.appendChild(document.createTextNode( result ));
-				debugbox.appendChild(document.createElement("br"));
-			}
-
-			if (typeof console == "undefined") {
-				console = { debug : function(){} };
-			} else if (typeof console.debug == "undefined") {
-				console.debug = function(){}
-			}
-
-
-			function init() {
-				debug("Please do nothing while calibration takes place");
-
-				var doc = document;
-				view.nodes.timer       = doc.getElementById("timer_button");
-				view.nodes.timer_sec   = doc.getElementById("timer_sec");
-				view.nodes.code        = doc.getElementById("code");
-				view.nodes.monitor     = doc.getElementById("monitor_button");
-				view.nodes.nothing     = doc.getElementById("do_nothing_button");
-				view.nodes.flashback   = doc.getElementById("flashback_button");
-
-				progress.build();
-
-				timer.callibrate(function(){
-					var debugbox = document.getElementById("debug");
-					debugbox.style.display = "none";
-
-					var node = document.getElementById("controls");
-					node.style.display = "block";
-				});
-
-				uline.setbin( document.getElementById("dumpbin") );
-			}
-
-		</script>
 		</head>
 
-		<body onload="init()">
-
-			<div id="controls" style="display:none">
-
-				<div class="let" style="float:left;">
-					<!-- Monitor should be always above antything, 
-					because firefox has bug height=2% 
-					-->
-					<div id="progressbox"></div>
-					<div style="margin:2px">Monitor: <button id="monitor_button" onclick="controller.swit4('monitor')">Start</button></div>
+		<body>
+	<br/>
 				</div>
-
-				<div  style="float:left;">
-					<div class="let">
-						Timer : 
-						<button onclick="controller.swit4('timer')" id="timer_button">Start</button>
-						<button onclick="timer.callibrate()">Re-Calibrate</button>
-						<input type="text" id="timer_sec" maxlength="2" style="width:30px"/>
-					</div>
-					<div class="let">
-						Usage dump :
-						<button onclick="uline.dump(stack)">Dump stack</button>
-						<button onclick="uline.clear(stack)">Clear</button>
-					</div>
-					<div class="let">
-						Flashback tool :
-						<button id="flashback_button" onclick="controller.swit4( 'flashback' )">Start</button>
-						<button onclick="flashback.dump()">Analyse</button>
-					</div>
-				</div>
-				<div style="clear:both"></div>
-
-				<div class="let">
-					Dump-bin : <br/>
-					<div id="dumpbin"></div>
-				</div>
-
-				<div class="let">
-					Interception code : <br/>
-					<textarea id="code" style="width:100%" cols="35" rows="7"> var arr = [];
-
-for (var i=0;i<6099;i++) {
-    var div = document.createElement("div");
-    arr.push( div );
-}</textarea> 
-<br/>
-					<button onclick="controller.intercept()">Execute</button>
-					<br/>
-					<button id="do_nothing_button" onclick="controller.nothing()">Empty</button>
-					<input type="text" value="dummy input"/>
-					<input type="checkbox" name="some_name"/> One
-				</div>
-				<div class="let">
-					Help  : <br/>
-                    Hi there, this is monitoring tool for the browser activity.
-                    <br/> 
-                    If you are here for the first time, I assume you just would
-                    like to click Start inside the Monitor box and enjoy the
-                    view. <br/>
-                    Start typing in the box, click buttons or resize window and
-                    see how monitor behaves. <br/>
-                    If you are done with that you also can look at the raw
-                    data. <br/>
-                    Stop the monitor and start the Timer <br/>
-                    Now the monitor just collects the data but do not displays
-                    it. Again do some stuff and click "Stop" button in the
-                    Timer box. <br/>
-                    Data is collected, so you can start watching it and
-                    analyzing. Click "Dump stack" button and here you go. Data
-                    is in a raw format together with a graph representing it. 
-                    <br/>
-                    Input box inside the timer gives you possibility to start
-                    the timer for some amount of seconds. After the amount of
-                    seconds have passed it will turn of the timer. ( I use it
-                    to have better time measurement ) <br/>
-                    PS: Sometimes calibration is not working so activiy monitor
-                    is doing wild. Click Re-Calibrate button to fix this stuff.
-                </div>
-			</div>
-			<div id="debug"></div>
-
 			<script src="progress.js"></script>
 			<script src="timer.js"></script>
 			<script src="uline.js"></script>
