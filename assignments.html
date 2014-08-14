@@ -93,43 +93,43 @@
           <!-- Put content here -->
             <!-- Wake Up time input -->
             <div style="color:#000000;font-size: 25px; position: absolute; left: 60px; top: 90px;">
-              <strong>Sleep Time: </strong>
+              <strong>When you need to get up for school: </strong>
             </div>
 
             <br/> <br/>
-            <select name="alarm_hour" title="Alarm Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 140px; font-size: 18px;">
-              <option value="">OFF</option>
-              <option id = "alarmHour-1" value="1" style="text-align: right;">&nbsp;&nbsp;1 AM</option>
-              <option id = "alarmHour-2" value="2" style="text-align: right;">&nbsp;&nbsp;2 AM</option>
-              <option id = "alarmHour-3" value="3" style="text-align: right;">&nbsp;&nbsp;3 AM</option>
-              <option id = "alarmHour-4" value="4" style="text-align: right;">&nbsp;&nbsp;4 AM</option>
-              <option id = "alarmHour-5" value="5" style="text-align: right;">&nbsp;&nbsp;5 AM</option>
-              <option id = "alarmHour-6" value="6" style="text-align: right;">&nbsp;&nbsp;6 AM</option>
-              <option id = "alarmHour-7" value="7" style="text-align: right;">&nbsp;&nbsp;7 AM</option>
-              <option id = "alarmHour-8" value="8" style="text-align: right;">&nbsp;&nbsp;8 AM</option>
-              <option id = "alarmHour-9" value="9" style="text-align: right;">&nbsp;&nbsp;9 AM</option>
-              <option id = "alarmHour-10" value="10" style="text-align: right;">           10 AM</option>
-              <option id = "alarmHour-11" value="11" style="text-align: right;">           11 AM</option>
-              <option id = "alarmHour-12" value="12" style="text-align: right;">           12 PM</option>
-              <option id = "alarmHour-13" value="13" style="text-align: right;">&nbsp;&nbsp;1 PM</option>
-              <option id = "alarmHour-14" value="14" style="text-align: right;">&nbsp;&nbsp;2 PM</option>
-              <option id = "alarmHour-15" value="15" style="text-align: right;">&nbsp;&nbsp;3 PM</option>
-              <option id = "alarmHour-16" value="16" style="text-align: right;">&nbsp;&nbsp;4 PM</option>
-              <option id = "alarmHour-17" value="17" style="text-align: right;">&nbsp;&nbsp;5 PM</option>
-              <option id = "alarmHour-18" value="18" style="text-align: right;">&nbsp;&nbsp;6 PM</option>
-              <option id = "alarmHour-19" value="19" style="text-align: right;">&nbsp;&nbsp;7 PM</option>
-              <option id = "alarmHour-20" value="20" style="text-align: right;">&nbsp;&nbsp;8 PM</option>
-              <option id = "alarmHour-21" value="21" style="text-align: right;">&nbsp;&nbsp;9 PM</option>
-              <option id = "alarmHour-22" value="22" style="text-align: right;">           10 PM</option>
-              <option id = "alarmHour-23" value="23" style="text-align: right;">           11 PM</option>
-              <option id = "alarmHour-0" value="0" style="text-align: right;">            12 AM</option>
+            <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 140px; font-size: 18px;">
+              <option value="off">OFF</option>
+              <option value="1" style="text-align: right;">&nbsp;&nbsp;1 AM</option>
+              <option value="2" style="text-align: right;">&nbsp;&nbsp;2 AM</option>
+              <option value="3" style="text-align: right;">&nbsp;&nbsp;3 AM</option>
+              <option value="4" style="text-align: right;">&nbsp;&nbsp;4 AM</option>
+              <option value="5" style="text-align: right;">&nbsp;&nbsp;5 AM</option>
+              <option value="6" style="text-align: right;">&nbsp;&nbsp;6 AM</option>
+              <option value="7" style="text-align: right;">&nbsp;&nbsp;7 AM</option>
+              <option value="8" style="text-align: right;">&nbsp;&nbsp;8 AM</option>
+              <option value="9" style="text-align: right;">&nbsp;&nbsp;9 AM</option>
+              <option value="10" style="text-align: right;">           10 AM</option>
+              <option value="11" style="text-align: right;">           11 AM</option>
+              <option value="12" style="text-align: right;">           12 PM</option>
+              <option value="13" style="text-align: right;">&nbsp;&nbsp;1 PM</option>
+              <option value="14" style="text-align: right;">&nbsp;&nbsp;2 PM</option>
+              <option value="15" style="text-align: right;">&nbsp;&nbsp;3 PM</option>
+              <option value="16" style="text-align: right;">&nbsp;&nbsp;4 PM</option>
+              <option value="17" style="text-align: right;">&nbsp;&nbsp;5 PM</option>
+              <option value="18" style="text-align: right;">&nbsp;&nbsp;6 PM</option>
+              <option value="19" style="text-align: right;">&nbsp;&nbsp;7 PM</option>
+              <option value="20" style="text-align: right;">&nbsp;&nbsp;8 PM</option>
+              <option value="21" style="text-align: right;">&nbsp;&nbsp;9 PM</option>
+              <option value="22" style="text-align: right;">           10 PM</option>
+              <option value="23" style="text-align: right;">           11 PM</option>
+              <option value="0" style="text-align: right;">            12 AM</option>
             </select>
 
             <div style="color:#000000;font-size: 35px; position: absolute; left: 310px; top: 140px;">
               <strong>&nbsp;:&nbsp; </strong>
             </div>
   
-            <select name="alarm_minute" title="Alarm Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 140px; font-size: 18px;">
+            <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 140px; font-size: 18px;">
               <option value="0" style="text-align: right;">00</option>
               <option value="1" style="text-align: right;">01</option>
               <option value="2" style="text-align: right;">02</option>
@@ -200,7 +200,7 @@
             </div>
 
             <!-- Activites hours -->
-            <select name="other_activities_hours" title="Activities Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 300px; font-size: 18px;">
+            <select id="extraHR" name="other_activities_hours" title="Activities Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 300px; font-size: 18px;">
               <option value="">OFF</option>
               <option value="1" style="text-align: right;">&nbsp;&nbsp;1hr</option>
               <option value="2" style="text-align: right;">&nbsp;&nbsp;2hr</option>
@@ -218,7 +218,7 @@
               <strong>&nbsp;&&nbsp; </strong>
             </div>
 
-            <select name="other_activites_minutes" title="Activities Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 300px; font-size: 18px;">
+            <select id="extraMin"name="other_activites_minutes" title="Activities Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 300px; font-size: 18px;">
               <option value="0" style="text-align: right;">00 min</option>
               <option value="1" style="text-align: right;">01 min</option>
               <option value="2" style="text-align: right;">02 min</option>
@@ -289,7 +289,7 @@
             <strong> Turn On Sleep Calculator? </strong>
           </div>
 
-          <paper-button label="Save" onclick="document.querySelector('#toast1').show()" style = "position: absolute; top : 500px; left: 500px; color: #607BC2"></paper-button>
+          <paper-button id="saveButton"label="Save" onclick="document.querySelector('#toast1').show()" style = "position: absolute; top : 500px; left: 500px; color: #607BC2"></paper-button>
           <paper-toast id="toast1" text="&nbsp; &nbsp; Your selections have been saved." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
         </paper-dialog>
@@ -301,6 +301,17 @@
             var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
             dialog.toggle();
           }
+        </script>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js">
+          $("#saveButton").on('click', function wakeUpTime(){
+             var wakeUpHR = $("wakeUpHR option:selected").text();
+             console.log(wakeUpHR);
+
+          });
+
+
+
         </script>
 
         <!-- End Paper Dialog -->
