@@ -76,6 +76,8 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
         <li data-target="#myCarousel" data-slide-to="4" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
         
 
       </ol>
@@ -89,7 +91,7 @@
 						<script type="text/javascript" src="profile.js"></script>
 						<script>
 						
-							fourDaysAgo();
+							currentDate(4);
 							
 						
 						</script>
@@ -98,6 +100,7 @@
             </div>
           </div>
         </div>
+
       	<div class="item">
           <div class="container">
             <div class="carousel-caption">
@@ -106,7 +109,7 @@
 						<script type="text/javascript" src="profile.js"></script>
 						<script type="text/javascript">
 					
-							threeDaysAgo();
+							currentDate(3);
 				
 						</script>
 					</a> </strong>
@@ -114,6 +117,7 @@
             </div>
           </div>
         </div>
+
       	<div class="item">
           <div class="container">
             <div class="carousel-caption">
@@ -122,14 +126,15 @@
 						<script type="text/javascript" src="profile.js"></script>
 						<script type="text/javascript">
 					
-							twoDaysAgo();
+							currentDate(2);
 				
 						</script>
 					</a> </strong>
 				</h1>
             </div>
           </div>
-      </div>
+      	</div>
+
       	<div class="item">
           <div class="container">
             <div class="carousel-caption">
@@ -138,7 +143,7 @@
 						<script type="text/javascript" src="profile.js"></script>
 						<script type="text/javascript">
 					
-							oneDayAgo();
+							currentDate(1);
 				
 						</script>
 					</a> </strong>
@@ -155,7 +160,7 @@
 						<script type="text/javascript" src="profile.js"></script>
 						<script type="text/javascript">
 					
-							currentDate();
+							currentDate(0);
 				
 						</script>
 					</a> </strong>
@@ -163,83 +168,49 @@
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							futureDate(1);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							futureDate(2);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+   	</div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- End carousel -->
 
-    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  	<script type="text/javascript">
-	    $(document).ready(function(){
-	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+   
 
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        //stores values of username and password
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
-
-	        authenticateUser(username, password);
-
-	      });
-
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "assignments.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-
-		    var newUser = function (username, password){
-	        var user = new Parse.User();
-	        user.set("username", username);
-	        user.set("password", password);
-	        user.signUp(null, {
-	          success: function(user) {
-	            // Hooray! Let them use the app now.
-	            alert("new user has been created", user.get("username"));
-	          },
-	          error: function(user, error) {
-	            // Show the error message somewhere and let the user try again.
-	            alert("Error: " + error.code + " " + error.message);
-
-	          }
-	        });
-	      };
-
-      	//get the username and password that the user has entered in the landing page
-
-    	});
-
-
-
-
-
-	</script>
 	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

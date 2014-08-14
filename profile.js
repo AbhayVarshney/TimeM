@@ -1,47 +1,20 @@
 		
 
 
-
-
-	function fourDaysAgo(){
+	//Returns a printed date that is timeDistance from the current date. This function refers to times in the past
+	function currentDate(timeDistance){
 		var currentTime = new Date()
 		var month = currentTime.getMonth() + 1
-		var day = currentTime.getDate() - 4
+		var day = currentTime.getDate() - timeDistance;
 		var year = currentTime.getFullYear()
 		document.write(month + "/" + day + "/" + year)
 	}
-
-
-	function threeDaysAgo(){
+	
+	//Returns a printed date that is timeDistance from the current date. This function refers to times in the future
+	function futureDate(timeDistance){
 		var currentTime = new Date()
 		var month = currentTime.getMonth() + 1
-		var day = currentTime.getDate() - 3
-		var year = currentTime.getFullYear()
-		document.write(month + "/" + day + "/" + year)
-	}
-
-
-	function twoDaysAgo(){
-		var currentTime = new Date()
-		var month = currentTime.getMonth() + 1
-		var day = currentTime.getDate() - 2
-		var year = currentTime.getFullYear()
-		document.write(month + "/" + day + "/" + year)
-	}
-
-
-	function oneDayAgo(){
-		var currentTime = new Date()
-		var month = currentTime.getMonth() + 1
-		var day = currentTime.getDate() - 1
-		var year = currentTime.getFullYear()
-		document.write(month + "/" + day + "/" + year)
-	}
-
-	function currentDate(){
-		var currentTime = new Date()
-		var month = currentTime.getMonth() + 1
-		var day = currentTime.getDate()
+		var day = currentTime.getDate() + timeDistance;
 		var year = currentTime.getFullYear()
 		document.write(month + "/" + day + "/" + year)
 	}
