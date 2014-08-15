@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -16,90 +15,81 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 	<link rel="icon" href="images/favicon.png">
-
 	<link href="components/paper-input/paper-input.html" rel="import">
+    
           
 	<title>Home | TimeM</title>
+	
 	<!-- Background image -->
-
 	<img src="images/mainbackground.jpg" class="bg">
 </head>
 
 <body>
-	
 	<!-- Main menu (top menu) ====================================================-->
 	<div id="fixedNav" style="z-index:24">
 		<div id='cssmenu'>
-		  <ul>
-		    <div id='header_top_left' class="active">
-		      <a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
-		    </div> 
-
-		    <li class='active'>
-		      <a href='contactus.html'>
-		        <span class = 'contactus'><strong> Contact Us </strong></span>
-		      </a>
-		    </li>
-
-		    <li class='active'>
-		      <a href='howitworks.html'>
-		        <span class = 'howitworks'><strong> How it works </strong></span>
-		      </a>
-		    </li>
-
-		    <li class='active'>
-		      <a href='#'>
-		        <span class = 'login'><strong> Join </strong></span>
-		      </a>
-		      <ul class='dropdown'>
-					<form name = "myform">
-					    <p>
-					    	<center> Login: </center>
-							<paper-input label="Email" id = "username" type= "text" name= " username"style = "position: absolute; top: 50px; width: 160px; left: 10px;"></paper-input>
-							<br/> <br/> <br/> <br/> 
-
-							<center> Password: </center>
-							<paper-input label="***********" id = "password" type = "password" name = "pword" style = "position: absolute; top: 130px; width: 160px; left: 10px;"></paper-input>
-							<br/> <br/> <br/> <br/> 
-
-							<input id="signIn" type="button" value="Sign In" name="Submit" style = "position: absolute; top: 190px; left: 30px; width: 120px;">
-							<br/> <br/>
-					    </p>
-					</form>
-				   <a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
-				</ul>
-		    </li>
+		  	<ul>
+			    <div id='header_top_left' class="active">
+			      	<a href = "landingpage.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
+			    </div> 
+			    <li class='active'>
+			      	<a href='contactus.html'>
+			        	<span class = 'contactus'><strong> Contact Us </strong></span>
+			      	</a>
+			    </li>
+			    <li class='active'>
+			      	<a href='howitworks.html'>
+			        	<span class = 'howitworks'><strong> How it works </strong></span>
+			      	</a>
+			    </li>
+			    <li class='active'>
+			      	<a href='#'>
+			       		<span class = 'login'><strong> Join </strong></span>
+			      	</a>
+			      	<ul class='dropdown'>
+						<form name = "myform">
+						    <p>
+						    	<center> Login: </center>
+								<paper-input label="Email" id = "username" type= "text" name= " username"style = "position: absolute; top: 50px; width: 160px; left: 10px;"></paper-input>
+								<br/> <br/> <br/> <br/> 
+								<center> Password: </center>
+								<paper-input label="***********" id = "password" type = "password" name = "pword" style = "position: absolute; top: 130px; width: 160px; left: 10px;"></paper-input>
+								<br/> <br/> <br/> <br/> 
+								<input id="signIn" type="button" value="Sign In" name="Submit" style = "position: absolute; top: 190px; left: 30px; width: 120px;">
+								<br/> <br/>
+						    </p>
+						</form>
+					   	<a class = "signUp" href="registration.html"><center>Sign Up!</center></a>
+					</ul>
+			    </li>
+			</ul>
 		</div>
 	</div>
-	<!-- put settings bar over here -->
+	<!-- Settings bar over here -->
 	<div id = 'settingsbar' style = "z-index:5; position: absolute; left: 80%; top: 100px;">
-	
   		<paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
 	</div>
 	<!-- End main menu (top menu) -->
-	<canvas id="myCanvas" width="1300px" height="530px"style="border:5px solid #000000; position: absolute; top: 130px; left: -10px; background:rgba(0,0,0,0.5);">
-	</canvas>	
+	<canvas id="myCanvas" width="1300px" height="530px"style="border:5px solid #000000; position: absolute; top: 130px; left: -10px; background:rgba(0,0,0,0.5);"> </canvas>	
 	<div id = "howitworkscontentpics" >
-			<div id = "num-contents1" style=  "position: absolute; left: -110px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">1.</div>
-			<img src="images/blueclock.png" width="300" height="300" style = "position: absolute; left: -50px; top:0px;">
-			<div id = "num-contents1" style=  "position: absolute; left: 300px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">2.</div>
-			<img src="images/guard.png" width = "300" height = "300" style = "position: absolute; left: 325px; top: 0px">
-			<div id = "num-contents1" style=  "position: absolute; left: 650px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">3.</div>
-			<img src="images/studyicon.png" width = "300" height = "300" style = "position: absolute; left: 650px; top: 0px;">
+		<div id = "num-contents1" style=  "position: absolute; left: -110px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">1.</div>
+		<img src="images/blueclock.png" width="300" height="300" style = "position: absolute; left: -50px; top:0px;"/>
+		<div id = "num-contents1" style=  "position: absolute; left: 300px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">2.</div>
+		<img src="images/guard.png" width = "300" height = "300" style = "position: absolute; left: 325px; top: 0px"/>
+		<div id = "num-contents1" style=  "position: absolute; left: 650px; top: 10px; font-size: 50px; color: white; font-family: 'Raleway' sans-serif;">3.</div>
+		<img src="images/studyicon.png" width = "300" height = "300" style = "position: absolute; left: 650px; top: 0px;"/>
 	</div>
 	<div id = "howitworkscontent">
-			<div id = "content 1" style = "position: absolute; top: 490px; left: 180px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
-				<strong>Set a study schedule</strong> Enter your assignments and how long you'll spend on each one
-			</div>
-			<div id = "content 2" style = "position: absolute; top: 490px; left: 560px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
-				<strong>Start studying</strong></br>Tell Viva la Sleep once</br>you start studying
-			</div>
-			<div id = "content 3" style = "position: absolute; top: 450px; left: 880px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
-				<strong>Reduce distractions</strong></br>Viva la Sleep will monitor</br>time you spend on</br>distractions and show you</br>what time you'll sleep
-			</div>
-		
+		<div id = "content 1" style = "position: absolute; top: 490px; left: 180px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
+			<strong>Set a study schedule</strong> Enter your assignments and how long you'll spend on each one
+		</div>
+		<div id = "content 2" style = "position: absolute; top: 490px; left: 560px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
+			<strong>Start studying</strong></br>Tell Viva la Sleep once</br>you start studying
+		</div>
+		<div id = "content 3" style = "position: absolute; top: 450px; left: 880px; width: 300px; font-family: 'Raleway', sans-serif; color: white; font-size: 25px">
+			<strong>Reduce distractions</strong></br>Viva la Sleep will monitor</br>time you spend on</br>distractions and show you</br>what time you'll sleep
+		</div>
 	</div>
-
     <!-- Authenticating User to allow user to enter the index.html page, logged in -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
