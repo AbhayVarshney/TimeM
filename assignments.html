@@ -10,34 +10,31 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
+  <!--Links to the stylesheet for the assignments page-->
   <link rel="stylesheet" type="text/css" href="assignments.css">
 
-    <!-- Fonts and style sheet for the rest of the landingpage -->
+    <!-- Fonts and style sheet for the rest of the assignments page -->
   
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
   <link rel="icon" href="images/favicon.png">
 
-  <!-- Polymer fonts -->
-
+  <!-- Polymer Components -->
   <script src="components/platform/platform.js"></script>
-
-
   <link href="components/paper-button/paper-button.html" rel="import">
   <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
   <link href="components/paper-dialog/paper-dialog.html" rel="import">
-
   <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
-
   <link rel="import" href="components/paper-toast/paper-toast.html">
 
-  <!-- End Polymer -->
-
+  
+  <!-- Title of Assignments page-->
   <title>Assignments | TimeM</title>
+  
   <!-- Background image -->
-
   <img src="images/mainbackground.jpg" class="bg">
 
+  <!-- In line css for polymer checkbox-->
   <style shim-shadowdom>
   
     paper-checkbox {
@@ -86,18 +83,20 @@
             <span class = 'login'><strong> Logout </strong></span>
           </a>
         </li>
+    </div>
+  </div>
 
-         <!-- Polymer dialog -->
+  <!-- Polymer dialog ======================================================================================-->
 
-        <paper-dialog heading="Settings" transition="paper-dialog-transition-center" style = "position: absolute; left: 350px;">
-          <!-- Put content here -->
+      <paper-dialog heading="Settings" transition="paper-dialog-transition-center" style = "position: absolute; left: 350px;">
+      
             <!-- Wake Up time input -->
-            <div style="color:#000000;font-size: 25px; position: absolute; left: 60px; top: 90px;">
+            <div class="wakeUpHeading">
               <strong>When you need to get up for school: </strong>
             </div>
 
             <br/> <br/>
-            <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 140px; font-size: 18px;">
+            <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
               <option value="off">OFF</option>
               <option value="1" style="text-align: right;">&nbsp;&nbsp;1 AM</option>
               <option value="2" style="text-align: right;">&nbsp;&nbsp;2 AM</option>
@@ -129,7 +128,7 @@
               <strong>&nbsp;:&nbsp; </strong>
             </div>
   
-            <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 140px; font-size: 18px;">
+            <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
               <option value="0" style="text-align: right;">00</option>
               <option value="1" style="text-align: right;">01</option>
               <option value="2" style="text-align: right;">02</option>
@@ -285,7 +284,7 @@
             <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
           
           <paper-checkbox role="checkbox" tabindex="0" aria-checked="true" checked="" style = "position: absolute;top: 400px; left: 70px;"></paper-checkbox>
-          <div style="color:#000000;font-size: 25px; position: absolute; left: 150px; top: 415px;">
+          <div class="sleepCalcTitle">
             <strong> Turn On Sleep Calculator? </strong>
           </div>
 
@@ -294,64 +293,60 @@
 
         </paper-dialog>
 
-        <paper-button style = "position: absolute; top: 3px; left: 1050px; z-index: 500; background-image: url(images/lock.png); background-size: 60px; height: 60px; width: 60px" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+        <!-- this is lock button on the top right corner-->
+        <paper-button style = "position: absolute; top: 15px; left: 1050px; z-index: 500; background-image: url(images/lock.png); background-size: 60px; height: 60px; width: 60px" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
 
         <script>
+          //This code opens the dialog for the dropdown of adjusting the times
           function toggleDialog(transition) {
             var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
             dialog.toggle();
           }
         </script>
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js">
+        <script type="text/javascript">
           $("#saveButton").on('click', function wakeUpTime(){
-             var wakeUpHR = $("wakeUpHR option:selected").text();
-             console.log(wakeUpHR);
-
+            var wakeUpHR = $("wakeUpHR option:selected").text();
+            console.log(wakeUpHR);
           });
-
-
-
         </script>
 
-        <!-- End Paper Dialog -->
-    </div>
-  </div>
+        <!-- End Paper Dialog ================================================================================= -->
+   
 
   <div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
   <div class="addAssignment" style="z-index:5">
 
-    <script type = 'text/javascript'>
-
-      function changeThis() {
-        var assignmentInput = document.getElementById('assignment');
-        document.getElementById('newAssign').innerHTML = assignmentInput.value;
-        var minsInput = document.getElementById('mins');
-        document.getElementById('newMins').innerHTML = minsInput.value;
-      }
+    <script type = 'text/javascript' sre="assignments.js"></script>
+    <script>
+      changeThis();
 
     </script>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {
+    $(document).ready(function () {
+    
+      $('<div/>', {
+        'class' : 'extraPerson', html: GetHtml()
+      }).appendTo('#container');
+    
+      $('#addRow').click(function () {
         $('<div/>', {
           'class' : 'extraPerson', html: GetHtml()
-        }).appendTo('#container');
-        $('#addRow').click(function () {
-          $('<div/>', {
-            'class' : 'extraPerson', html: GetHtml()
-          }).hide().appendTo('#container').slideDown('slow');
+        }).hide().appendTo('#container').slideDown('slow');
 
-        });
-      })
+      });
+    })
 
-      function GetHtml() {
-        //var len = $('.extraPerson').length;
-        //var $html = $('.extraPersonTemplate').clone();
-        //$html.find('[name=assignment]')[0].name="assignment" + len;
-        //$html.find('[name=mins]')[0].name="mins" + len;
-        //return $html.html();    
-      }
+     function GetHtml() {
+    //var len = $('.extraPerson').length;
+    //var $html = $('.extraPersonTemplate').clone();
+    //$html.find('[name=assignment]')[0].name="assignment" + len;
+    //$html.find('[name=mins]')[0].name="mins" + len;
+    //return $html.html();    
+    }
+  
     </script>
 
     <div class="extraPersonTemplate">
@@ -405,6 +400,7 @@
       });
 
       //  making the list of assignment in the ui from the assignments pulled from the database
+      
       var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
         query.equalTo("username", username);
