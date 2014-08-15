@@ -110,7 +110,6 @@
 								<li id="min"></li>
 							</ul>
 						</div>
-
 						<div id="date-time" style= "position:absolute; top: 400px; left: 280px; font-family: 'Roboto', sans-serif; font-size: 50px;"></div>
 						<!-- End time -->
 						<!-- CLOCK html ENDS HERE =====================================-->
@@ -130,86 +129,16 @@
 		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- End carousel -->
-    <!-- Authenticating User to allow user to enter the index.html page, logged in -->
+    <!-- Authenticating User to allow user to enter the assignments.html page, logged in -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  	<script type="text/javascript">
-	    $(document).ready(function(){
-	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        //stores values of username and password
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
-
-	        authenticateUser(username, password);
-
-	      });
-
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "assignments.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-
-		    var newUser = function (username, password){
-	        var user = new Parse.User();
-	        user.set("username", username);
-	        user.set("password", password);
-	        user.signUp(null, {
-	          success: function(user) {
-	            // Hooray! Let them use the app now.
-	            alert("new user has been created", user.get("username"));
-	          },
-	          error: function(user, error) {
-	            // Show the error message somewhere and let the user try again.
-	            alert("Error: " + error.code + " " + error.message);
-
-	          }
-	        });
-	      };
-
-      	//get the username and password that the user has entered in the landing page
-
-    	});
-
-
-	</script>
 	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<!-- End of login functionality -->
-
-	<!-- Main Context (should be on the bottom of the screen) -->
-
-	
-	<!-- Bottom part of the screen -->
-	<div id= "bottom-layer-context"> </div>
+	<!-- Login functionality -->
+	<!-- Bottom part of the screen, main content -->
+	<div id= "bottom-layer-context"></div>
 	<div id="main-layer-context">
-
 		<!--put crap information here -->
 		<div id= "left-informationandcontent"> 
 			<strong> TimeM.com </strong> is a web app that <strong>aids </strong> students who consistently are <strong>distracted </strong> from their 
@@ -218,100 +147,64 @@
 		<div id= "right-informationandcontent"> 
 			<strong> A students </strong> impaired alertness and productivity decreases <strong> significantly </strong> the next day as a result of lack of sleep. <strong> Your grades </strong> are affected by the lack of <strong> effective time management</strong>.
 		</div>
-
-<!-- Tiles -->
+		<!-- Tiles -->
 		<div id= "mixed-tiles" style="position: absolute; top: 450px; left: 70px; z-index: 50;">
 			<!-- Top left tile -->
 			<div class="tile type-news odd" style="background-color:#209CC8;">
 				<!-- if you want to put an image -->
-				<div class=image>
-				</div>
+				<div class=image></div>
 				<br/> <br/> <br/>
 				<span class=type>Hours of sleep required for High Schoolers</span>
 				<h1 style="font-family: 'Abril Fatface', cursive; font-size:200px; text-align:center; color:white;"><strong>8</strong></h1>
 				<a href="http://www.helpguide.org/life/sleeping.htm" class=view>view</a>
 			</div>
-
 			<div class="tile type-news even">
 				<span class=type>Average hours of sleep for High Schoolers</span>
 				<h1 style="font-family: 'Indie Flower', cursive; font-size:150px; text-align:center; "><strong>7</strong></h1>
 				<a href="http://www.nationwidechildrens.org/sleep-in-adolescents" class=view>view</a>
 			</div>
-
 			<div class="tile type-case_study odd" style="background-color:#469146">
 				<br/><br/><br/><br/>
 				<span class=type>Percent of High Schoolers That Get Enough Sleep</span>
 				<h1 style="font-family: 'Lobster', cursive; text-align:center; font-size:78px; color:white;"><strong>8% to 15%</strong></h1>
 				<a href="http://sleepfoundation.org/sleep-topics/teens-and-sleep" class=view></a>
 			</div>
-			
 			<div class="tile type-white_paper even" style = "background-color: #FE8484">
 				<span class=type>Average number of hours spent by highschoolers, watching TV</span>
 				<h1 style="font-family: 'Audiowide', cursive; text-align:center;font-size:115px;"><strong>1.2</strong></h1>
 				<a href="http://thesocietypages.org/socimages/2012/05/30/how-much-do-students-study/" class=view>view</a>
 			</div>
-			
 			<div class="tile type-case_study odd" style="background-color:#d57e00">
 				<span class=type> Average hours of HW for students </span>
 				<h1 style="font-family: 'Changa One', cursive; text-align:center;font-size:175px;"><strong>3.5</strong></h1>
 				<a href="http://www.usu.edu/arc/idea_sheets/pdf/estimate_study_hours.pdf" class=view>view</a>
 			</div>
-			
 			<div class="tile type-case_study even" style="background-color: #F5A685">
 				<span class=type>Average number of hours spent by highschoolers doing HW</span>
 				<h1 style="font-family: 'Special Elite', cursive; text-align:center; font-size:100px;"><strong>.75</strong></h1>
 				<a href="http://www.bls.gov/opub/mlr/2008/11/art4full.pdf" class=view>view</a>
 			</div>
 		</div>
-<!-- End Tiles -->
-
+		<!-- End Tiles -->
 	</div>
-
 </body>
 
 <footer>
 	<!-- Script for scroll up feature -->              
-	<script>
-		$(document).ready(function () {
-
-			$(window).scroll(function () {
-			    if ($(this).scrollTop() > 100) {
-			        $('.scrollup').fadeIn();
-			    } else {
-			        $('.scrollup').fadeOut();
-			    }
-			});
-
-			$('.scrollup').click(function () {
-			    $("html, body").animate({
-			        scrollTop: 0
-			    }, 600);
-		    	return false;
-			});
-
-		});
-	</script>
-
 	<article style="height: 300px">
 		<a href="#" class="scrollup" style = "z-index: 108;">Scroll</a>
 	</article>
-	
 	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1800px; left: -10px; background:rgba(0,0,0,0.7);">
 	</canvas>
-
 	<h1>
 		<a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
 		</a> 
-
 		<a href= "contactus.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 41%" > Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|
 		</a>
-
-		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp;
-	</h1>
-
-	<h1> 
+		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp; </a>
 		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1950px; left: 39%">TimeM.com
 		</a>
 	</h1> 
 </footer>
+
 </html>
