@@ -17,7 +17,6 @@
 	<link rel="icon" href="images/favicon.png">
 	<link href="components/paper-input/paper-input.html" rel="import">
     
-          
 	<title>Home | TimeM</title>
 	
 	<!-- Background image -->
@@ -93,77 +92,11 @@
     <!-- Authenticating User to allow user to enter the index.html page, logged in -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-  	<script type="text/javascript">
-	    $(document).ready(function(){
-	      Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-
-	      $("#signIn").on('click', function(e){
-	        e.preventDefault();
-	        var username = $("#username").val();
-	        var password = $("#password").val();
-	        if(username.length < 0){
-	          alert("Please type in your username"); 
-	        }
-	        if(password.length < 0){
-	          alert("Please type in your password"); 
-	        }
-
-	        authenticateUser(username, password);
-
-	      });
-
-
-	      /* Adding Username */
-	      var makeAssignment,getAssignment;
-
-	      //function to find an existing user
-	      var authenticateUser = function(username, password){
-	        
-
-	        Parse.User.logIn(username, password, {
-	          success: function(user) {
-	            // Do stuff after successful login.
-	             document.cookie="username=" + username;
-	             window.location.href = "assignments.html";
-
-	          },
-	          error: function(user, error) {
-	            // The login failed. Check error to see why.
-	            alert("Incorrect password or username");
-	          }
-	        });
-	      };
-
-		    var newUser = function (username, password){
-	        var user = new Parse.User();
-	        user.set("username", username);
-	        user.set("password", password);
-	        user.signUp(null, {
-	          success: function(user) {
-	            // Hooray! Let them use the app now.
-	            alert("new user has been created", user.get("username"));
-	          },
-	          error: function(user, error) {
-	            // Show the error message somewhere and let the user try again.
-	            alert("Error: " + error.code + " " + error.message);
-
-	          }
-	        });
-	      };
-
-      	//get the username and password that the user has entered in the landing page
-
-    	});
-
-
-	</script>
+    <script type="text/javascript" src="howitworks.js" > </script>
 	 <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<!-- End of login functionality -->
-
-	<!-- Main Context (should be on the bottom of the screen) -->
-
 	<!-- Bottom part of the screen -->
 	<div id= "bottom-layer-context"> </div>
 	<div id="main-layer-context">
@@ -221,34 +154,10 @@
 		</div>
 <!-- End Tiles -->
 	</div>
-
-	
-
 </body>
 
 <footer>
-	<!-- Script for scroll up feature -->              
-	<script>
-		$(document).ready(function () {
-
-			$(window).scroll(function () {
-			    if ($(this).scrollTop() > 100) {
-			        $('.scrollup').fadeIn();
-			    } else {
-			        $('.scrollup').fadeOut();
-			    }
-			});
-
-			$('.scrollup').click(function () {
-			    $("html, body").animate({
-			        scrollTop: 0
-			    }, 600);
-		    	return false;
-			});
-
-		});
-	</script>
-
+	<!-- Scroll up feature -->              
 	<article style="height: 300px">
 		<a href="#" class="scrollup" style= "z-index: 50;">Scroll</a>
 	</article>
