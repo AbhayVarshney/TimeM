@@ -57,7 +57,8 @@ function updatingClock(selector, type) {
         var Hour = currentTime.getHours();
         if (Hour > 12) {
             Hour -= 12;
-        } //end if
+        } 
+         //end if
         var Time = Hour + ':' + Minutes;
         if (currentTime.getHours() <= 12) {
             Time += ' AM';

@@ -464,6 +464,17 @@ img.bg {
 
 }
 
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
+    box-shadow: 3 4 30px black; 
+}
+
 .btn {
     color: white;
     font-size: 25px; 
@@ -474,15 +485,10 @@ img.bg {
     border-width: 3px; 
     border-radius: 3px; 
     width: 210px;
+    transition: all .3s ease-in-out;
 }
 
 .btn:hover {
-    color: transparent;
+    color: black;
     background: white;
 }
-
-
-
-
-
-
