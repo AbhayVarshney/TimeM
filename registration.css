@@ -20,8 +20,6 @@ img.bg {
     }
 }
 
-
-
 #header_top_left {
     /* Top left header */
     color: #ffffff;
@@ -293,8 +291,4 @@ img.bg {
     
     height:100px;
     border:0.5px solid #000
-}
-
-.registration{
-    
 }
