@@ -92,7 +92,8 @@ Time for students for the next years classes
 
   <!-- Polymer dialog ======================================================================================-->
 
-      <paper-dialog heading="Settings" transition="paper-dialog-transition-center" style = "position: absolute; left: 350px;">
+      <paper-dialog heading="Settings" transition="paper-dialog-transition-center" style = "position: absolute; left: 350px; text-align: center; z-index: 200;">
+      <br/>
       
             <!-- Wake Up time input -->
             <div class="wakeUpHeading">
@@ -285,7 +286,7 @@ Time for students for the next years classes
             </select>
 
             <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
-            <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+            <br/> <br/><br/> 
           
           <paper-checkbox role="checkbox" tabindex="0" aria-checked="true" checked="" style = "position: absolute;top: 400px; left: 70px;"></paper-checkbox>
           <div class="sleepCalcTitle">
@@ -339,24 +340,20 @@ Time for students for the next years classes
     }
   
     </script>
-
     <div class="extraPersonTemplate">
       <div class="controls controls-row">
-        <label>
           <br/><br/>
-          <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px">
-          <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px">
-          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 190px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
+          <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px; padding-left: 20px;">
+          <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px; padding-left: 20px;">
+          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 203px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
           </select>
-        </label>
       </div>
     </div>  
     <div id="container"></div>
-        <!--<a class = 'addRow' href="#" id="addRow"><i class="icon-plus-sign icon-white"></i>Add more</p></a-->
   </div>
 
       <!-- Display added assignments -->
-      <h3 style="text-align:center; color:white; position: absolute; top: 250px; left: 420px"> View assignments for today here: </h3>
+      <h3 style="text-align:center; color:white; position: absolute; top: 275px; left: 440px"> View assignments for today here: </h3>
       <ul id="assignments" class="list-group">
         <!-- here the  assignments will be inserted -->
         <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
