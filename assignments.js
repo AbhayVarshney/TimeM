@@ -221,7 +221,7 @@ $(document).ready(function(){
 		var wakeUpHR = $("wakeUpHR option:selected").text();
 		console.log(wakeUpHR);
 	});
-
+/*
 	function changeThis() {
         var assignmentInput = document.getElementById('assignment');
         document.getElementById('newAssign').innerHTML = assignmentInput.value;
@@ -229,6 +229,6 @@ $(document).ready(function(){
         document.getElementById('newMins').innerHTML = minsInput.value;
     }
     changeThis();
-   
+ */  
 });
      
