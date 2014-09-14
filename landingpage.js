@@ -106,6 +106,7 @@ $(document).ready(function(){
 		//stores values of username and password
 		var username = $("#username").val();
 		var password = $("#password").val();
+		
 		if(username.length < 0){
 		  alert("Please type in your username"); 
 		}
