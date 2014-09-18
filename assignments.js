@@ -14,6 +14,7 @@ $(document).ready(function(){
       
       var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
+        console.log(query);
         query.equalTo("username", username);
         query.find({
           success: function(results){
@@ -22,6 +23,9 @@ $(document).ready(function(){
             for(var i = 1; i < results.length; i++ ){
               console.log(results[i].get("assignment"));
               var assignmentList = $("#assignmentList");
+
+              //Query to determine whether or not the Assignment was completed
+              var completedQuery = results[i].get("completed");
                
               //Determines date of assignment
               var createdAt = results[i].get("createdAt");
@@ -33,9 +37,7 @@ $(document).ready(function(){
               var newCreatedAt = yr + '-' + mo  + '-' + day;
 
               
-               //Determines the date today 
-                
-            
+               //Determines the date today
               var currentDate = new Date()
               var dayToday = currentDate.getDate()
               var month = currentDate.getMonth() + 1
@@ -52,7 +54,7 @@ $(document).ready(function(){
               var btn = '<td><button class="done-button" type="button"> Done</button></td>';
               
               
-
+              if(completedQuery == 0){
                 $(tr).append(td);
                 $(tr).append(td2);
                 $(tr).append(td3);
@@ -101,7 +103,7 @@ $(document).ready(function(){
               
             
               assignmentList.append(tr);
-              
+             } 
             }
 
           },
