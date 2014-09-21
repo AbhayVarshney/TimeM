@@ -1,7 +1,9 @@
 	
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-	 $("#addNewAssignment").on('click', function(){
+	 if(getUsername !== ""){
+    console.log(document.cookie);
+   $("#addNewAssignment").on('click', function(){
 
         var username = getUsername();
         var assignment = $("#assignment").val();
@@ -9,7 +11,11 @@ $(document).ready(function(){
         createNewAssignment( assignment, username, time);
 
       });
+ }
+ else{
+  window.location("registration.html")
 
+ }
       //  making the list of assignment in the ui from the assignments pulled from the database
       
       var makeAssignmentList = function(username){
@@ -53,7 +59,7 @@ $(document).ready(function(){
               var text = "<td><span style='color:green'>Completed</span></td>";
               var btn = '<td><button class="done-button" type="button"> Done</button></td>';
               
-              
+              //If the Assignment is marked complete (i.e marked as a one in Parse)
               if(completedQuery == 0){
                 $(tr).append(td);
                 $(tr).append(td2);
