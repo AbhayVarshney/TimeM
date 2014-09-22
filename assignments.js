@@ -1,8 +1,7 @@
 	
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-	 if(getUsername !== ""){
-    console.log(document.cookie);
+	 
    $("#addNewAssignment").on('click', function(){
 
         var username = getUsername();
@@ -11,16 +10,12 @@ $(document).ready(function(){
         createNewAssignment( assignment, username, time);
 
       });
- }
- else{
-  window.location("registration.html")
-
- }
+ 
       //  making the list of assignment in the ui from the assignments pulled from the database
       
       var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
-        console.log(query);
+        //console.log(query);
         query.equalTo("username", username);
         query.find({
           success: function(results){
@@ -171,7 +166,9 @@ $(document).ready(function(){
             var half = (document.cookie).substring(9);
             var array = (half).split(";");
             var username = array[0];
+            alert(username);
             return username;
+
           };
 
 
