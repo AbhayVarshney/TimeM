@@ -394,16 +394,16 @@ Time for students for the next years classes
     
       <nav>
         <ul class="nav">
-          <li><a href="javascript:void(0);" class="icon-home" onclick="document.querySelector('#toast2').show()" ></a></li>
+          <li><a href="javascript:void(0);" class="icon-home btnIncrementTime" data-min="5" onclick="document.querySelector('#toast2').show()" ></a></li>
           <paper-toast id="toast2" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
-          <li><a href="javascript:void(0);" class="icon-cog" onclick="document.querySelector('#toast3').show()"></a></li>
+          <li><a href="javascript:void(0);" id="15min" class="icon-cog btnIncrementTime" data-min="15" onclick="document.querySelector('#toast3').show()"></a></li>
           <paper-toast id="toast3" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
-          <li><a href="javascript:void(0);" class="icon-cw" onclick="document.querySelector('#toast4').show()"></a></li>
+          <li><a href="javascript:void(0);" class="icon-cw btnIncrementTime" data-min="30" onclick="document.querySelector('#toast4').show()"></a></li>
           <paper-toast id="toast4" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
-          <li><a href="javascript:void(0);" class="icon-location" onclick="document.querySelector('#toast5').show()"></a></li>
+          <li><a href="javascript:void(0);" class="icon-location btnIncrementTime" data-min="60" onclick="document.querySelector('#toast5').show()"></a></li>
           <paper-toast id="toast5" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Hour Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
 
         </ul>

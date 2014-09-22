@@ -21,6 +21,8 @@ $(document).ready(function(){
 
             for(var i = 1; i < results.length; i++ ){
               console.log(results[i].get("assignment"));
+              var objectId = results[i].id;
+
               var assignmentList = $("#assignmentList");
                
               //Determines date of assignment
@@ -43,6 +45,9 @@ $(document).ready(function(){
               var todayDate = year+ '-' + month  + '-' + dayToday
 
               var tr = $('<tr></tr>');
+              //adding assignment id to the row
+              $(tr).attr("id", objectId);
+
               var td = $('<td></td>').text(results[i].get("assignment"));
               var td2 = $('<td></td>').text(results[i].get("time"));
               var td3 =  '<input type="button" value="Start" id="countDown">';
@@ -221,7 +226,7 @@ $(document).ready(function(){
 		var wakeUpHR = $("wakeUpHR option:selected").text();
 		console.log(wakeUpHR);
 	});
-
+/*
 	function changeThis() {
         var assignmentInput = document.getElementById('assignment');
         document.getElementById('newAssign').innerHTML = assignmentInput.value;
@@ -229,6 +234,42 @@ $(document).ready(function(){
         document.getElementById('newMins').innerHTML = minsInput.value;
     }
     changeThis();
+    */
+
+    $(".btnIncrementTime").on('click', function(){
+    	// call parse and increment time
+    	var min = $(this).data("min");
+    	 var query = new Parse.Query("Assignment");
+    	 query.equalTo("assignment", "Calculus HW");
+              query.first({
+               success: function(assignment){
+               	var initialTime = assignment.get('time');
+               	console.log("initial time is " + initialTime );
+               	var newTime = initialTime + min;
+        		console.log("newtime is " + newTime);
+                //updating the completed column for this assingment
+                assignment.set("time", newTime);
+                assignment.save(null, {
+                  success: function(assignment) {
+                    //update the html
+                    var id = assignment.id;
+                    var timeElement = $("#" + id).children().eq(1);
+                    $(timeElement).text(assignment.get('time'));
+
+                  },
+                  error: function(assignment) {
+                    // don't update
+                  }
+                });
+              },
+              error: function( assignment,error) {
+                    // Show the error message somewhere and let the user try again.
+                    alert("Error: " + error.code + " " + error.message);
+
+                }
+              });
+
+    })
    
 });
      
