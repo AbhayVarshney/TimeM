@@ -1,7 +1,8 @@
-	
+
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-	 $("#addNewAssignment").on('click', function(){
+	 
+   $("#addNewAssignment").on('click', function(){
 
         var username = getUsername();
         var assignment = $("#assignment").val();
@@ -9,11 +10,12 @@ $(document).ready(function(){
         createNewAssignment( assignment, username, time);
 
       });
-
+ 
       //  making the list of assignment in the ui from the assignments pulled from the database
       
       var makeAssignmentList = function(username){
         var query = new Parse.Query("Assignment");
+        //console.log(query);
         query.equalTo("username", username);
         query.find({
           success: function(results){
@@ -24,6 +26,9 @@ $(document).ready(function(){
               var objectId = results[i].id;
 
               var assignmentList = $("#assignmentList");
+
+              //Query to determine whether or not the Assignment was completed
+              var completedQuery = results[i].get("completed");
                
               //Determines date of assignment
               var createdAt = results[i].get("createdAt");
@@ -35,9 +40,7 @@ $(document).ready(function(){
               var newCreatedAt = yr + '-' + mo  + '-' + day;
 
               
-               //Determines the date today 
-                
-            
+               //Determines the date today
               var currentDate = new Date()
               var dayToday = currentDate.getDate()
               var month = currentDate.getMonth() + 1
@@ -56,8 +59,8 @@ $(document).ready(function(){
               var text = "<td><span style='color:green'>Completed</span></td>";
               var btn = '<td><button class="done-button" type="button"> Done</button></td>';
               
-              
-
+              //If the Assignment is marked complete (i.e marked as a one in Parse)
+              if(completedQuery == 0){
                 $(tr).append(td);
                 $(tr).append(td2);
                 $(tr).append(td3);
@@ -106,7 +109,7 @@ $(document).ready(function(){
               
             
               assignmentList.append(tr);
-              
+             } 
             }
 
           },
@@ -168,7 +171,9 @@ $(document).ready(function(){
             var half = (document.cookie).substring(9);
             var array = (half).split(";");
             var username = array[0];
+            alert(username);
             return username;
+
           };
 
 
@@ -270,6 +275,5 @@ $(document).ready(function(){
               });
 
     })
-   
 });
      
