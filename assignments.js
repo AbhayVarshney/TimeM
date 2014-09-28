@@ -44,6 +44,8 @@ $(document).ready(function(){
               var text = "<td><span style='color:green'>Completed</span></td>";
               var btn = '<td><button class="done-button" type="button"> Done</button></td>';
               
+              init_Countdown( results[i].get("assignment") , results[i].get("time"));
+
               //If the Assignment is marked complete (i.e marked as a one in Parse)
               if(completedQuery == 0){
                 $(tr).append(td);
@@ -114,7 +116,7 @@ $(document).ready(function(){
 
 
           //This is the date that the assignment is added to Parse
-
+          
                 var seconds = results[i].get("time");
              
                 var t;
@@ -278,11 +280,16 @@ $(document).ready(function(){
       });
   });
 
-function init() {
-  
+function init_Countdown( assignment , time) {
+      //Gets the total time and assignment from the makeAssignmentList function
+      var assignment_CountDown = assignment;
+      var totalTime = time;
+
+      //Converts to time from minutes to seconds
+      seconds = totalTime*60;
     
 
-    var Assignment = Parse.Object.extend("Assignment");
+  /* var Assignment = Parse.Object.extend("Assignment");
   var query = new Parse.Query(Assignment);
   query.equalTo("username", getUsername);
   
@@ -298,7 +305,8 @@ function init() {
       
     }
   });
-  seconds = totalTime*60;
+*/
+  
 }
 
 
@@ -335,7 +343,7 @@ function reset() {
 };
 
 
-  init();
+  init_Countdown();
   reset();
 
 
