@@ -116,6 +116,7 @@ $(document).ready(function(){
 
 	   }
 	 });
+
   };
 
   var todayDate = function(){
@@ -193,37 +194,17 @@ $(document).ready(function(){
     });*/
 $(document).on('click', "button.done-button", function() {
 
-  var assignmentName = $(this).parent().parent().children(":first").html();
-  console.log(assignmentName);
+function init_Countdown( assignment , time) {
+      //Gets the total time and assignment from the makeAssignmentList function
+      var assignment_CountDown = assignment;
+      var totalTime = time;
 
-  //replace the button with text that says "completed"
-  $(this).replaceWith("<span style='color:green'>Completed</span>"); 
-  //var parent = $(this).parent().append("<span style='color:green'>Completed</span>")
+      //Converts to time from minutes to seconds
+      seconds = totalTime*60;
     
 
-  //in the database change completed status to 1
-  var query = new Parse.Query("Assignment");
-  query.equalTo("assignment", assignmentName);
-  query.first({
-   success: function(assignment){
-	 console.log(assignment);
-    //updating the completed column for this assingment
-	 assignment.save({completed:1}, {
-	   success: function() {
-		console.log("assginment has been updated with completed=1");
-	   }
-    });
-  },
-  error: function( assignment,error) {
-	   // Show the error message somewhere and let the user try again.
-	   console.log("Error: " + error.code + " " + error.message);
+  /* var Assignment = Parse.Object.extend("Assignment");
 
-    }
-  });
-});
-
-function init() {
-  var Assignment = Parse.Object.extend("Assignment");
   var query = new Parse.Query(Assignment);
   query.equalTo("username", getUsername);
   
@@ -239,7 +220,8 @@ function init() {
 	 
     }
   });
-  seconds = totalTime*60;
+*/
+  
 }
 
 
@@ -276,7 +258,7 @@ function reset() {
 };
 
 
-  init();
+  init_Countdown();
   reset();
 
 
