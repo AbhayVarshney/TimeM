@@ -150,17 +150,7 @@ $(document).ready(function(){
     });
 	 //things to do after the save takes place
     };
-
-    var getUsername = function (){
-  	 var half = (document.cookie).substring(9);
-  	 var array = (half).split(";");
-  	 var username = array[0];
-  	 console.log(username);
-  	 return username;
-
-    };
-
-
+    
     var username = getUsername();
     makeAssignmentList(username);
 
