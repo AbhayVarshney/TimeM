@@ -613,3 +613,7 @@ a:focus {
     padding-right: 5px;
     text-decoration: none;
   }
+
+  .highlight {
+    background-color: yellow;
+  }
