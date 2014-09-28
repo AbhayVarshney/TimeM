@@ -210,7 +210,7 @@ function init_Countdown( assignment , time) {
   query.first({
     success: function (object) {
 	 // Do something with the returned Parse.Object values
-	 alert(object);
+	 console.log(object);
 	   totalTime = object.get('time');
 	   console.log(object)
 
@@ -303,7 +303,7 @@ function reset() {
 	   },
 	   error: function( assignment,error) {
 		    // Show the error message somewhere and let the user try again.
-		    alert("Error: " + error.code + " " + error.message);
+		    console.log("Error: " + error.code + " " + error.message);
 
 		}
 	   });
