@@ -12,7 +12,8 @@ $(document).ready(function(){
   var username = getUsername();
   if (username == "") {
 	 console.log("Username not found");
-	 document.location = "registration.html";
+	 window.location.replace("registration.html");
+	 //document.location = "registration.html";
   }
   var currentAssignmentId;
 	 
