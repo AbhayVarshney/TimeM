@@ -1,11 +1,7 @@
 
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
-  var username = getUsername();
-  if (username == "") {
-      console.log("Username not found");
-      document.location = "landingpage.html";
-  }
+  
   var currentAssignmentId;
 	 
    $("#" + currentAssignmentId).addClass();
@@ -27,6 +23,47 @@ $(document).ready(function(){
     query.equalTo("username", username);
     query.find({
       success: function(results){
+
+              
+               //Determines the date today
+              var currentDate = new Date()
+              var dayToday = currentDate.getDate()
+              var month = currentDate.getMonth() + 1
+              var year = currentDate.getFullYear()
+              var todayDate = year+ '-' + month  + '-' + dayToday
+
+              var tr = $('<tr></tr>');
+              //adding assignment id to the row
+              $(tr).attr("id", objectId);
+
+              var td = $('<td></td>').text(results[i].get("assignment"));
+              var td2 = $('<td></td>').text(results[i].get("time"));
+              var td3 =  '<input type="button" value="Start" onclick="countdown()" id="timespan">';
+              var td4 = '<input type="button" value="Stop" onclick="pause()" id="timespan">'
+              var td5 = '<input onload="reset()" value="Reset" type="button" onclick="reset()" id="timespan">'
+              var text = "<td><span style='color:green'>Completed</span></td>";
+              var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+              
+              //If the Assignment is marked complete (i.e marked as a one in Parse)
+              if(completedQuery == 0){
+                $(tr).append(td);
+                $(tr).append(td2);
+                $(tr).append(td3);
+                $(tr).append(td4);
+                $(tr).append(td5);
+
+
+              //This is the date that the assignment is added to Parse
+
+                    var seconds = results[i].get("time");
+                 
+                    var t;
+                    var count = results[i].get("time");
+
+            
+              assignmentList.append(tr);
+             } 
+            }
 
 
         for(var i = 1; i < results.length; i++ ){
@@ -153,6 +190,13 @@ $(document).ready(function(){
             var td2 = $('<td></td>').text(assignment.get("time"));
             var td3 = $('<td></td>').text(assignment.get("time"));
 
+          var getUsername = function (){
+            var half = (document.cookie).substring(9);
+            var array = (half).split(";");
+            var username = array[0];
+            
+            return username;
+
             var btn = '<td><button class="done-button" type="button"> Done</button></td>'
             
             $(tr).append(td);
@@ -233,6 +277,66 @@ $(document).ready(function(){
         }
       });
   });
+
+function init() {
+  
+    
+
+    var Assignment = Parse.Object.extend("Assignment");
+  var query = new Parse.Query(Assignment);
+  query.equalTo("username", getUsername);
+  
+  query.first({
+    success: function (object) {
+      // Do something with the returned Parse.Object values
+      alert(object);
+        totalTime = object.get('time');
+        console.log(object)
+
+    },
+    error: function(error) {
+      
+    }
+  });
+  seconds = totalTime*60;
+}
+
+
+function countdown() {
+          // starts countdown
+          
+          countDisplay();
+            
+          if (count == 0) {
+              // time is up
+          } else {
+              count--;
+              t = setTimeout("countdown()", 1000);
+          }
+      };
+
+  function countDisplay() {
+    // displays time in span
+    document.getElementById('timespan').innerHTML = count;
+};
+
+
+
+function pause() {
+    // pauses countdown
+    clearTimeout(t); 
+};
+
+function reset() {
+    // resets countdown
+    pause();
+    count = seconds;
+    countDisplay();
+};
+
+
+  init();
+  reset();
 
 
 	$("#saveButton").on('click', function wakeUpTime(){
