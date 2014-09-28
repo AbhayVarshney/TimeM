@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
@@ -8,18 +7,6 @@ $(document).ready(function(){
 		var username = array[0];
 
 		return username;
-
-		var btn = '<td><button class="done-button" type="button"> Done</button></td>'
-
-		$(tr).append(td);
-		$(tr).append(td2);
-		$(tr).append(td3);
-		$(tr).append(btn);
-		assignmentList.append(tr);
-
-		//empty the asisgnment name and time from the new assignment form
-		$("#assignment").val("");
-		$("#mins").val("");
 	}
 
   var username = getUsername();
@@ -42,80 +29,79 @@ $(document).ready(function(){
 
 
   //  making the list of assignment in the ui from the assignments pulled from the database
+  var createNewTR = function (result, objectId){
+    var tr = $('<tr></tr>');
+     //adding assignment id to the row
+     $(tr).attr("id", objectId);
+
+     var td = $('<td></td>').text(result.get("assignment"));
+     var td2 = $('<td></td>').text(result.get("time"));
+     var td3 =  '<input type="button" value="Start" id="countDown">';
+     var td4 = '<input type="button" value="Stop" id="pause">'
+     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()">'
+     var text = "<td><span style='color:green'>Completed</span></td>";
+     var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+     
+    //If the Assignment is marked complete (i.e marked as a one in Parse
+      $(tr).append(td);
+      $(tr).append(td2);
+      $(tr).append(td3);
+      $(tr).append(td4);
+      $(tr).append(td5);
+
+      //This is the date that the assignment is added to Parse
+      var seconds = result.get("time");
+      
+      var t;
+      var count = result.get("time");
+
+      
+      if (result.get("completed") == 1){
+        $(tr).append(text);
+      }
+      else{
+        $(tr).append(btn);
+      }
+    
+      $("#assignmentList").append(tr);
+      
+  }
   
+
   var makeAssignmentList = function(username){
     var query = new Parse.Query("Assignment");
     //console.log(query);
     query.equalTo("username", username);
     query.equalTo("completed", 0);
     query.find({
-	 success: function(results){
+  	  success: function(results){
+    	  for(var i = 1; i < results.length; i++ ){
+      	   console.log(results[i].get("assignment"));
+      	   var objectId = results[i].id;
 
-	  for(var i = 1; i < results.length; i++ ){
-	   console.log(results[i].get("assignment"));
-	   var objectId = results[i].id;
+      	   
 
-	   var assignmentList = $("#assignmentList");
+      	   //Query to determine whether or not the Assignment was completed
+      	   var completedQuery = results[i].get("completed");
+      	    
+      	   //Determines date of assignment
+      	   var createdAt = results[i].get("createdAt");
+      	   
+      	   var date = new Date(createdAt);
+      	   var yr = date.getFullYear();
+      	   var mo = date.getMonth() + 1;
+      	   var day = date.getDate();
+      	   var newCreatedAt = yr + '-' + mo  + '-' + day;
 
-	   //Query to determine whether or not the Assignment was completed
-	   var completedQuery = results[i].get("completed");
-	    
-	   //Determines date of assignment
-	   var createdAt = results[i].get("createdAt");
-	   
-	   var date = new Date(createdAt);
-	   var yr = date.getFullYear();
-	   var mo = date.getMonth() + 1;
-	   var day = date.getDate();
-	   var newCreatedAt = yr + '-' + mo  + '-' + day;
-
-	  
-
-	   var tr = $('<tr></tr>');
-	   //adding assignment id to the row
-	   $(tr).attr("id", objectId);
-
-	   var td = $('<td></td>').text(results[i].get("assignment"));
-	   var td2 = $('<td></td>').text(results[i].get("time"));
-	   var td3 =  '<input type="button" value="Start" id="countDown">';
-	   var td4 = '<input type="button" value="Stop" id="pause">'
-	   var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()">'
-	   var text = "<td><span style='color:green'>Completed</span></td>";
-	   var btn = '<td><button class="done-button" type="button"> Done</button></td>';
-	   
-		//If the Assignment is marked complete (i.e marked as a one in Parse)
-	   if(completedQuery == 0){
-		$(tr).append(td);
-		$(tr).append(td2);
-		$(tr).append(td3);
-		$(tr).append(td4);
-		$(tr).append(td5);
-
-		//This is the date that the assignment is added to Parse
-		var seconds = results[i].get("time");
-	  
-		var t;
-		var count = results[i].get("time");
-
-		
-		if (results[i].get("completed") == 1){
-		  $(tr).append(text);
-		}
-		else{
-		  $(tr).append(btn);
-		}
-		
-		assignmentList.append(tr);
-	    } 
-	   }
-	 },
-	 error: function( assignment,error) {
-		// Show the error message somewhere and let the user try again.
-		console.log("Error: " + error.code + " " + error.message);
-
-	   }
-	 });
-
+           createNewTR(results[i], objectId);
+    	   
+    	   }
+  	   },
+    	error: function( assignment,error) {
+    		// Show the error message somewhere and let the user try again.
+    		console.log("Error: " + error.code + " " + error.message);
+      }
+    });
   };
 
   var todayDate = function(){
@@ -165,11 +151,11 @@ $(document).ready(function(){
     };
 
     var getUsername = function (){
-	 var half = (document.cookie).substring(9);
-	 var array = (half).split(";");
-	 var username = array[0];
-	 console.log(username);
-	 return username;
+  	 var half = (document.cookie).substring(9);
+  	 var array = (half).split(";");
+  	 var username = array[0];
+  	 console.log(username);
+  	 return username;
 
     };
 
@@ -181,7 +167,7 @@ $(document).ready(function(){
     console.log(done);
 
     $(".done-button").click(function(){
-	 console.log(clicked);
+	     console.log(clicked);
     });
 
 	 /*
@@ -190,9 +176,10 @@ $(document).ready(function(){
 			 //var parent = this.parent.append("<span>Completed</span>")
 			 //this.fadeOut();
 		    });
-    });*/
+    });
 $(document).on('click', "button.done-button", function() {
-
+}
+*/
 function init_Countdown( assignment , time) {
       //Gets the total time and assignment from the makeAssignmentList function
       var assignment_CountDown = assignment;
@@ -237,14 +224,15 @@ function countdown() {
 		}
 	 };
 
-  function countDisplay() {
+function countDisplay() {
     // displays time in span
-    document.getElementById('timespan').innerHTML = count;
+    //document.getElementById('timespan').innerHTML = count;
 };
 
 
 
 function pause() {
+  var t = 0;
     // pauses countdown
     clearTimeout(t); 
 };
@@ -275,39 +263,37 @@ function reset() {
     changeThis();
     */
 
-    $(".btnIncrementTime").on('click', function(){
-	// call parse and increment time
-	var min = $(this).data("min");
-	 var query = new Parse.Query("Assignment");
-	 query.equalTo("assignment", "Calculus HW");
-	   query.first({
-	    success: function(assignment){
-		var initialTime = assignment.get('time');
-		console.log("initial time is " + initialTime );
-		var newTime = initialTime + min;
-		    console.log("newtime is " + newTime);
-		//updating the completed column for this assingment
-		assignment.set("time", newTime);
-		assignment.save(null, {
-		  success: function(assignment) {
-		    //update the html
-		    var id = assignment.id;
-		    var timeElement = $("#" + id).children().eq(1);
-		    $(timeElement).text(assignment.get('time'));
+  $(".btnIncrementTime").on('click', function(){
+  	// call parse and increment time
+      var min = $(this).data("min");
+      var query = new Parse.Query("Assignment");
+      query.equalTo("assignment", "Calculus HW");
+      query.first({
+        success: function(assignment){
+          var initialTime = assignment.get('time');
+          console.log("initial time is " + initialTime );
+          var newTime = initialTime + min;
+          console.log("newtime is " + newTime);
+          //updating the completed column for this assingment
+          assignment.set("time", newTime);
+          assignment.save(null, {
+            success: function(assignment) {
+              //update the html
+              var id = assignment.id;
+              var timeElement = $("#" + id).children().eq(1);
+              $(timeElement).text(assignment.get('time'));
 
-		  },
-		  error: function(assignment) {
-		    // don't update
-		  }
-		});
-	   },
-	   error: function( assignment,error) {
-		    // Show the error message somewhere and let the user try again.
-		    console.log("Error: " + error.code + " " + error.message);
-
-		}
-	   });
-
-    })
+            },
+            error: function(assignment) {
+              // don't update
+              }
+              });
+            },
+        error: function( assignment,error) {
+          // Show the error message somewhere and let the user try again.
+          console.log("Error: " + error.code + " " + error.message);
+        }
+      });
+  });
 });
-	
+
