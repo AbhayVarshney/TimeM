@@ -61,7 +61,7 @@ $(document).ready(function(){
       var t;
       var count = result.get("time");
 
-      
+      //********************************WHAT IS THE PURPOSE OF BELOW IF IT IS ALREADY CALCULTING WHATS DONE AND NOT DONE
       if (result.get("completed") == 1){
         $(tr).append(text);
       }
@@ -73,7 +73,7 @@ $(document).ready(function(){
       
   }
   
-
+//Makes the Assignment list by searching for items in parse given the username
   var makeAssignmentList = function(username){
     var query = new Parse.Query("Assignment");
     //console.log(query);
@@ -93,12 +93,14 @@ $(document).ready(function(){
       	   //Determines date of assignment
       	   var createdAt = results[i].get("createdAt");
       	   
+           // gets the date of assignment in the format below
       	   var date = new Date(createdAt);
       	   var yr = date.getFullYear();
       	   var mo = date.getMonth() + 1;
       	   var day = date.getDate();
       	   var newCreatedAt = yr + '-' + mo  + '-' + day;
 
+           //Adds values to the other table values
            createNewTR(results[i], objectId);
     	   
     	   }
@@ -110,6 +112,7 @@ $(document).ready(function(){
     });
   };
 
+//Returns the date today
   var todayDate = function(){
   		   //Determines the date today
 	   var currentDate = new Date();
@@ -121,7 +124,7 @@ $(document).ready(function(){
   }
 
 
-  //Function for creating a new assignment and adding to the database
+//Function for creating a new assignment and adding to the database
   var createNewAssignment = function (assignmentName, username, time){
     var Assignment = Parse.Object.extend("Assignment");
 
@@ -176,6 +179,8 @@ $(document).ready(function(){
 $(document).on('click', "button.done-button", function() {
 }
 */
+
+//Prepares for Countdown timer
 function init_Countdown( assignment , time) {
       //Gets the total time and assignment from the makeAssignmentList function
       var assignment_CountDown = assignment;
@@ -206,7 +211,7 @@ function init_Countdown( assignment , time) {
   
 }
 
-
+//Countdown timer
 function countdown() {
 		// starts countdown
 		
@@ -220,19 +225,21 @@ function countdown() {
 		}
 	 };
 
+//Displays count down on screen
 function countDisplay() {
     // displays time in span
     //document.getElementById('timespan').innerHTML = count;
 };
 
 
-
+//Pauses timer
 function pause() {
   var t = 0;
     // pauses countdown
     clearTimeout(t); 
 };
 
+//Resets timer
 function reset() {
     // resets countdown
     pause();
@@ -240,25 +247,18 @@ function reset() {
     countDisplay();
 };
 
-
+//Calls these functions on load
   init_Countdown();
   reset();
 
-
+//Saves the time stored for wake up hour
 	$("#saveButton").on('click', function wakeUpTime(){
 		var wakeUpHR = $("wakeUpHR option:selected").text();
 		console.log(wakeUpHR);
 	});
-/*
-	function changeThis() {
-	   var assignmentInput = document.getElementById('assignment');
-	   document.getElementById('newAssign').innerHTML = assignmentInput.value;
-	   var minsInput = document.getElementById('mins');
-	   document.getElementById('newMins').innerHTML = minsInput.value;
-    }
-    changeThis();
-    */
 
+//Adds time to assignment 
+//These are the buttons at the bottom of the page
   $(".btnIncrementTime").on('click', function(){
   	// call parse and increment time
       var min = $(this).data("min");
