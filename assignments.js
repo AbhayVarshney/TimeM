@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
+//Returns the Username of the current user by accessing a cookie
 	var getUsername = function (){
 		var half = (document.cookie).substring(9);
 		var array = (half).split(";");
@@ -9,16 +10,19 @@ $(document).ready(function(){
 		return username;
 	}
 
+//Returns user to registration if no username/cookie present
   var username = getUsername();
   if (username == "") {
 	 console.log("Username not found");
 	 window.location.replace("registration.html");
 	 //document.location = "registration.html";
   }
+  
   var currentAssignmentId;
 	 
   $("#" + currentAssignmentId).addClass();
 
+  //Creates a New assignment
   $("#addNewAssignment").on('click', function(){
 
     var username = getUsername();
@@ -35,6 +39,7 @@ $(document).ready(function(){
      //adding assignment id to the row
      $(tr).attr("id", objectId);
 
+     //Table element values
      var td = $('<td></td>').text(result.get("assignment"));
      var td2 = $('<td></td>').text(result.get("time"));
      var td3 =  '<input type="button" value="Start" id="countDown">';
@@ -43,7 +48,7 @@ $(document).ready(function(){
      var text = "<td><span style='color:green'>Completed</span></td>";
      var btn = '<td><button class="done-button" type="button"> Done</button></td>';
      
-    //If the Assignment is marked complete (i.e marked as a one in Parse
+    //This makes the list in the table
       $(tr).append(td);
       $(tr).append(td2);
       $(tr).append(td3);
