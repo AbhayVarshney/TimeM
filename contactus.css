@@ -186,7 +186,7 @@ img.bg {
 #main-layer-context { 
     /* This is the top layer of information sheet */
     position: absolute; 
-    width: 800px; 
+    width: 650px; 
     height: 620px;
     margin: 50px auto;
     padding: 20px; 
@@ -195,11 +195,11 @@ img.bg {
     -webkit-box-shadow: 0 0 10px black;
     box-shadow: 0 0 10px black; 
     top: 150px;
-    left: 20%;
+    left: 26%;
     font-family: 'Open Sans', Helvetica, sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 3em;
+    font-size: 2em;
     letter-spacing: 0em;
     line-height: 1.1em;
 }
@@ -328,9 +328,9 @@ img.bg {
 .btn {
     font-size: 20px;
     position: absolute; 
-    left: 300px;
+    left: 230px;
     top: 500px; 
-    background: #4DA8C7;
+    background: #4DB8C7;
     border-width: 0px;
     border-radius: 3px; 
     width: 210px; 
