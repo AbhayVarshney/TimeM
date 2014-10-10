@@ -32,6 +32,9 @@
   <link href="components/paper-dialog/paper-dialog.html" rel="import">
   <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
   <link rel="import" href="components/paper-toast/paper-toast.html">
+  <!-- IonIcons -->
+  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+    
 
   <!-- 
 Time for students for the next years classes
@@ -49,20 +52,19 @@ Time for students for the next years classes
     paper-checkbox {
       padding: 20px 20px 20px 0;
     }
-    
+
     section {
       width: 300px;
     }
-    
+
     paper-checkbox.blue::shadow #ink[checked] {
       color: #4285f4;
     }
-    
+
     paper-checkbox.blue::shadow #checkbox.checked {
       border-color: #4285f4;
-
     }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -70,26 +72,25 @@ Time for students for the next years classes
   <div id="fixedNav" style="z-index:24">
     <div id='cssmenu'>
       <ul>
-
         <div id='header_top_left' class="active">
           <a href = "profile.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
         </div> 
 
         <li class='active'>
           <a href='profile.html'>
-            <span class = 'aboutus'><strong> Profile </strong></span>
+            <span class = 'aboutus'><i class="ion-ios7-pulse-strong"></i><strong> &nbsp; Profile </strong></span>
           </a>
         </li>
 
         <li class='active'>
           <a href='assignments.html'>
-            <span class = 'howitworks'><strong> Assignments </strong></span>
+            <span class = 'howitworks'><i class="ion-podium"></i><strong> &nbsp; Assignments </strong></span>
           </a>
         </li>
 
         <li class='active'>
           <a href='landingpage.html'>
-            <span class = 'login' onclick = "logout()"><strong> Logout </strong></span>
+            <span class = 'login' onclick = "logout()"><i class="ion-arrow-graph-down-left"></i><strong> &nbsp;Logout </strong></span>
           </a>
         </li>
     </div>
