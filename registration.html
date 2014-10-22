@@ -17,7 +17,8 @@
 	<link rel="icon" href="images/favicon.png">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-    <script type="text/javascript" src="landingpage.js" > </script>
+    
+    <script src="registration.js"></script>
  
 	<title>Home | TimeM</title>
 	
@@ -51,12 +52,16 @@
 		<form name="registration">
 			<!-- mail icons and information -->
 			<img src="images/favicon.png" width="80" height="80" style = "position: absolute; left: 240px; top:50px;">
+			
 			<!--Input id allows for access parse  DO NOT TOUCH-->
 			<div id = "username" style = "position: absolute; top: 150px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Username </div>
+
 			<input id="inputUsername" style= "position: absolute; top:200px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;PaulG" name="email">
+
 			<div class = "password" style = "top: 270px;   font-size: 30px; color: #7E7A89">Password </div>
 			<!--Input id allows for access parse  DO NOT TOUCH-->
 			<input id="inputPassword" class= "password" name = "password" type="password" required="required" style= "top:320px; width: 470px;  height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="password">
+
 			<div id = "repassword" style = "position: absolute; top: 385px; left: 50px; font-family: 'Raleway', san-serif; font-size: 30px; color: #7E7A89">Re-type Password </div>
 			<input type="repassword" style= "position: absolute; top:440px; width: 470px; left: 50px; height: 40px; border-radius: 6.5px; border-width: 2px; border-color: #BDC3C7; font-family: 'Raleway', sans-serif; padding: 20px;" placeholder="&nbsp; &nbsp;***************" name="repassword">
 			<p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button" style ="position: absolute; top: 530px">Sign Up!</a></p>

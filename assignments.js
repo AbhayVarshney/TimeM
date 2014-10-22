@@ -42,11 +42,11 @@ $(document).ready(function(){
      //Table element values
      var td = $('<td></td>').text(result.get("assignment"));
      var td2 = $('<td></td>').text(result.get("time"));
-     var td3 =  '<input type="button" value="Start" id="countDown">';
-     var td4 = '<input type="button" value="Stop" id="pause">'
-     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()">'
+     var td3 =  '<input type="button" value="Start" id="countDown" class="remoteButtons">';
+     var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons">'
+     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()" class="remoteButtons">'
      var text = "<td><span style='color:green'>Completed</span></td>";
-     var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+     var btn = '<td><button class="done-button" type="button" class="remoteButtons"> Done</button></td>';
      
     //This makes the list in the table
       $(tr).append(td);
