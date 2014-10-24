@@ -43,10 +43,10 @@ $(document).ready(function(){
      var td = $('<td></td>').text(result.get("assignment"));
      var td2 = $('<td></td>').text(result.get("time"));
      var td3 =  '<input type="button" value="Start" id="countDown" class="remoteButtons">';
-     var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons">'
-     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()" class="remoteButtons">'
+     var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons">';
+     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()" class="remoteButtons">';
      var text = "<td><span style='color:green'>Completed</span></td>";
-     var btn = '<td><button class="done-button" type="button" class="remoteButtons"> Done</button></td>';
+     var btn = '<td><button class="done-button" type="button"> Done</button></td>';
      
     //This makes the list in the table
       $(tr).append(td);
@@ -180,77 +180,16 @@ $(document).on('click', "button.done-button", function() {
 }
 */
 
-//Prepares for Countdown timer
-function init_Countdown( assignment , time) {
-      //Gets the total time and assignment from the makeAssignmentList function
-      var assignment_CountDown = assignment;
-      var totalTime = time;
-
-      //Converts to time from minutes to seconds
-      seconds = totalTime*60;
-    
-
-  /* var Assignment = Parse.Object.extend("Assignment");
-
-  var query = new Parse.Query(Assignment);
-  query.equalTo("username", getUsername);
+/* THIS IS THE TIMER */
+$("#countDown").on("click", function(){
+  //make sures that the countdown has been clicked
+  alert("has been clicked");
+  alert("Wait 5 sec");
+    //newUser($("#inputUsername").val(), $("#inputPassword").val());
   
-  query.first({
-    success: function (object) {
-	 // Do something with the returned Parse.Object values
-	 console.log(object);
-	   totalTime = object.get('time');
-	   console.log(object)
+})
 
-    },
-    error: function(error) {
-	 
-    }
-  });
-*/
-  
-}
-
-//Countdown timer
-function countdown() {
-		// starts countdown
-		
-		countDisplay();
-		  
-		if (count == 0) {
-		    // time is up
-		} else {
-		    count--;
-		    t = setTimeout("countdown()", 1000);
-		}
-	 };
-
-//Displays count down on screen
-function countDisplay() {
-    // displays time in span
-    //document.getElementById('timespan').innerHTML = count;
-};
-
-
-//Pauses timer
-function pause() {
-  var t = 0;
-    // pauses countdown
-    clearTimeout(t); 
-};
-
-//Resets timer
-function reset() {
-    // resets countdown
-    pause();
-    count = seconds;
-    countDisplay();
-};
-
-//Calls these functions on load
-  init_Countdown();
-  reset();
-
+/* END TIMER OPERATIONS ********/
 //Saves the time stored for wake up hour
 	$("#saveButton").on('click', function wakeUpTime(){
 		var wakeUpHR = $("wakeUpHR option:selected").text();
