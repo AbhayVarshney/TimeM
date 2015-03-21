@@ -21,6 +21,10 @@ img.bg {
     }
 }
 
+.remoteButtons{
+  color: #000000;
+}
+
 /*This is the header for the wake up time dropdowm*/
 .wakeUpHead{
   color:#000000;
