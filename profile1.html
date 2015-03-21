@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+    	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="css/carousel.css" rel="stylesheet">
+	<!-- Fonts and style sheet for the rest of the landingpage -->
+	<link rel="stylesheet" type="text/css" href="landingpage.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="images/favicon.png">
+
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script src="js/common.js"></script>
+	
+          
+	<title>Profile | TimeM</title>
+	<!-- Background image -->
+
+	<img src="images/mainbackground.jpg" class="bg">
+</head>
+
+<body>
+	<!-- Main menu (top menu) ====================================================-->
+	<div id="fixedNav" style="z-index:104">
+		<div id='cssmenu'>
+			<ul>
+
+				<div id='header_top_left' class="active">
+				  <a href = "profile.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none; font-size: 55px; font-family: 'Raleway', sans-serif;"> TimeM </a>
+				</div> 
+
+				<li class='active'>
+				  <a href='profile.html'>
+				    <span class = 'aboutus'><strong> Profile </strong></span>
+				  </a>
+				</li>
+
+				<li class='active'>
+				  <a href='assignments.html'>
+				    <span class = 'howitworks'><strong> Assignments </strong></span>
+				  </a>
+				</li>
+
+				<li class='active'>
+				  <a href='landingpage.html'>
+				    <span class = 'login' onclick = "logout()"><strong> Logout </strong></span>
+				  </a>
+				</li>
+			</ul>
+    	</div>
+	</div>
+
+	<!-- End main menu (top menu) -->
+
+
+	<canvas id="myCanvas" width="1280px" height="130px"style="border:5px solid #FFFFFF; position: absolute; top: 445px; left: -5px; background:rgba(150,150,150,0.7);">
+	</canvas>
+	<div id = "schedule" style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: 480px; left:440px;" >
+		Daily Schedule:
+	</div>
+
+ <!-- Carousel  ================================================== -->
+	<script src="js/bootstrap.min.js"></script>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3; top: absolute; top: 520px; z-index: 20; height: 640px;">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+
+        <li data-target="#myCarousel" data-slide-to="0"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6" class="active"></li>
+        
+
+      </ol>
+      
+      <div class="carousel-inner">
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script>
+						
+							currentDate(6);
+							
+						
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							currentDate(5);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							currentDate(4);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+      	</div>
+
+      	<div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							currentDate(3);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							currentDate(2);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+						<script type="text/javascript" src="profile.js"></script>
+						<script type="text/javascript">
+					
+							currentDate(1);
+				
+						</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+            	<h1>
+            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
+														<script type="text/javascript" src="profile.js"></script>
+														<script type="text/javascript">
+
+													
+															currentDate(0);
+												
+														</script>
+					</a> </strong>
+				</h1>
+            </div>
+          </div>
+        </div>
+
+   	</div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <!-- End carousel -->
+
+   
+
+	 <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<!-- End of login functionality -->
+
+	<!-- Main Context (should be on the bottom of the screen) -->
+
+</body>
+
+<footer>
+	<!-- Script for scroll up feature -->              
+	<script>
+		$(document).ready(function () {
+
+			$(window).scroll(function () {
+			    if ($(this).scrollTop() > 100) {
+			        $('.scrollup').fadeIn();
+			    } else {
+			        $('.scrollup').fadeOut();
+			    }
+			});
+
+			$('.scrollup').click(function () {
+			    $("html, body").animate({
+			        scrollTop: 0
+			    }, 600);
+		    	return false;
+			});
+
+		});
+	</script>
+
+	<article style="height: 300px">
+		<a href="#" class="scrollup" style = "z-index: 108;">Scroll</a>
+	</article>
+	
+	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1800px; left: -10px; background:rgba(0,0,0,0.7);">
+	</canvas>
+
+	<h1>
+		<a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
+		</a> 
+
+		<a href= "contactus.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 41%" > Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|
+		</a>
+
+		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp;
+	</h1>
+
+	<h1> 
+		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1950px; left: 39%">TimeM.com
+		</a>
+	</h1> 
+</footer>
+</html>

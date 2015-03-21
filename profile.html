@@ -1,271 +1,347 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<meta name="description" content="">
-    	<meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Custom styles for this template -->
-	<link href="css/carousel.css" rel="stylesheet">
-	<!-- Fonts and style sheet for the rest of the landingpage -->
-	<link rel="stylesheet" type="text/css" href="landingpage.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
-	<link rel="icon" href="images/favicon.png">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  
+  <!--Links to the stylesheet for the assignments page-->
+  <link rel="stylesheet" type="text/css" href="profile.css">
 
-	<script type="text/javascript" src="assets/js/jquery.js"></script>
-	<script src="js/common.js"></script>
-	
-          
-	<title>Profile | TimeM</title>
-	<!-- Background image -->
+  <!-- Common Js file for both assignments.html and landingpage.js -->
+  <script src="js/common.js"></script>
+  
 
-	<img src="images/mainbackground.jpg" class="bg">
+    <!-- Fonts and style sheet for the rest of the assignments page -->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Polymer Components -->
+  <script src="components/platform/platform.js"></script>
+  <link href="components/paper-button/paper-button.html" rel="import">
+  <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+  <link href="components/paper-dialog/paper-dialog.html" rel="import">
+  <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="components/paper-toast/paper-toast.html">
+  <link href="components/paper-input/paper-input.html" rel="import">
+  <!-- IonIcons -->
+  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <!-- 
+Time for students for the next years classes
+
+-->
+  <!-- Title of Assignments page-->
+  <title>Profile | TimeM</title>
+  
+  <!-- Background image -->
+  <img src="images/mainbackground.jpg" class="bg">
+
+  <!-- In line css for polymer checkbox-->
+  <style shim-shadowdom>
+  
+    paper-checkbox {
+      padding: 20px 20px 20px 0;
+    }
+
+    section {
+      width: 300px;
+    }
+
+    paper-checkbox.blue::shadow #ink[checked] {
+      color: #4285f4;
+    }
+
+    paper-checkbox.blue::shadow #checkbox.checked {
+      border-color: #4285f4;
+    }
+  </style>
 </head>
 
 <body>
-	<!-- Main menu (top menu) ====================================================-->
-	<div id="fixedNav" style="z-index:104">
-		<div id='cssmenu'>
-			<ul>
+  <!-- Nav Bar(top menu) ====================================================-->
+  <div id="fixedNav" style="z-index:24">
+    <div id='cssmenu'>
+      <ul>
+        <div id='header_top_left' class="active">
+          <a href = "profile.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none;"> TimeM </a>
+        </div> 
 
-				<div id='header_top_left' class="active">
-				  <a href = "profile.html" style = "color: white; z-index: 24; position: absolute; text-decoration:none; font-size: 55px; font-family: 'Raleway', sans-serif;"> TimeM </a>
-				</div> 
+        <li class='active'>
+          <a href='profile.html'>
+            <span class = 'aboutus'><i class="ion-ios7-pulse-strong"></i><strong> &nbsp; Profile </strong></span>
+          </a>
+        </li>
 
-				<li class='active'>
-				  <a href='profile.html'>
-				    <span class = 'aboutus'><strong> Profile </strong></span>
-				  </a>
-				</li>
+        <li class='active'>
+          <a href='assignments.html'>
+            <span class = 'howitworks'><i class="ion-podium"></i><strong> &nbsp; Assignments </strong></span>
+          </a>
+        </li>
 
-				<li class='active'>
-				  <a href='assignments.html'>
-				    <span class = 'howitworks'><strong> Assignments </strong></span>
-				  </a>
-				</li>
-
-				<li class='active'>
-				  <a href='landingpage.html'>
-				    <span class = 'login' onclick = "logout()"><strong> Logout </strong></span>
-				  </a>
-				</li>
-			</ul>
-    	</div>
-	</div>
-
-	<!-- End main menu (top menu) -->
-
-
-	<canvas id="myCanvas" width="1280px" height="130px"style="border:5px solid #FFFFFF; position: absolute; top: 445px; left: -5px; background:rgba(150,150,150,0.7);">
-	</canvas>
-	<div id = "schedule" style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: 480px; left:440px;" >
-		Daily Schedule:
-	</div>
-
- <!-- Carousel  ================================================== -->
-	<script src="js/bootstrap.min.js"></script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3; top: absolute; top: 520px; z-index: 20; height: 640px;">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-
-        <li data-target="#myCarousel" data-slide-to="0"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
-        <li data-target="#myCarousel" data-slide-to="6" class="active"></li>
-        
-
-      </ol>
-      
-      <div class="carousel-inner">
-      	<div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script>
-						
-							currentDate(6);
-							
-						
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-      	<div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script type="text/javascript">
-					
-							currentDate(5);
-				
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-      	<div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script type="text/javascript">
-					
-							currentDate(4);
-				
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-      	</div>
-
-      	<div class="item">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script type="text/javascript">
-					
-							currentDate(3);
-				
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script type="text/javascript">
-					
-							currentDate(2);
-				
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-						<script type="text/javascript" src="profile.js"></script>
-						<script type="text/javascript">
-					
-							currentDate(1);
-				
-						</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-        <div class="item active">
-          <div class="container">
-            <div class="carousel-caption">
-            	<h1>
-            		<strong> <a style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: -350px; left:250px;" >
-														<script type="text/javascript" src="profile.js"></script>
-														<script type="text/javascript">
-
-													
-															currentDate(0);
-												
-														</script>
-					</a> </strong>
-				</h1>
-            </div>
-          </div>
-        </div>
-
-   	</div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        <li class='active'>
+          <a href='landingpage.html'>
+            <span class = 'login' onclick = "logout()"><i class="ion-arrow-graph-down-left"></i><strong> &nbsp;Logout </strong></span>
+          </a>
+        </li>
     </div>
-    <!-- End carousel -->
+  </div>
 
-   
+  <!-- Polymer dialog ======================================================================================-->
 
-	 <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<!-- End of login functionality -->
+      <paper-dialog heading="Settings" transition="paper-dialog-transition-center" style = "position: absolute; left: 350px; text-align: center; z-index: 200;">
+      <br/>
+      
+            <!-- Wake Up time input -->
+            <div class="wakeUpHeading">
+              <strong>When you need to get up for school: </strong>
+            </div>
 
-	<!-- Main Context (should be on the bottom of the screen) -->
+            <br/> <br/>
+            <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
+              <option value="off">OFF</option>
+              <option value="1" style="text-align: right;">&nbsp;&nbsp;1 AM</option>
+              <option value="2" style="text-align: right;">&nbsp;&nbsp;2 AM</option>
+              <option value="3" style="text-align: right;">&nbsp;&nbsp;3 AM</option>
+              <option value="4" style="text-align: right;">&nbsp;&nbsp;4 AM</option>
+              <option value="5" style="text-align: right;">&nbsp;&nbsp;5 AM</option>
+              <option value="6" style="text-align: right;">&nbsp;&nbsp;6 AM</option>
+              <option value="7" style="text-align: right;">&nbsp;&nbsp;7 AM</option>
+              <option value="8" style="text-align: right;">&nbsp;&nbsp;8 AM</option>
+              <option value="9" style="text-align: right;">&nbsp;&nbsp;9 AM</option>
+              <option value="10" style="text-align: right;">           10 AM</option>
+              <option value="11" style="text-align: right;">           11 AM</option>
+              <option value="12" style="text-align: right;">           12 PM</option>
+              <option value="13" style="text-align: right;">&nbsp;&nbsp;1 PM</option>
+              <option value="14" style="text-align: right;">&nbsp;&nbsp;2 PM</option>
+              <option value="15" style="text-align: right;">&nbsp;&nbsp;3 PM</option>
+              <option value="16" style="text-align: right;">&nbsp;&nbsp;4 PM</option>
+              <option value="17" style="text-align: right;">&nbsp;&nbsp;5 PM</option>
+              <option value="18" style="text-align: right;">&nbsp;&nbsp;6 PM</option>
+              <option value="19" style="text-align: right;">&nbsp;&nbsp;7 PM</option>
+              <option value="20" style="text-align: right;">&nbsp;&nbsp;8 PM</option>
+              <option value="21" style="text-align: right;">&nbsp;&nbsp;9 PM</option>
+              <option value="22" style="text-align: right;">           10 PM</option>
+              <option value="23" style="text-align: right;">           11 PM</option>
+              <option value="0" style="text-align: right;">            12 AM</option>
+            </select>
 
+            <div style="color:#000000;font-size: 35px; position: absolute; left: 310px; top: 140px;">
+              <strong>&nbsp;:&nbsp; </strong>
+            </div>
+  
+            <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+              <option value="0" style="text-align: right;">00</option>
+              <option value="1" style="text-align: right;">01</option>
+              <option value="2" style="text-align: right;">02</option>
+              <option value="3" style="text-align: right;">03</option>
+              <option value="4" style="text-align: right;">04</option>
+              <option value="5" style="text-align: right;">05</option>
+              <option value="6" style="text-align: right;">06</option>
+              <option value="7" style="text-align: right;">07</option>
+              <option value="8" style="text-align: right;">08</option>
+              <option value="9" style="text-align: right;">09</option>
+              <option value="10" style="text-align: right;">10</option>
+              <option value="11" style="text-align: right;">11</option>
+              <option value="12" style="text-align: right;">12</option>
+              <option value="13" style="text-align: right;">13</option>
+              <option value="14" style="text-align: right;">14</option>
+              <option value="15" style="text-align: right;">15</option>
+              <option value="16" style="text-align: right;">16</option>
+              <option value="17" style="text-align: right;">17</option>
+              <option value="18" style="text-align: right;">18</option>
+              <option value="19" style="text-align: right;">19</option>
+              <option value="20" style="text-align: right;">20</option>
+              <option value="21" style="text-align: right;">21</option>
+              <option value="22" style="text-align: right;">22</option>
+              <option value="23" style="text-align: right;">23</option>
+              <option value="24" style="text-align: right;">24</option>
+              <option value="25" style="text-align: right;">25</option>
+              <option value="26" style="text-align: right;">26</option>
+              <option value="27" style="text-align: right;">27</option>
+              <option value="28" style="text-align: right;">28</option>
+              <option value="29" style="text-align: right;">29</option>
+              <option value="30" style="text-align: right;">30</option>
+              <option value="31" style="text-align: right;">31</option>
+              <option value="32" style="text-align: right;">32</option>
+              <option value="33" style="text-align: right;">33</option>
+              <option value="34" style="text-align: right;">34</option>
+              <option value="35" style="text-align: right;">35</option>
+              <option value="36" style="text-align: right;">36</option>
+              <option value="37" style="text-align: right;">37</option>
+              <option value="38" style="text-align: right;">38</option>
+              <option value="39" style="text-align: right;">39</option>
+              <option value="40" style="text-align: right;">40</option>
+              <option value="41" style="text-align: right;">41</option>
+              <option value="42" style="text-align: right;">42</option>
+              <option value="43" style="text-align: right;">43</option>
+              <option value="44" style="text-align: right;">44</option>
+              <option value="45" style="text-align: right;">45</option>
+              <option value="46" style="text-align: right;">46</option>
+              <option value="47" style="text-align: right;">47</option>
+              <option value="48" style="text-align: right;">48</option>
+              <option value="49" style="text-align: right;">49</option>
+              <option value="50" style="text-align: right;">50</option>
+              <option value="51" style="text-align: right;">51</option>
+              <option value="52" style="text-align: right;">52</option>
+              <option value="53" style="text-align: right;">53</option>
+              <option value="54" style="text-align: right;">54</option>
+              <option value="55" style="text-align: right;">55</option>
+              <option value="56" style="text-align: right;">56</option>
+              <option value="57" style="text-align: right;">57</option>
+              <option value="58" style="text-align: right;">58</option>
+              <option value="59" style="text-align: right;">59</option>
+            </select>
+
+            <INPUT TYPE="HIDDEN" NAME="mode" value="alarm" CHECKED>
+
+            <div style="color:#000000;font-size: 25px; position: absolute; left: 60px; top: 250px;">
+              <!-- Varun put a better description for this here -->
+              <strong>Other Activities: </strong>
+            </div>
+
+            <!-- Activites hours -->
+            <select id="extraHR" name="other_activities_hours" title="Activities Hour" style= "width: 150px; height: 50px; position: absolute; left: 100px; top: 300px; font-size: 18px;">
+              <option value="">OFF</option>
+              <option value="1" style="text-align: right;">&nbsp;&nbsp;1hr</option>
+              <option value="2" style="text-align: right;">&nbsp;&nbsp;2hr</option>
+              <option value="3" style="text-align: right;">&nbsp;&nbsp;3hr</option>
+              <option value="4" style="text-align: right;">&nbsp;&nbsp;4hr</option>
+              <option value="5" style="text-align: right;">&nbsp;&nbsp;5hr</option>
+              <option value="6" style="text-align: right;">&nbsp;&nbsp;6hr</option>
+              <option value="7" style="text-align: right;">&nbsp;&nbsp;7hr</option>
+              <option value="8" style="text-align: right;">&nbsp;&nbsp;8hr</option>
+              <option value="9" style="text-align: right;">&nbsp;&nbsp;9hr</option>
+              <option value="10" style="text-align: right;">           10hr</option>
+            </select>
+
+            <div style="color:#000000;font-size: 35px; position: absolute; left: 305px; top: 305px;">
+              <strong>&nbsp;&&nbsp; </strong>
+            </div>
+
+            <select id="extraMin"name="other_activites_minutes" title="Activities Minute" style= "width: 150px; height: 50px; position: absolute; left: 400px; top: 300px; font-size: 18px;">
+              <option value="0" style="text-align: right;">00 min</option>
+              <option value="1" style="text-align: right;">01 min</option>
+              <option value="2" style="text-align: right;">02 min</option>
+              <option value="3" style="text-align: right;">03 min</option>
+              <option value="4" style="text-align: right;">04 min</option>
+              <option value="5" style="text-align: right;">05 min</option>
+              <option value="6" style="text-align: right;">06 min</option>
+              <option value="7" style="text-align: right;">07 min</option>
+              <option value="8" style="text-align: right;">08 min</option>
+              <option value="9" style="text-align: right;">09 min</option>
+              <option value="10" style="text-align: right;">10 min</option>
+              <option value="11" style="text-align: right;">11 min</option>
+              <option value="12" style="text-align: right;">12 min</option>
+              <option value="13" style="text-align: right;">13 min</option>
+              <option value="14" style="text-align: right;">14 min</option>
+              <option value="15" style="text-align: right;">15 min</option>
+              <option value="16" style="text-align: right;">16 min</option>
+              <option value="17" style="text-align: right;">17 min</option>
+              <option value="18" style="text-align: right;">18 min</option>
+              <option value="19" style="text-align: right;">19 min</option>
+              <option value="20" style="text-align: right;">20 min</option>
+              <option value="21" style="text-align: right;">21 min</option>
+              <option value="22" style="text-align: right;">22 min</option>
+              <option value="23" style="text-align: right;">23 min</option>
+              <option value="24" style="text-align: right;">24 min</option>
+              <option value="25" style="text-align: right;">25 min</option>
+              <option value="26" style="text-align: right;">26 min</option>
+              <option value="27" style="text-align: right;">27 min</option>
+              <option value="28" style="text-align: right;">28 min</option>
+              <option value="29" style="text-align: right;">29 min</option>
+              <option value="30" style="text-align: right;">30 min</option>
+              <option value="31" style="text-align: right;">31 min</option>
+              <option value="32" style="text-align: right;">32 min</option>
+              <option value="33" style="text-align: right;">33 min</option>
+              <option value="34" style="text-align: right;">34 min</option>
+              <option value="35" style="text-align: right;">35 min</option>
+              <option value="36" style="text-align: right;">36 min</option>
+              <option value="37" style="text-align: right;">37 min</option>
+              <option value="38" style="text-align: right;">38 min</option>
+              <option value="39" style="text-align: right;">39 min</option>
+              <option value="40" style="text-align: right;">40 min</option>
+              <option value="41" style="text-align: right;">41 min</option>
+              <option value="42" style="text-align: right;">42 min</option>
+              <option value="43" style="text-align: right;">43 min</option>
+              <option value="44" style="text-align: right;">44 min</option>
+              <option value="45" style="text-align: right;">45 min</option>
+              <option value="46" style="text-align: right;">46 min</option>
+              <option value="47" style="text-align: right;">47 min</option>
+              <option value="48" style="text-align: right;">48 min</option>
+              <option value="49" style="text-align: right;">49 min</option>
+              <option value="50" style="text-align: right;">50 min</option>
+              <option value="51" style="text-align: right;">51 min</option>
+              <option value="52" style="text-align: right;">52 min</option>
+              <option value="53" style="text-align: right;">53 min</option>
+              <option value="54" style="text-align: right;">54 min</option>
+              <option value="55" style="text-align: right;">55 min</option>
+              <option value="56" style="text-align: right;">56 min</option>
+              <option value="57" style="text-align: right;">57 min</option>
+              <option value="58" style="text-align: right;">58 min</option>
+              <option value="59" style="text-align: right;">59 min</option>
+            </select>
+
+            <br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+            <br/> <br/><br/> 
+          
+          <paper-checkbox role="checkbox" tabindex="0" aria-checked="true" checked="" style = "position: absolute;top: 400px; left: 70px;"></paper-checkbox>
+          <div class="sleepCalcTitle">
+            <strong> Turn On Sleep Calculator? </strong>
+          </div>
+
+          <paper-button id="saveButton"label="Save" onclick="document.querySelector('#toast1').show()" style = "position: absolute; top : 500px; left: 500px; color: #607BC2"></paper-button>
+          <paper-toast id="toast1" text="&nbsp; &nbsp; Your selections have been saved." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
+
+        </paper-dialog>
+
+        <!-- this is lock button on the top right corner-->
+        <paper-button style = "position: absolute; top: 15px; left: 1050px; z-index: 500; background-image: url(images/lock.png); background-size: 60px; height: 60px; width: 60px" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+
+        <script>
+          //This code opens the dialog for the dropdown of adjusting the times
+          function toggleDialog(transition) {
+            var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+            dialog.toggle();
+          }
+        </script>
+
+        <!-- End Paper Dialog ================================================================================= -->
+   <canvas id="myCanvas" width="1280px" height="130px"style="border:5px solid #FFFFFF; position: absolute; top: 545px; left: -5px; background:rgba(150,150,150,0.7);">
+  </canvas>
+  <div id = "schedule" style = "font-size: 55px; color: white; text-decoration:none; position: absolute; top: 580px; left:440px;" >
+    Daily Schedule:
+  </div>
+
+<!-- Carousel  ================================================== -->
+
+
+
+
+<!-- End Carousel -->
 </body>
 
 <footer>
-	<!-- Script for scroll up feature -->              
-	<script>
-		$(document).ready(function () {
+<!-- Fix relativity. Make sure that if the table size increases, the bottom part of the page will move as well -->
+  <canvas id="myCanvas" width="1278px" height="130px"style="border:5px solid #000000; position: relative; top: 1800px; left: -8px; background:rgba(0,0,0,0.7);">
+  </canvas>
 
-			$(window).scroll(function () {
-			    if ($(this).scrollTop() > 100) {
-			        $('.scrollup').fadeIn();
-			    } else {
-			        $('.scrollup').fadeOut();
-			    }
-			});
+  <h1>
+    <a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 21%" > <i class="ion-home">&nbsp;&nbsp;</i> Home &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
+    </a> 
+    <a href= "assignments.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 25.5%" > <i class="ion-android-social">&nbsp;&nbsp;</i> Assignments
+    </a>
+    <a href= "profile.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 30%" > |  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class="ion-help-buoy">&nbsp;&nbsp;</i> Profile </a>
+    <a style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1880px; left: -6%">TimeM.com
+    </a>
+  </h1> 
 
-			$('.scrollup').click(function () {
-			    $("html, body").animate({
-			        scrollTop: 0
-			    }, 600);
-		    	return false;
-			});
-
-		});
-	</script>
-
-	<article style="height: 300px">
-		<a href="#" class="scrollup" style = "z-index: 108;">Scroll</a>
-	</article>
-	
-	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1800px; left: -10px; background:rgba(0,0,0,0.7);">
-	</canvas>
-
-	<h1>
-		<a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
-		</a> 
-
-		<a href= "contactus.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 41%" > Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|
-		</a>
-
-		<a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1870px; left: 63%" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp;
-	</h1>
-
-	<h1> 
-		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1950px; left: 39%">TimeM.com
-		</a>
-	</h1> 
 </footer>
 </html>

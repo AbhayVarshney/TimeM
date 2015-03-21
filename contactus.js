@@ -1,6 +1,33 @@
 // Authenticating User to allow user to enter the assignments.html page, logged in
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
+	var Mailgun = require('mailgun');
+	Mailgun.initialize('sandbox1f23a7865ec340f89b5754c264dd17a4.mailgun.org', 'key-269c42f2e1271f965eb92622c2c5101a');
+
+	$("#contactUsButton").on('click', function(e){
+		var name = $("#fullNameField").val();
+		var userEmail = $("#userEmailField").val();
+		var comments = $("commentsField").val();
+		
+		console.log("Name: " + name);
+
+		Mailgun.sendEmail({
+			to: "varshneyabhay@gmail.com",
+			from: userEmail,
+			subject: "Email from " + name,
+			text: comments
+		}, {
+			success: function(httpResponse) {
+				console.log(httpResponse);
+				response.success("Email sent!");
+			},
+			error: function(httpResponse) {
+				console.error(httpResponse);
+				response.error("Uh oh, something went wrong");
+			}
+		});
+
+	})
 
 	$("#signIn").on('click', function(e){
 		e.preventDefault();

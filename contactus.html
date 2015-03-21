@@ -18,7 +18,9 @@
 	<link href="components/paper-input/paper-input.html" rel="import">
 	<!-- IonIcons -->
     <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-    
+    <!-- Jquery & Parse -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
 
 	<title>Home | TimeM</title>
 
@@ -89,39 +91,18 @@
 		<div id = "questions">
 			&nbsp; &nbsp; Hi! My name is 
 			<br/> 
-			<paper-input label="Full Name" style = "position: absolute; top: -10px; width: 270px; left: 300px;"></paper-input>
+			<paper-input id="fullNameField" label="Full Name" style = "position: absolute; top: -10px; width: 270px; left: 300px;"></paper-input>
 			<br/><br/>
 			&nbsp; &nbsp; My email address is
-			<paper-input label="TimeM@gmail.com" style = "position: absolute; top: 70px; width: 270px; left: 300px;"></paper-input>
+			<paper-input id="userEmailField" label="TimeM@gmail.com" style = "position: absolute; top: 70px; width: 270px; left: 300px;"></paper-input>
 		</div>
 		<div id = "morequestions">
 			&nbsp; &nbsp; I'd like to talk about
-			<paper-input style = "position: absolute; top: 50px; width: 515px; height: 100px; left: 40px;"></paper-input>
+			<paper-input id="commentsField" style="position: absolute; top: 50px; width: 515px; height: 100px; left: 40px;"></paper-input>
 		</div>
-		<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign Up!</a></p>
+		<p><a id="contactUsButton" class="btn btn-lg btn-primary" href="#" role="button">Send!</a></p>
 		<!--  style= "font-size: 20px; position: absolute; left: 300px; top: 500px; background: #4DA8C7; border-color: #4DA8C7; border-width: 3px; border-radius: 3px; width: 210px; height: 55px;" -->
 	</div>
-	<div id = "callus-layer-context">
-		<!-- mail icons and contact-us information -->
-		<div id = "num-contents1" style=  "position: absolute; left: 140px; top: 27px; font-size: 20px; color: white; font-family: 'Raleway' sans-serif;"> <i class="ion-android-mail"></i> &nbsp; &nbsp; &nbsp; &nbsp;TimeM@gmail.com</div>
-		<div id = "num-contents1" style=  "position: absolute; left: 140px; top: 70px; font-size: 20px; color: white; font-family: 'Raleway' sans-serif;"> <i class="ion-android-call"></i>&nbsp; &nbsp; &nbsp; &nbsp;1-800-324-2345</div>
-	</div>
 </body>
-
-<footer>
-	<!-- Script for scroll up feature -->              
-	<article style="height: 300px">
-		<a href="#" class="scrollup" style = "z-index: 108;">Scroll</a>
-	</article>
-	<canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1150px; left: -10px; background:rgba(0,0,0,0.7);">
-	</canvas>
-	<h1>
-		<a href= "landingpage.html" class = "homeFooter" style = "text-decoration:none; color: white;"> Home &nbsp;&nbsp;&nbsp;&nbsp;| </a> 
-		<a href= "contactus.html" class = "contactusFooter" style = "text-decoration:none; color: white;"> Contact Us &nbsp;&nbsp;&nbsp;&nbsp;|</a>
-		<a href= "howitworks.html" class = "worksFooter" style = "text-decoration: none; color: white;" > How it Works! &nbsp;&nbsp;&nbsp;&nbsp; </a>
-		<a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1300px; left: 39%">TimeM.com
-		</a>
-	</h1> 
-</footer>
 
 </html>

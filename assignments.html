@@ -26,12 +26,12 @@
 
   <!-- Polymer Components -->
   <script src="components/platform/platform.js"></script>
-  
   <link href="components/paper-button/paper-button.html" rel="import">
   <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
   <link href="components/paper-dialog/paper-dialog.html" rel="import">
   <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
   <link rel="import" href="components/paper-toast/paper-toast.html">
+  <link href="components/paper-input/paper-input.html" rel="import">
   <!-- IonIcons -->
   <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
     
@@ -320,89 +320,81 @@ Time for students for the next years classes
 
   <div id = "userinput text" style = "color: white; font-size: 33px; position: absolute; top: 120px; left: 400px"> Add New Assignments Below </div>
   <div class="addAssignment" style="z-index:5">
-
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-    
-      $('<div/>', {
-        'class' : 'extraPerson', html: GetHtml()
-      }).appendTo('#container');
-    
-      $('#addRow').click(function () {
+      $(document).ready(function () {
+      
         $('<div/>', {
           'class' : 'extraPerson', html: GetHtml()
-        }).hide().appendTo('#container').slideDown('slow');
+        }).appendTo('#container');
+      
+        $('#addRow').click(function () {
+          $('<div/>', {
+            'class' : 'extraPerson', html: GetHtml()
+          }).hide().appendTo('#container').slideDown('slow');
 
-      });
-    })
+        });
+      })
 
-     function GetHtml() {
-    //var len = $('.extraPerson').length;
-    //var $html = $('.extraPersonTemplate').clone();
-    //$html.find('[name=assignment]')[0].name="assignment" + len;
-    //$html.find('[name=mins]')[0].name="mins" + len;
-    //return $html.html();    
-    }
-  
+       function GetHtml() {
+      //var len = $('.extraPerson').length;
+      //var $html = $('.extraPersonTemplate').clone();
+      //$html.find('[name=assignment]')[0].name="assignment" + len;
+      //$html.find('[name=mins]')[0].name="mins" + len;
+      //return $html.html();    
+      }
     </script>
     <div class="extraPersonTemplate">
       <div class="controls controls-row">
           <br/><br/>
           <!-- Input for the assignment on the assignments page -->
-          <input id="assignment" class="span3" placeholder=" &nbsp; Assignment" type="text" name="assignment" style = "border-width: 2px; height: 45px; font-size: 20px; position: absolute; left: 380px; padding-left: 20px;">
-          
+          <paper-input id="assignment" placeholder="Assignment Name" type="text" name="assignment" style = "position: absolute; top: 200px; width: 260px; left: 340px; font-family: 'Raleway'; color:white; font-size: 25px;"></paper-input>
+
           <!-- Input for the minutes on the assignments page -->
-          <input id="mins" class="span2" placeholder=" &nbsp; Enter minutes" type="text" name="mins" style = "border-width: 2px; height: 45px; width: 200px; font-size: 20px; position: absolute; left: 600px; padding-left: 20px;">
+          <paper-input id="mins" placeholder="Minutes" type="text" name="mins" style = "position: absolute; top: 200px; width: 140px; left: 650px; font-family: 'Raleway'; color:white; font-size: 25px;"></paper-input>
           
           <!-- Submit button for assignments page -->
-          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 203px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 150px; height: 45px; color: white">
+          <input id="addNewAssignment" class="submit" type="submit" value="Submit" style = "font-size: 20px; position: absolute; left: 840px; top: 215px; background: #4DA8C7; border-color: #4DA8C7; border-width: 1px; border-radius: 3px; width: 200px; height: 45px; color: white">
           </select>
-
       </div>
     </div>  
     <div id="container"></div>
   </div>
 
-      <!-- Display added assignments -->
-      <h2 style="text-align:center; color:white; position: absolute; top: 275px; left: 400px"> View assignments for today here: </h2>
-      <ul id="assignments" class="list-group">
-        <!-- here the  assignments will be inserted -->
-        <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
-      </ul>
-      <table class="table table-hover" table-align = "center" style= "position: absolute; top: 400px; color: white; font-size: 25px; left: 200px;">
-        <thead>
-          <tr style="color:white">
-            <th >Assignment Name</th>
-            <th>Time (in Minutes)</th>
-            <th>Time Control</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="assignmentList">
+    <!-- Display added assignments -->
+    <h2 style="text-align:center; color:white; position: absolute; top: 275px; left: 400px"> View assignments for today here: </h2>
+    <ul id="assignments" class="list-group">
+      <!-- here the  assignments will be inserted -->
+      <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
+    </ul>
+    <table class="table table-hover" table-align = "center" style= "position: absolute; top: 400px; color: white; font-size: 25px; left: 200px;">
+      <thead>
+        <tr style="color:white">
+          <th >Assignment Name</th>
+          <th>Time (in Minutes)</th>
+          <th>Time Control</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="assignmentList">
+      </tbody>
+    </table>
+    <!-- PARSE JAVA SCRIPT ===================================================================================-->
+ <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<!-- End of login functionality -->
 
-        </tbody>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+  <script type="text/javascript" src="assignments.js"></script>
 
-      </table>
-
-      <!-- PARSE JAVA SCRIPT ===================================================================================-->
-
-
-   <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  <!-- End of login functionality -->
-
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
-    <script type="text/javascript" src="assignments.js"></script>
-
-  <canvas id="myCanvas" width="1278px" height="100px"style="border:3px solid #FFFFFF; position: absolute; top: 1080px; left: -10px; background:rgba(150,150,150,0.6);">
+  <canvas id="myCanvas" width="1278px" height="100px"style="border:3px solid #FFFFFF; position: relative; top: 1080px; left: -10px; background:rgba(150,150,150,0.6);">
   </canvas>
 
-  <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1100px; left: 37.5%"> <strong> Add Minutes! </strong> </a>
+  <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1100px; left: 37.5%"> <strong> Add Minutes! </strong> </a>
 
   <!-- Add minutes buttons -->
-  <div class="page-wrap" style = "position: absolute; top: 1220px; left: 150px">
+  <div class="page-wrap" style = "position: relative; top: 1220px; left: 150px">
     
       <nav>
         <ul class="nav">
@@ -420,31 +412,22 @@ Time for students for the next years classes
 
         </ul>
       </nav>
-
   </div>
-
   <!-- End add minutes buttons -->
-
- 
 </body>
 
 <footer>
-
-  <canvas id="myCanvas" width="1278px" height="230px"style="border:5px solid #000000; position: absolute; top: 1500px; left: -10px; background:rgba(0,0,0,0.7);">
+<!-- Fix relativity. Make sure that if the table size increases, the bottom part of the page will move as well -->
+  <canvas id="myCanvas" width="1278px" height="130px"style="border:5px solid #000000; position: relative; top: 1800px; left: -8px; background:rgba(0,0,0,0.7);">
   </canvas>
 
   <h1>
-    <a href= "index.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 25%" > Home &nbsp;&nbsp;&nbsp;&nbsp;|
+    <a href= "landingpage.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 21%" > <i class="ion-home">&nbsp;&nbsp;</i> Home &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
     </a> 
-
-    <a href= "assignments.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 41%" > Assignments &nbsp;&nbsp;&nbsp;&nbsp;|
+    <a href= "assignments.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 25.5%" > <i class="ion-android-social">&nbsp;&nbsp;</i> Assignments
     </a>
-
-    <a href= "howitworks.html" style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1570px; left: 66%" > Profile &nbsp;&nbsp;&nbsp;&nbsp;
-  </h1>
-
-  <h1> 
-    <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: absolute; top: 1650px; left: 39%">TimeM.com
+    <a href= "profile.html" style = "font-family: 'Raleway', sans-serif; font-size: 25px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1830px; left: 30%" > |  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class="ion-help-buoy">&nbsp;&nbsp;</i> Profile </a>
+    <a style = "font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1880px; left: -6%">TimeM.com
     </a>
   </h1> 
 

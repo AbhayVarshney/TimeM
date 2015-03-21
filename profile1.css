@@ -11,7 +11,6 @@ img.bg {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 
 @media screen and (max-width: 1024px){
@@ -20,57 +19,6 @@ img.bg {
         margin-left: -512px; 
     }
 }
-
-/*This is the header for the wake up time dropdowm*/
-.wakeUpHead{
-  color:#000000;
-  font-size: 25px; 
-  position: absolute; 
-  left: 60px; 
-  top: 90px;
-}
-
-/*This is the wake up hour dropdown*/
-.wakeUpHour{
-  width: 150px; 
-  height: 50px; 
-  position: absolute; 
-  left: 100px; 
-  top: 140px; 
-  font-size: 18px;
-}
-
-/*This is the the wake up minute dropdown*/
-.wakeUpMinutes{
-  width: 150px; 
-  height: 50px; 
-  position: absolute; 
-  left: 400px; 
-  top: 140px; 
-  font-size: 18px;
-}
-
-/*This is the sleep calculator title*/
-.sleepCalcTitle{
-  color:#000000;
-  font-size: 25px; 
-  position: absolute; 
-  left: 150px; 
-  top: 415px;
-}
-
-paper-dialog {
-      width: 50%;
-      min-width: 430px;
-    }
-
-    paper-dialog paper-button {
-      font-weight: bold;
-    }
-
-    paper-button[autofocus] {
-      color: #4285f4;
-    }
 
 #header_top_left {
     /* Top left header */
@@ -82,7 +30,7 @@ paper-dialog {
 
     position: absolute;
     left: 6.5%;
-    top: 0;
+    top: 5%;
 }
 
 
@@ -233,77 +181,12 @@ paper-dialog {
     background-color: rgb(114,164,65);
     color: rgb(240,240,240);
 }
-
-.addAssignment{
-    margin-left: auto;
-    margin-right: auto;
-    width: 450px;
-    top:25px;
-    margin-top: 150px;
-}
-
-.name {
-    font-family: 'Oswald', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    font-size: 5em;
-    color: #ffffff;
-    letter-spacing: 0.25em;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.span3 {
-    /*background-color: transparent;*/
-    background-color: rgba(255,255, 255,0.75);
-    border: 1px solid white;
-    height: 35px;
-    width: 200px;
-    margin-right: 5px;
-
-
-}
-
-.span2 {
-    /*background-color: transparent;*/
-    background-color: rgba(255,255, 255,0.75);
-    border: 1px solid white;
-    height: 35px;
-    width: 125px;
-    margin-right: 5px;
-}
-.submit {
-    background-color: white;
-    border: 1px solid white;
-    height: 40px;
-    margin-right: 5px;
-}
-
-.newMins, .mins {
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    text-align: center;
-    color: #ffffff;
-    font-size: 1.25em;
-}
-
-
-.addRow {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-}
-
                     
 #main-layer-context { 
     /* This is the top layer of information sheet */
     position: absolute; 
     width: 1100px; 
-    height: 850px;
+    height: 400px;
     margin: 50px auto;
     padding: 20px; 
     background: white;
@@ -317,7 +200,7 @@ label {
 #bottom-layer-context {
     /* Bottom layer of information sheet */
     position: absolute; 
-    height: 800px;
+    height: 1154px;
     width: 100%;
     padding: 20px; 
     background: #EAEEF1;
@@ -356,11 +239,12 @@ label {
     width: 110px;
     height: 110px;
     position: fixed;
+    top: 0px;
     bottom: 50px;
     right: 100px;
     display: none;
     text-indent: -9999px;
-    background: url('scrollup.png') no-repeat;
+    background: url('images/scrollup.png') no-repeat;
     content:url("http://www.atlantic.com.my/images/arrow-up.png");
 }
                
@@ -374,7 +258,7 @@ label {
     width: 450px;
     height: 450px;
     margin: 20px auto 0 auto;
-    background: url(images/clockface3.png);
+    background: url(images/clockface.png);
     background-size: 100%;
     background-repeat: none;
     list-style: none;
@@ -391,17 +275,17 @@ label {
 }
 
 #sec {
-    background: url(images/sechand3.png);
+    background: url(images/sechand.png);
     z-index: 3;
 }
 
 #min {
-    background: url(images/minhand2.png);
+    background: url(images/minhand.png);
     z-index: 2;
 }
    
 #hour {
-    background: url(images/hourhand2.png);
+    background: url(images/hourhand.png);
     z-index: 1;
   
 }
@@ -410,6 +294,49 @@ label {
     background-color: white;
     border: 1px solid #C0C0C0;
     padding: 5px;
+}
+
+
+.timeContainer{
+    height:300px;
+    border:0.5px 
+    background-color: rgb(112,66, 20);
+
+}
+
+.homeFooter{
+    font-family: 'Raleway', sans-serif; font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 25%
+
+}
+
+.profileFooter{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 66%
+
+}
+
+.assignmentsFooter{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 35px; 
+    z-index: 10; 
+    color: white; 
+    text-decoration:none; 
+    position: absolute; 
+    top: 1570px; 
+    left: 41%
+
 }
 
 #fixedNav{
@@ -424,196 +351,6 @@ label {
 
 }
 
-/* Table styling */
-#hor-minimalist-b {
-    font-family: 'Roboto', Sans-Serif;
-    font-size: 20px;
-    background: rgba(255, 255, 255, 0.7);
-    margin: 45px;
-    width: 700px;
-    height: 500px;
-    border-collapse: collapse;
-    text-align: left;
-    border-radius: 10px
-}
-
-#hor-minimalist-b th {
-    font-size: 20px;
-    font-weight: normal;
-    color: #039;
-    padding: 10px 8px;
-    border-bottom: 2px solid #6678b1;
-
-}
-
-#hor-minimalist-b td {
-    border-bottom: 1px solid grey;
-    color: #669;
-    padding: 6px 8px;
-}
-
-#hor-minimalist-b tbody tr:hover td{
-    color: grey;
-}
-/* End table styling */
 
 
-/* Add minutes icons */
-[class*="icon-"] {
-  font-family: 'fontello';
-  font-style: normal;
-  font-size: 3em;
-  position: relative;
-  speak: none;
-}
 
-.icon-home:after { 
-  content: "5 min";
-  font-size: .6em;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  top: -10px;
-
- } 
-.icon-cog:after { 
-  content: "15 min";
-  font-size: .6em;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  top: -10px;
-} 
-.icon-cw:after { 
-  content: "30 min";
-  font-size: .6em;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  top: -10px;
-} 
-.icon-location:after { 
-  content: "1 hr"; 
-  font-size: .6em;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  top: -10px;
-} 
-
-* { 
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing:    border-box; 
-  box-sizing:         border-box; 
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  color: none;
-  font-size: 100%;    
-}
-
-body {
-  -webkit-font-smoothing: antialiased; 
-  font-size:18px; 
-  font-size:1.125rem;
-  line-height: 1.5;
-}
-
-a {
-  text-decoration: none;
-  color: #DD6C4F;
-}
-
-a:hover {
-  text-decoration:underline;
-}
-
-a:focus { 
-  outline: none;
-}
-
-.page-wrap {
-  width: 960px;
-  /* ISSAM THIS IS TO LOWER THE BUTTONS*/
-  margin: 0px auto;
-}
-
-.nav {
-  list-style: none;
-  text-align: left;
-}
-
-.nav li {
-  position: relative;
-  display: inline-block;
-  margin-right: 20px; /* See: http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
-}
-
-.nav li:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  z-index: -1;
-}
-
-.nav a {
-  display: block;
-  background-color: #f7f7f7;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
-  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
-  color: #a7a7a7; 
-  margin: 36px;
-  width: 144px;
-  height: 144px;
-  position: relative;
-  text-align: center;
-  line-height: 144px;
-  border-radius: 50%;
-  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-}
-
-.nav a:before {
-  content: "";
-  display: block;
-  background: #FFF;
-  border-top: 2px solid #bdd;
-  position: absolute;
-  top: -22px;
-  left: -22px;
-  bottom: -22px;
-  right: -22px;
-  z-index: -1;
-  border-radius: 50%;
-  box-shadow: inset 0px 8px 48px #ddd;
-}
-
-.nav a:hover {
-  text-decoration: none;
-  color: #555;
-  background: #f5f5f5;
-}
-
-/*start and stop buttons*/
-.stopwatch {
-    display: inline-block;
-    background-color: white;
-    border: 1px solid #eee;
-    padding: 5px;
-    margin: 5px;
-  }
-  .stopwatch span {
-    font-weight: bold;
-    display: block;
-  }
-  .stopwatch a {
-    padding-right: 5px;
-    text-decoration: none;
-  }
-
-  .highlight {
-    background-color: yellow;
-  }
