@@ -1,3 +1,21 @@
+//Put Slide In code into this function
+  var hideInactiveAssignments = function(node) {
+      var assignmentListNode = $("#assignmentList"), assignmentList;
+
+      if (assignmentListNode) {
+        assignmentList = assignmentListNode[0].childNodes;
+      }
+
+      for (var i = 1; i < assignmentList.length; i++) {
+
+        if (assignmentList[i].id !== node.parentNode.id) {
+          assignmentList[i].style.display = "none";
+        }
+
+      }
+  }
+  
+
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 
@@ -41,8 +59,10 @@ $(document).ready(function(){
 
      //Table element values
      var td = $('<td></td>').text(result.get("assignment"));
-     var td2 = $('<td></td>').text(result.get("time"));
-     var td3 =  '<input type="button" value="Start" id="countDown" class="remoteButtons">';
+     var td2 = $('<td></td`>').text(result.get("time"));
+     // Start Button
+     var td3 =  '<input type="button" value="Start" id="countDown" class="remoteButtons" onclick="hideInactiveAssignments(this)">';
+     // Pause Button
      var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons">';
      var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()" class="remoteButtons">';
      var text = "<td><span style='color:green'>Completed</span></td>";
@@ -72,7 +92,7 @@ $(document).ready(function(){
       $("#assignmentList").append(tr);
       
   }
-  
+
 //Makes the Assignment list by searching for items in parse given the username
   var makeAssignmentList = function(username){
     var query = new Parse.Query("Assignment");
