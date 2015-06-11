@@ -1,20 +1,59 @@
+/*
+var assignment = function(id) {
+  var assign = {};
+
+  assign.element = document.createElement("div");
+
+  assign.show = function() {
+    assign.element.style.display = "block";
+  };
+
+  assign.addTo = function(list) {
+
+  };
+
+  assign.onName = function(k) {
+    Parse(function() {
+      if (! error) k();
+    })
+  };
+
+  // var x = assignment(123)
+  // x.addTo()
+
+  assign.add = function() {
+
+  };
+
+  return assign;
+};
+
+var assignmentList = function(id) {
+  var list = {};
+
+  list.children = [];
+
+  list.each = function(k) {
+
+  };
+};
+*/
+
 //Put Slide In code into this function
-  var hideInactiveAssignments = function(node) {
-      var assignmentListNode = $("#assignmentList"), assignmentList;
-
-      if (assignmentListNode) {
-        assignmentList = assignmentListNode[0].childNodes;
+// This will hide all the rows except the one that the user clicked
+var hideInactiveAssignments = function(node) {
+     $("#assignmentList tr").each(function(el){
+      if ($(this).attr("id") !== $(node).parent().attr("id")){
+        $(this).hide();
       }
+    })
+}
 
-      for (var i = 1; i < assignmentList.length; i++) {
-
-        if (assignmentList[i].id !== node.parentNode.id) {
-          assignmentList[i].style.display = "none";
-        }
-
-      }
-  }
-  
+var showInactiveAssignemnts = function(node) {
+  $("#assignmentList tr").each(function(el){
+    $(this).show();
+  });
+}
 
 $(document).ready(function(){
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
@@ -51,6 +90,7 @@ $(document).ready(function(){
   });
 
 
+
   //  making the list of assignment in the ui from the assignments pulled from the database
   var createNewTR = function (result, objectId){
     var tr = $('<tr></tr>');
@@ -61,19 +101,16 @@ $(document).ready(function(){
      var td = $('<td></td>').text(result.get("assignment"));
      var td2 = $('<td></td`>').text(result.get("time"));
      // Start Button
-     var td3 =  '<input type="button" value="Start" id="countDown" class="remoteButtons" onclick="hideInactiveAssignments(this)">';
+     var td3 = '<input type="button" value="Start" id="countDown" class="remoteButtons" onclick="hideInactiveAssignments(this)">';
      // Pause Button
-     var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons">';
-     var td5 = '<input onload="reset()" type="button" value="Reset" onclick="reset()" class="remoteButtons">';
-     var text = "<td><span style='color:green'>Completed</span></td>";
-     var btn = '<td><button class="done-button" type="button"> Done</button></td>';
+     var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons" onclick="showInactiveAssignemnts(this)" >';
+    
      
     //This makes the list in the table
       $(tr).append(td);
       $(tr).append(td2);
       $(tr).append(td3);
       $(tr).append(td4);
-      $(tr).append(td5);
 
       //This is the date that the assignment is added to Parse
       var seconds = result.get("time");
@@ -81,13 +118,6 @@ $(document).ready(function(){
       var t;
       var count = result.get("time");
 
-      //********************************WHAT IS THE PURPOSE OF BELOW IF IT IS ALREADY CALCULTING WHATS DONE AND NOT DONE
-      if (result.get("completed") == 1){
-        $(tr).append(text);
-      }
-      else{
-        $(tr).append(btn);
-      }
     
       $("#assignmentList").append(tr);
       
