@@ -457,6 +457,14 @@ label {
 }
 /* End table styling */
 
+.welcomeText {
+  font-family: 'Raleway';
+  color: white;
+  font-size: 1.3em;
+  position: relative;
+  top: 120px;
+  left: 60px;
+}
 
 /* Add minutes icons */
 [class*="icon-"] {

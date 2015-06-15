@@ -279,13 +279,26 @@ label {
     width: 125px;
     margin-right: 5px;
 }
+
 .submit {
-    background-color: white;
-    border: 1px solid white;
-    height: 40px;
+    font-size: 20px; 
+    position: absolute; 
+    left: 850px; 
+    top: 235px; 
+    background: none; 
+    border-radius: 5px; 
+    width: 200px; 
+    height: 48px; 
+    color: white;
+    border: 3px solid white;
     margin-right: 5px;
+    -webkit-transition: .7s;
 }
 
+.submit:hover {
+  background: white;
+  color: black;
+}
 .newMins, .mins {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
