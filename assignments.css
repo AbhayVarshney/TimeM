@@ -246,6 +246,16 @@ paper-dialog {
     margin-top: 150px;
 }
 
+.assignmentInput {
+  position: absolute; 
+  top: 220px; 
+  width: 260px; 
+  left: 340px; 
+  font-family: 'Raleway'; 
+  color: #ffffff; 
+  font-size: 25px;
+}
+
 .name {
     font-family: 'Oswald', sans-serif;
     font-weight: lighter;

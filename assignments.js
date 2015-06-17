@@ -102,7 +102,7 @@ $(document).ready(function(){
      var td2 = $('<td></td`>').text(result.get("time"));
      // Start Button
      var td3 = '<input type="button" value="Start" id="countDown" class="remoteButtons" onclick="hideInactiveAssignments(this)">';
-     // Pause Button
+     // Stop Button
      var td4 = '<input type="button" value="Stop" id="pause" class="remoteButtons" onclick="showInactiveAssignemnts(this)" >';
     
      
@@ -193,10 +193,12 @@ $(document).ready(function(){
 	   //add the newly created assignment to the bottom of the table
 	  
 	   var assignmentList = $("#assignmentList");
-	   var tr = $('<tr></tr>');
-	   var td = $('<td></td>').text(assignment.get("assignment"));
-	   var td2 = $('<td></td>').text(assignment.get("time"));
-	   var td3 = $('<td></td>').text(assignment.get("time"));
+
+     var assignmentList = $("#assignmentList");
+     assignmentList.html("");
+     makeAssignmentList(username);
+
+
 
 
 	 },
@@ -238,7 +240,6 @@ $("#countDown").on("click", function(){
     //newUser($("#inputUsername").val(), $("#inputPassword").val());
   
 })
-
 /* END TIMER OPERATIONS ********/
 //Saves the time stored for wake up hour
 	$("#saveButton").on('click', function wakeUpTime(){

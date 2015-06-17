@@ -25,7 +25,7 @@
 :host /deep/ input,
 :host /deep/ textarea {
   font: inherit;
-  color: #000;
+  color: black;
   padding: 0;
   /* Important to use margin here so the margin remains visible
    * when textarea scrolls internally. */

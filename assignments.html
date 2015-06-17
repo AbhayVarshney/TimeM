@@ -348,7 +348,7 @@ Time for students for the next years classes
       <div class="controls controls-row">
           <br/><br/>
           <!-- Input for the assignment on the assignments page -->
-          <paper-input id="assignment" placeholder="Assignment Name" type="text" name="assignment" style = "position: absolute; top: 220px; width: 260px; left: 340px; font-family: 'Raleway'; color:#ffffff; font-size: 25px;"></paper-input>
+          <paper-input id="assignment" class="assignmentInput" placeholder="Assignment Name" type="text" name="assignment"></paper-input>
 
           <!-- Input for the minutes on the assignments page -->
           <paper-input id="mins" placeholder="Minutes" type="text" name="mins" style = "position: absolute; top: 220px; width: 140px; left: 650px; font-family: 'Raleway'; color:white; font-size: 25px;"></paper-input>
@@ -386,9 +386,6 @@ Time for students for the next years classes
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
   <script type="text/javascript" src="assignments.js"></script>
 
-  <canvas id="myCanvas" width="1278px" height="100px"style="border:3px solid #FFFFFF; position: relative; top: 1080px; left: -10px; background:rgba(150,150,150,0.6);">
-  </canvas>
-
   <a style = "font-family: 'Raleway', sans-serif; font-size: 45px; z-index: 10; color: white; text-decoration:none; position: relative; top: 1100px; left: 37.5%"> <strong> Add Minutes! </strong> </a>
 
   <!-- Add minutes buttons -->
@@ -407,7 +404,6 @@ Time for students for the next years classes
 
           <li><a href="javascript:void(0);" class="icon-location btnIncrementTime" data-min="60" onclick="document.querySelector('#toast5').show()"></a></li>
           <paper-toast id="toast5" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Hour Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
-
         </ul>
       </nav>
   </div>
@@ -416,7 +412,7 @@ Time for students for the next years classes
 
 <footer>
 <!-- Fix relativity. Make sure that if the table size increases, the bottom part of the page will move as well -->
-  <canvas id="myCanvas" width="1278px" height="130px"style="border:5px solid #000000; position: relative; top: 1800px; left: -8px; background:rgba(0,0,0,0.7);">
+  <canvas id="myCanvas" width="1278px" height="130px" style="border:5px solid #000000; position: relative; top: 2000px; left: -8px; background:rgba(0,0,0,0.7);">
   </canvas>
 
   <h1>
